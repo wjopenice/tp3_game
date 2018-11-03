@@ -1,0 +1,1 @@
+UPDATE `tab_user` SET `type`='1' WHERE `account` = 'doubilei01'

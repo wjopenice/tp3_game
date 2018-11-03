@@ -1,0 +1,105 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <link rel="stylesheet" href="__CSS__/pctrade.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" href="__CSS__/comboselect.css">
+    <style>
+       #pc_main_con .trade_record .title span{float: left;width:21px;height: 21px;margin:15px 20px 0 20px;background-image: url(__IMG__/personalcenter/pcsprits.png) ; background-repeat:no-repeat ;
+        }
+        #member_r{width:960px;padding:0 60px; float:left;margin-top:30px;min-height:500px;}
+        #member_r p{width:960px;padding:20px 20px;height:60px;line-height:20px;font-size:14px; text-align: left;color:#333;}
+        #member_r table{margin-bottom: 20px;width: 100%;padding:0 20px}
+        #member_r table tr{display: table-row; vertical-align: inherit; border-color: inherit;border-bottom:1px solid #cfd3d2; }
+        #member_r table tr td, #member_r table tr th{text-align: center;height: 38px;font-size:12px;}
+        #member_r table tr th{font-size: 14px;color:#333;}
+        #member_r table tr td{font-size: 12px;color:#666;}
+    </style>
+
+    <div id="pc_main_con" >     
+        <div class="trade_record">
+            <div class="title">
+                  <span style=" background-position:  -124px 0;"></span>交易记录
+            </div>
+            <div class="content clearfix">
+                <div class="con_l" id="trade_tab">
+                    <ul>
+                        <li ><a href="{:U('pctrade')}"><span style="background: url(__IMG__/personalcenter/pcsprits.png) no-repeat -84px -34px;"></span>充值记录</a></li>
+                        <li ><a href="{:U('pctradexf')}" name="czxf"> <span style="background: url(__IMG__/personalcenter/pcsprits.png) no-repeat -85px -70px;"></span>消费记录</a></li>
+                        <li class="current" ><a href="{:U('points')}" ><span style="background: url(__IMG__/personalcenter/pcsprits.png) no-repeat -127px -107px;"></span>积分记录</a></li>
+                    </ul>
+                </div>
+                <div class='excon' id="member_r" >
+                  <p>最近10笔积分获取记录</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>时间</th>
+                          <th>充值金额</th>
+                          <th>充值方式</th>
+                          <th>获取积分</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <volist name='list_data' id="vo">
+                          <tr>
+                            <td>{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+                            <td>{$vo.amount}</td>
+                            <td>
+                              <switch name="vo['pay_way']" >
+                                <case value="0">平台币</case>
+                                <case value="1">支付宝</case>
+                                <case value="2">微信</case>
+                                <default />支付宝
+                              </switch>
+                            </td>
+                            <td>{$vo.points}</td>
+                          </tr> 
+                       </volist>
+                      </tbody>
+                    </table>
+                </div>  
+             
+            </div>
+
+    </div>
+
+</div>
+
+
+
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+
+<script>
+    var pcImgArr=[
+            ["__IMG__/personalcenter/baseinfo/jibenxinxi_1.png","__IMG__/personalcenter/baseinfo/jibenxinxi_2.png"],
+            ["__IMG__/personalcenter/baseinfo/anquanzhongxin_1.png","__IMG__/personalcenter/baseinfo/anquanzhongxin_2.png"],
+            ["__IMG__/personalcenter/baseinfo/xinxizhongxi_1.png","__IMG__/personalcenter/baseinfo/xinxizhongxin_2.png"],
+            ["__IMG__/personalcenter/baseinfo/jiaoyijilv_2.png","__IMG__/personalcenter/baseinfo/jiaoyijilv_1.png"],
+            ["__IMG__/personalcenter/baseinfo/zhanghuyue_2.png","__IMG__/personalcenter/baseinfo/zhanghuyue_1.png"]
+    ];
+    pcUrlArr=[
+            ["personalcenter"],
+            ["pcsafecenter","bindphone","bindemail","noidcard"],
+            ["pcmessage","pcmsgunread","pcmsghasread"],
+            ["pctrade","pctradexf","points"],
+            ["pcaccountyue"]
+    ];   
+    for(var i=0;i<pcUrlArr.length;i++){
+        $("#pc_main_title").find("li").eq(i).find("img").attr("src",pcImgArr[i][1]);
+        if($.inArray(navItem, pcUrlArr[i])!=-1){
+            $("#pc_main_title").find("li").eq(i).find("img").attr("src",pcImgArr[i][0]);
+        }
+    }
+
+
+ 
+</script>
+
+
+</body>
+</html>
+</block>

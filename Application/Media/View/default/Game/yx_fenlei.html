@@ -1,0 +1,154 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="__CSS__/yx-fenlei.css">
+    <style>
+        #pagation{text-align:center;width:1200px;margin:0 auto 40px;}       
+        #pagation .aBtns{
+            float:left;
+            padding-left:300px;
+        }
+        #pagation .aBtns a{
+            text-decoration: none;
+            font-size:14px;color:#4c4c4c;
+            display: inline-block;padding:5px 10px;
+            background:#fff;margin:0 5px;float:left;
+            cursor: pointer;
+        }
+        #pagation .aBtns a.active{
+            color:#fff;
+            background:#ed6557;
+        }
+        #pagation .jump{
+            float:right; font-size:14px;color:#4c4c4c;
+            line-height:20px;
+            padding-right:300px;
+        }
+        #pagation .jump input{
+            width:40px;height:20px;border:1px solid #999;
+            font-size:14px;margin:3px 3px 0 10px;
+        }
+        #pagation .jump span{
+            display: inline-block; cursor: pointer;
+            font-size:14px;padding:5px 10px;color:#4c4c4c;
+        }
+
+    </style>
+<!--游戏分类详情-->
+<div class="fenlei container">
+    <!--游戏分类-->
+    <div class="category">
+        <div class="category-t">
+            <a href="javascript:;"><span class="icon-fenlei"></span>游戏分类</a>
+        </div>
+        <div class="category-b" id="box1">
+             <div class="hd">
+                <span class="current" id="0">不 &nbsp;限</span><volist name=':get_game_type_all_show()' id='vo' key='k'><span id="{$vo['id']}">{$vo.type_name}</span></volist>
+            </div> 
+            <div class="bd">
+                <ul>
+                    <li class="show">
+                         <volist name='list_data' id='v'>
+                           <div class="one">
+                                <a href="{:U('Game/yxchildren?id='.$v['id'].'&type=1')}""><img src="__ROOT__{$v.icon|get_cover='path'}" alt=""></a>
+                                <div class="right">
+                                    <a href="{:U('Game/yxchildren?id='.$v['id'].'&type=1')}" class="title">{:msubstr($v['game_name'],0,7,'UTF-8',false)}</a>
+                                    <p class="next">{$v.game_type_name} | {$v.game_size}</p>
+                                    <a class="xz" href="<if condition='$v.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$v['id'].'&type=1')}</if>">下&nbsp;载</a>
+                                    <a class="lb" href="__CONTROLLER__/yxchildren/id/{$v['id']}/type/2.html">礼&nbsp;包</a>
+                                </div>
+                            </div>
+                         </volist>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<!--分页器-->
+<div id="pagation" class="clearfix">
+   
+</div>
+
+<!--尾巴部分-->
+</body>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="__JS__/query.js"></script>
+<script type="text/javascript" src="__JS__/pagation.js"></script>
+<script>
+    var spans=document.querySelector('.hd');
+    var options=spans.getElementsByTagName('span');     
+    var dataLength={$count|default=0};//后台的数据总条目条目
+    var pageSize=20;
+    var allPageNum=dataLength%pageSize==0 ? parseInt(dataLength/pageSize):(parseInt(dataLength/pageSize)+1);
+    // 总计多少页
+    
+    var p ={$Think.get.p|default=1};
+    var type= {$Think.get.type|default=0};
+    if(dataLength>pageSize){
+        
+        page({
+            id : 'pagation',
+            nowNum : p,
+            allNum : allPageNum,
+            callBack : function(now,all){
+                 window.location.href="http://{$Think.server.http_host}__CONTROLLER__/yx_fenlei/type/"+type+"/p/"+now+"/pagesize/"+pageSize+'.html';
+            }
+        });
+    }else{
+        $("#pagation").css("display","none");
+    }
+    // tab切换页面
+    for(var i=0;i<options.length;i++){
+        options[i].index=i;
+        options[i].onclick=function () {
+            var type2= options[this.index].getAttribute('id');
+            if(type != type2){
+                p=1;
+            }
+        
+             window.location.href="http://{$Think.server.http_host}__CONTROLLER__/yx_fenlei/type/"+type2+"/p/"+p+"/pagesize/"+pageSize+'.html';
+            
+        
+        };
+
+    }
+    if($("#pagation").find(".jump").length>0){
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 300px");
+    }else{
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 460px");
+    }
+    
+
+
+</script>
+<script language="javascript" type="text/javascript">
+   $(function(){
+    var num = {$Think.get.type|default=0};
+    //从=号后面的内容
+    var spans=document.getElementById("box1").getElementsByTagName('span');
+            
+        for(var i=0;i<spans.length;i++){
+                for(var j=0;j<spans.length;j++){
+                    spans[j].className = "";
+                }
+        
+        }
+        $('#'+num).addClass('current');    
+
+   
+
+})
+</script>
+
+
+
+
+</html>
+</block>

@@ -1,0 +1,50 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>新增IP</h2>
+    </div>
+    <form action="{:U('forbid_add')}" method="post" class="form-horizontal tab-list" id="ipsubmit" onsubmit=" return submitTest()">
+
+        <div class="form-item">
+            <label class="item-label">IP<span class="check-tips">（该IP为要拉黑的IP）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="forbid_ip" value="">
+                <span style='color:#ed6557; '></span>
+            </div>
+        </div>
+        
+        
+       <div class="form-item">
+            <input  type="submit" name="submit" value="确 定" style="border:none;width:70px;height: 40px;color:#fff; background-color: #2062b0;   margin: 30px 10px;padding: 10px;line-height: 20px;">
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('User/forbid')}');
+    </script>
+    <script>
+     function submitTest(){
+            var ip=$(".controls").find("input[name=forbid_ip]").val();
+            if(isIP(ip)==false){            
+                $(".controls").find("span").html("您输入的ip格式不正确！");
+            }
+            return isIP(ip);
+            
+        }
+     function isIP(ip)
+        {
+            var re =  /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+            return re.test(ip);
+        }
+
+
+
+</script>
+
+</block>

@@ -1,0 +1,80 @@
+<extend name="Public/base" />
+
+<block name="body">
+<!-- <link rel="stylesheet" type="text/css" href="__CSS__/admin_table.css" media="all"> -->
+<link rel="stylesheet" type="text/css" href="__CSS__/combo.select.css" media="all">
+<script src="__JS__/jquery.combo.select.js"></script>
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <div class="main-title cf">
+        <h2>新增 [代充折扣]</h2>
+    </div>
+    <!-- 标签页导航 -->
+<div class="tab-wrap">
+    <ul class="tab-nav nav">
+        <li data-tab="tab1" class="current"><a href="javascript:void(0);">基础</a></li>
+    </ul>
+    <div class="tab-content zc_for">
+    <!-- 表单 -->
+    <form id="form" action="{:U('add?model='.$model['id'])}" method="post" class="form-horizontal">
+        <!-- 基础 -->
+        <div id="tab1" class="tab-pane in tab1">
+    		<table  border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td class="l">游戏名称：</td>
+                    <td class="r" >
+                       <select id="game_id" name="game_id">
+                       <volist name=":get_game_list()" id="vo">
+                        <option value="{$vo.id}">{$vo.game_name}</option>
+                       </volist>
+                       </select>
+                    </td>
+                    </tr>
+                  <tr>
+                    <td class="l">推广员：</td>
+                    <td class="r">
+                       <select id="promote_id" name="promote_id">
+                       <volist name=":get_promote_all()" id="vo">
+                        <option value="{$vo.id}">{$vo.account}</option>
+                       </volist>
+                       </select>
+                    </td>
+                    <td class="l"></td>
+                    <td class="r">                        
+                    </td>
+                  </tr>
+                    <tr>
+                    <td class="l">代充折扣：</td>
+                    <td class="r" colspan='3'>
+                        <input type="text" class="txt"  name="discount" value="" placeholder="请输入1-10的数字,如:4.5即为45%">
+                        <span>请输入1-10的数字,如:4.5即为45%</span>
+                    </td>
+                    <input type="hidden" name="create_time" value="{:time()}">
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-item cf">
+            <button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <a class="btn btn-return" href="javascript:history.back(-1);">返 回</a>
+        </div>
+    </form>
+    </div>
+</div>
+</block>
+
+<block name="script">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+//导航高亮
+highlight_subnav('{:U('Charge/lists')}');
+$('#submit').click(function(){
+    $('#form').submit();
+});
+
+$(function(){
+   $('select').comboSelect();
+
+});
+</script>
+</block>

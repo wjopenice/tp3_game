@@ -1,0 +1,111 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+.box{
+	
+	height: 1000px;
+}
+.container{
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 70px;
+	background:url(/Public/Media/images/error/baocuo_beijing.png) 0 0 no-repeat;	
+}
+
+.logo a{
+	width: 190px;
+	height: 53px;
+	display: inline-block;
+	background: url(/Public/Media/images/error/baocuo_logo.png) 0 0 no-repeat;
+}
+.tp{
+	height: 492px;
+	position: relative;
+}
+.qiqiu{
+	height: 410px;
+}
+.tp a{
+	position: absolute;
+	display: inline-block;
+}
+.one{
+	top: 100px;
+	left: 200px;
+}
+.two{
+	top: 130px;
+	left: 300px;
+}
+.three{
+	top: -10px;
+	left: 360px;
+}
+.four{
+	top: 129px;
+	left: 477px;
+}
+.five{
+	top: 22px;
+	left: 550px;
+	/*z-index: 1;*/
+}
+.six{
+	top: 117px;
+	left: 629px;
+}
+.wenzi .first{
+	font-size:24px;
+	font-weight: 900;
+	color: #DB7623;
+	padding-left: 200px;
+}
+.wenzi .next{
+    margin-left: 300px;
+    margin-top: 20px;
+    color: #666;
+	font-size: 12px;
+}
+.baobao{
+	margin-top: 10px;
+}
+.baobao .last{
+	padding-left: 200px;
+	color: #666;
+	font-size: 14px;  
+	margin-top: 50px; 
+	float: left;                                                                                                                                                                                                                                                                         
+}
+.baobao a{
+	text-decoration: none;
+	font-size: 14px;
+	color: #1176d3;
+}
+.baobao img{
+	float: right;
+	padding-right: 430px;
+}
+#daojishi{
+	width: 350px;
+	height: 40px;
+	border-radius: 10px;
+	background: #E27319;
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 40px;
+}

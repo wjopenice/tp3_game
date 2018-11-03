@@ -1,0 +1,242 @@
+<extend name="Public/base"/>
+<block name="body" >
+
+    <link rel="stylesheet" href="__CSS__/zxchildren.css">
+
+<!--中间新闻-->
+<div class="center container clearfix">
+    <div class="center-t">
+        <span>当前位置：<a href="{:U('Category/zixun')}">资讯中心</a> >{$vo.title}</span>
+    </div>
+    <div class="center-l">
+        <div class="center-l-t">
+            <div class='center-l-tit'>
+            <h1>{$vo.title}</h1>
+            <p class="auther">作者: {:get_admin_name($vo['admin'])} &nbsp;  &nbsp;  &nbsp;时间：{$vo.create_time|date="Y-m-d H:i:s",###}</p>
+            </div>
+          <!--<div class="title">
+                <p>{$vo.title}</p>
+              </div>-->
+            <div class="article">
+              <p>{$vo.content}</p>
+               <!-- <img src="__IMG__/zixun/zxchildren/zixun_xiangqing.png" alt="">-->
+              <p></p>
+            </div>
+            <article:prev name="prev" info="info">
+                        <a href="{:U('?id='.$prev['id'])}" class="before">上一篇</a>
+             </article:prev>
+             <article:next name="next" info="info">
+                        <a href="{:U('?id='.$next['id'])}" class="after">下一篇</a>
+             </article:next>
+        </div>
+    </div>
+
+    <div class="center-r">
+        <div class="center-r-t">
+            <div class="banner">
+            
+               <ul class="img">
+                   <volist name="slider_zxchild" id="lun" >
+                    <li><a href="{$lun.url}" target="{$lun.target}"><img src="__ROOT__{$lun.data|get_cover='path'}" alt="{$lun.title}"></a></li>
+                   </volist>
+                </ul>
+
+                <div class="jb"><img src="__IMG__/zixun/zxchildren/lunbojianbian.png" alt=""></div>
+                <ul class="num"></ul>
+            </div>
+        </div>
+
+        <div class="center-r-c">
+            <!--推荐礼包-->
+            <div class="libao">
+                <div class="libao-t">
+                    <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏礼包</a>
+                </div>
+                <div class="libao-b ">
+                    <ul>
+                        <volist name="gift" id="vo">
+                        <li>
+                            <a href="{:U('Game/yxchildren?id='.$vo['game_id'].'&type=2')}"><p class="fengbao" id="{$vo.gift_id}">{$vo.game_name}</p> <p>{$vo.giftbag_name}</p></a>
+                                <div class="lingqu">领 &nbsp;取</div>
+                        
+                        </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+
+            <!--热门游戏-->
+            <div class="hot-game">
+                <div class="hot-game-t">
+                    <a href="javascript:;" class="two"><span class="icon-hot"></span>热门游戏</a>
+                    <a href="{:U('Game/youxi')}" class="gengduo">更多> ></a>
+                </div>
+                <div class="hot-game-b">
+                    <ul class="clearfix">
+                        <volist name="hot" id="vo">
+                            <li>
+                                <div class="hot">
+                                    <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><img src="__ROOT__{$vo.icon|get_cover='path'}"></a>
+                                    <div class="wenzi">
+                                        <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="first">{:msubstr($vo['game_name'],0,7,'UTF-8',false)}</a>
+                                        <p href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="next">{$vo.game_type_name}</p>
+                                        <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="load">下 &nbsp;载</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="xian"></div>
+
+
+<!--底部-->
+<!--尾巴部分-->
+</body>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script>
+$('.libao-b ').find('li').each(function () {
+        $(this).find('.lingqu').click(function () {
+            $.ajax({
+                type:'post',
+                dataType:'json',
+                data:{
+                    gift:$(this).parent("li").find('.fengbao').html(),
+                    giftid:$(this).parent("li").find('.fengbao').attr('id')
+                },
+                url:"{:U('Member/getGameGift')}",
+                success:function(data) {
+                    if (parseInt(data.status) == 1 ) {
+//                    登录成功时候的状态
+                        if(data.msg=='ok'){
+                            login_ok(data);
+                        }
+                        if(data.msg=='no'){
+//                        您已领取过该礼包
+                            login_no(data)
+                        }
+                        if(data.msg=='noc'){
+//                        该礼包已领取完，下次请早
+                            login_noc(data)
+                        }
+                    }
+                    if (parseInt(data.status) == 0 ) {
+                        //登录失败的时候
+                        nologin_box();
+                    }
+                },
+                error:function() {
+                    alert('服务器故障，请稍候再试。。。。');
+                }
+            });
+        })
+    });
+
+    $(function(){
+        var i=0;
+        var timer=null;
+        for (var j = 0; j < $('.img li').length; j++) { //创建圆点
+            $('.num').append('<li></li>')
+        }
+        $('.num li').first().addClass('active'); //给第一个圆点添加样式
+        var firstimg=$('.img li').first().clone(); //复制第一张图片
+        $('.img').append(firstimg).width($('.img li').length*($('.banner').width())); //将第一张图片放到最后一张图片后，设置ul的宽度为图片张数*图片宽度
+        // 下一个按钮
+        $('.next').click(function(){
+            i++;
+            if (i==$('.img li').length) {
+                i=1; //这里不是i=0
+                $('.img').css({left:0}); //保证无缝轮播，设置left值
+            };
+            $('.img').stop().animate({left:-i*375},300);
+            if (i==$('.img li').length-1) {  //设置小圆点指示
+                $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+            }else{
+                $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+            }
+        })
+        // 上一个按钮
+        $('.prev').click(function(){
+            i--;
+            if (i==-1) {
+                i=$('.img li').length-2;
+                $('.img').css({left:-($('.img li').length-1)*375});
+            }
+            $('.img').stop().animate({left:-i*375},300);
+            $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+        })
+
+        //设置按钮的显示和隐藏
+        $('.banner').hover(function(){
+            $('.btn').show();
+        },function(){
+            $('.btn').hide();
+        })
+
+        //鼠标划入圆点
+        $('.num li').mouseover(function(){
+            var _index=$(this).index();
+            $('.img').stop().animate({left:-_index*375},150);
+            $('.num li').eq(_index).addClass('active').siblings().removeClass('active');
+        })
+        //定时器自动播放
+        timer=setInterval(function(){
+            i++;
+            if (i==$('.img li').length) {
+                i=1;
+                $('.img').css({left:0});
+            };
+
+            $('.img').stop().animate({left:-i*375},300);
+            if (i==$('.img li').length-1) {
+                $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+            }else{
+                $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+            }
+        },1500)
+        //鼠标移入，暂停自动播放，移出，开始自动播放
+        $('.banner').hover(function(){
+            clearInterval(timer);
+        },function(){
+            timer=setInterval(function(){
+                i++;
+                if (i==$('.img li').length) {
+                    i=1;
+                    $('.img').css({left:0});
+                };
+
+                $('.img').stop().animate({left:-i*375},300);
+                if (i==$('.img li').length-1) {
+                    $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+                }else{
+                    $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+                }
+            },1000)
+        })
+    })
+</script>
+<!-- <script src="__JS__/src/IE8.js"></script>
+<script src="__JS__/src/IE9.js"></script> -->
+<script>
+window.onload=function(){
+    var mWidth=600;
+    $('.center .center-l .center-l-t .article').find('img').each(function(){
+        var oWidth=$(this).width();
+        var oHeight=$(this).height();
+        var nHeight=mWidth/oWidth*oHeight;
+        if(oWidth>mWidth){
+            $(this).css({width:mWidth,height:nHeight});
+        }else{
+            $(this).css({width:oWidth,height:oHeight});           
+        }
+    })
+
+}
+</script>
+</html>
+</block>

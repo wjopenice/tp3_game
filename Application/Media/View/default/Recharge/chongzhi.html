@@ -1,0 +1,493 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/cz.css">
+<link rel="stylesheet" href="__CSS__/dialog_base.css" />
+
+<script src="__JS__/layer/layer.js" type="text/javascript"></script>
+
+<!-- <script type="text/javascript" src="__STATIC__/jquery-2.0.3.min.js"></script> -->
+<script type="text/javascript" src="__JS__/jquery-1.7.2.min.js"></script>
+
+
+
+<!--banner-->
+<div class="bannner container" style="width:1200px;height: 120px;overflow: hidden ;margin:0 auto;">
+   <img src="__ROOT__{$adv_recharg['data']|get_cover='path'}" alt="" style="width:100%;"/>
+</div>
+
+<!--充值部分-->
+<div id="TabMain">
+    <div class="tabItemContainer">
+        <li><a class="tabItemCurrent">支付宝充值</a></li>
+      <li><a>微信充值</a></li>
+       <!-- <li><a>银行卡充值</a></li> -->
+    </div>
+    <div class="tabBodyContainer">
+        <div class="tabBodyItem tabBodyCurrent">
+            <form action="" method="post" >
+                <div class="content">
+                    <div class="content-t">
+                        <p class="title">充值到<span id="pingtaibi" >平台币</span>
+                        <span style="color:#666;font-size:12px;padding-left:25px;display:none;">平台币是玩转平台统一支付的虚拟货币。玩家可以使用平台币兑换玩转平台旗下绝大部分游戏的游戏币。</span>
+                        </p>
+                        <p class="left">充值账号：</p> <input type="text" id="toaccount2" value="{$account}">
+                        <p class="right">确认账号：</p> <input type="text" name="uname2" id="retoaccount2" value="{$account}" >
+                    </div>
+                    <div class="content-b">
+                        <p class="content-b-t">充值金额</p>
+                        <div class="money" id="mon">
+                            <a href="javascript:;">10元</a> 
+                            <a href="javascript:;">20元</a>
+                            <a href="javascript:;" >30元</a>
+                            <a href="javascript:;">50元</a>
+                            <a href="javascript:;" class="dj">100元</a>
+                            <a href="javascript:;">200元</a>
+                            <a href="javascript:;">300元</a>
+                            <a href="javascript:;">500元</a>
+                            <a href="javascript:;">1000元</a>
+                            <a href="javascript:;">2000元</a>
+                            <a href="javascript:;">3000元</a>
+                            <a href="javascript:;">5000元</a>
+                            <a href="javascript:;">10000元</a>
+                        </div>
+                        <div class="jinbi">
+                            <p class="left">其它金额：</p> <input type="text" maxlength="10" size="10" name="money2" id="money3" class="money2" onkeyup="this.value = this.value.replace(/[^0-9]/g, ''); get_game_coin2();" style="display: inline-block"><p class="right"> &nbsp;元</p>
+                            <input type="hidden" id="alipay_amount" name="amount" value="" />
+                            <input type="hidden" name="apitype" value="alipay" />
+                            <span style="font-size:14px;">*比例&nbsp;:&nbsp;1元=1平台币={$points}积分 </span>
+                            <span  style="font-size:14px;">获得平台币：<a href="javascript:;" id="game_coin2">100</a> </span>
+                            <span style="font-size:14px;">获得积分：<a href="javascript:;" id="game_coin3">1000</a> </span>
+                        </div>
+
+                        <a class="now" href="javascript:;" id="action">立即充值</a>
+                    </div>
+                    <div class="content-f">
+                        <p>支付宝余额支付说明：</p>
+                        <p>1、您必须拥有支付宝账户。</p>
+                        <p>2、充值时请确认好您的充值金额准确无误后再充值，避免输错金额导致错误，如因未仔细确认金额造成的充值问题，我们将一律不予处理此类退款申诉。</p>
+                        <p>3、在线客服咨询QQ ：{:C('CH_SET_SERVER_QQ')}&nbsp;&nbsp;&nbsp; {:C('CH_SET_SERVER_QQ1')}</p>
+                        <p>4、客服电话：{:C('CH_SET_ZUOJI_PHONE')}&nbsp;&nbsp;&nbsp;{:C('CH_SET_SERVER_PHONE')}</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    
+
+    <div class="tabBodyItem ">
+            <form action="{:U('Recharge/beginPay')}" method="post" id="form_weixin_zl">
+                <div class="content">
+                    <div class="content-t">
+                        <p class="title">充值到<span id="pingtaibi" >平台币</span>
+                        <span style="color:#666;font-size:12px;padding-left:25px;display:none;">平台币是玩转平台统一支付的虚拟货币。玩家可以使用平台币兑换玩转平台平台旗下绝大部分游戏的游戏币。</span>
+                        </p>
+                        <p class="left">充值账号：</p> <input type="text" id="toaccount2_" value="{$account}">
+                        <p class="right">确认账号：</p> <input type="text" name="uname2_" id="retoaccount2_" value="{$account}" >
+                    </div>
+                    <div class="content-b">
+                        <p class="content-b-t">充值金额</p>
+                        <div class="money" id="mon_">
+                            <a href="javascript:;">10元</a> 
+                            <a href="javascript:;">20元</a>
+                            <a href="javascript:;" >30元</a>
+                            <a href="javascript:;">50元</a>
+                            <a href="javascript:;" class="dj">100元</a>
+                            <a href="javascript:;">200元</a>
+                            <a href="javascript:;">300元</a>
+                            <a href="javascript:;">500元</a>
+                            <a href="javascript:;">1000元</a>
+                            <a href="javascript:;">2000元</a>
+                            <a href="javascript:;">3000元</a>
+                            <a href="javascript:;">5000元</a>
+                            <a href="javascript:;">10000元</a>
+                        </div>
+                        <div class="jinbi">
+                            <p class="left">其它金额：</p> <input type="text" maxlength="10" size="10" name="money2" id="money4" class="money2" onkeyup="this.value = this.value.replace(/[^0-9]/g, ''); get_game_coin3();" style="display: inline-block"><p class="right"> &nbsp;元</p>
+                            <input type="hidden" id="weixin_zl_amount" name="amount" value="" />
+                            <input type="hidden" id="weixin_zl_user" name="account" value="" />
+                            <input type="hidden" name="apitype" value="weixin_zl" />
+                            <span style="font-size:14px;">*比例&nbsp;:&nbsp;1元=1平台币={$points}积分 </span>
+                            <span  style="font-size:14px;">获得平台币：<a href="javascript:;" id="game_coin4">100</a> </span>
+                            <span style="font-size:14px;">获得积分：<a href="javascript:;" id="game_coin5">1000</a> </span>
+                        </div>
+
+                        <a class="now" href="javascript:;" id="action_">立即充值</a>
+                    </div>
+                    <div class="content-f">
+                        <p>微信支付说明：</p>
+                        <p>1、您必须拥有微信账户。</p>
+                        <p>2、充值时请确认好您的充值金额准确无误后再充值，避免输错金额导致错误，如因未仔细确认金额造成的充值问题，我们将一律不予处理此类退款申诉。</p>
+                        <p>3、在线客服咨询QQ ：{:C('CH_SET_SERVER_QQ')}&nbsp;&nbsp;&nbsp; {:C('CH_SET_SERVER_QQ1')}</p>
+                        <p>4、客服电话：{:C('CH_SET_ZUOJI_PHONE')}&nbsp;&nbsp;&nbsp;{:C('CH_SET_SERVER_PHONE')}</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
+        <div class="tabBodyItem">
+            <div class="content">
+                    <div class="dredge">
+                        <img src="__IMG__/nanguo.png" alt="">
+                        <p>暂未开通 ，试试别的支付方式吧 ！</p>
+                    </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="tabBodyItem">
+          <div class="content">
+                    <div class="dredge">
+                        <img src="__IMG__/nanguo.png" alt="">
+                        <p>暂未开通 ，试试别的支付方式吧 ！</p>
+                    </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+<!--弹出框-->
+<div class="cart-win">
+    <div class="win-box">
+        <div class="mess-t">
+            <p>请确认您的充值信息</p>
+        </div>     
+       <div class="mess-c">
+            <form action="{:U('Recharge/beginPay')}" method="post" id="form_alipay" >
+            <p>充值账号 ：<input class="czzh" name="account" readonly="readonly"></p>
+            <p>充值方式 ：<input class="czfs" value="支付宝支付" readonly="readonly"></p>
+            <p>充值金额 ：<input class="czje" name="money" readonly="readonly" maxlength="10">元</p>
+            <input type="hidden" name="apitype" value="alipay">
+            </form>
+        </div>
+
+        <div class="mess-b">
+            <a href="javascript:;" class="sure">确认提交</a>
+            <a href="javascript:;" class="return">返回修改</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!--弹出框第二步-->
+<div class="bounce">
+    <div class="box">
+        <div class="bounce-t"><p>请确认您的充值信息</p></div>
+        <div class="bounce-c">
+            <p>付款完成前请不要关闭或者刷新此窗口</p>
+            <p>完成付款后根据您的情况点击下面的按钮</p>
+        </div>
+        <div class="bounce-b">
+            <a href="zfsuccess.html" class="check">查看充值结果</a>
+            <a href="javascript:;" class="back">返回</a>
+        </div>
+    </div>
+
+</div>
+
+<!--尾巴部分-->
+
+</body>
+<script type="text/javascript" src="__JS__/jquery.min.js"></script>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script>
+$("#pingtaibi").click(function(){
+	$(this).next().toggle();
+})
+</script>
+<script type="text/javascript">
+    /*用户名是否存在判断*/
+    $("#toaccount2").blur(function(){
+        if($.trim($("#toaccount2").val()).length !== 0){
+            $.ajax({
+                url:"{:U('Recharge/checkUser')}",
+                data:{username:$("#toaccount2").val()},
+                type:"post",
+                dataType:"json",
+                success:function(data) {                  
+                    alert(data);
+                    return false;
+                },
+                error:function () {                   
+                    return false;
+                }
+
+            });
+
+       }
+    });
+
+        $("#toaccount2_").blur(function(){
+        if($.trim($("#toaccount2_").val()).length !== 0){
+            $.ajax({
+                url:"{:U('Recharge/checkUser')}",
+                data:{username:$("#toaccount2_").val()},
+                type:"post",
+                dataType:"json",
+                success:function(data) {                  
+                    alert(data);
+                    return false;
+                },
+                error:function () {                   
+                    return false;
+                }
+
+            });
+
+       }
+    });
+
+
+    $(document).ready(function(e) {
+        SidebarTabHandler.Init();
+    });
+    var SidebarTabHandler={
+        Init:function(){
+            $(".tabItemContainer>li").click(function(){
+                $(".tabItemContainer>li>a").removeClass("tabItemCurrent");
+                $(".tabBodyItem").removeClass("tabBodyCurrent");
+                $(this).find("a").addClass("tabItemCurrent");
+                $($(".tabBodyItem")[$(this).index()]).addClass("tabBodyCurrent");
+            });
+
+        }
+    }
+
+    $(function(){
+        var zzsc = $(".money a");
+        zzsc.click(function(){
+            $(this).addClass("dj").siblings().removeClass("dj");
+            $('.jinbi').find('input[name=money2]').val('');
+        });
+    });
+
+
+function name() {
+    var points={$points};
+    var mon=document.getElementById('mon');
+    var  aa=mon.getElementsByTagName('a');
+    for(var i=0;i<aa.length;i++){
+        aa[i].index=i;
+        aa[i].onclick=function () {
+            $('#game_coin2').html( parseInt(aa[this.index].innerHTML));
+            $('#game_coin3').html( parseInt(aa[this.index].innerHTML)*points);
+        }
+    }
+}
+function name_() {
+    var points={$points};
+    var mon=document.getElementById('mon_');
+    var  aa=mon.getElementsByTagName('a');
+    for(var i=0;i<aa.length;i++){
+        aa[i].index=i;
+        aa[i].onclick=function () {
+            $('#game_coin4').html( parseInt(aa[this.index].innerHTML));
+            $('#game_coin5').html( parseInt(aa[this.index].innerHTML)*points);
+        }
+    }
+}
+name();
+name_();
+    function get_game_coin2(){
+        var points={$points};
+        var money = parseInt($('#money3').val());
+        if(!money){
+            name();
+
+        }else{
+          $(".money a").removeClass('dj');
+        }
+        if(isNaN(money)) money = 0;{
+            $('#game_coin2').html(money * 1);
+            $('#game_coin3').html(money * points);
+        }
+
+    }
+    function get_game_coin3(){
+        var points={$points};
+        var money = parseInt($('#money4').val());
+        if(!money){
+            name();
+
+        }else{
+          $(".money a").removeClass('dj');
+        }
+        if(isNaN(money)) money = 0;{
+            $('#game_coin4').html(money * 1);
+            $('#game_coin5').html(money * points);
+        }
+
+    }
+    var verify=1;
+    $("#action").on("click", function(){        
+        if($.trim($("#toaccount2").val()).length == 0){
+            alert("充值账号不能为空!");
+            return false;
+        }
+        if($.trim($("#retoaccount2").val()).length != $.trim($("#toaccount2").val()).length){
+            alert("两次账号不相同!");
+            return false;
+        }
+            if($("#game_coin3").html() == 0){
+                alert("请输入充值金额");
+                return false;
+            }
+
+            if($.trim($("#toaccount2").val()).length !== 0){
+            $.ajax({
+                url:"{:U('Recharge/checkUser')}", async:false,
+                data:{username:$("#toaccount2").val()},
+                type:"post",
+                dataType:"json",
+                success:function(data) {
+                    alert(data);
+                    verify=0;
+                },
+                error:function () {
+                    return false;
+                }
+            });
+
+       }
+        if(verify==1){
+        var win=document.querySelector('.cart-win');
+        var ret =document.querySelector(".return");
+        var sure=document.querySelector('.sure');
+        var bounce=document.querySelector('.bounce');
+        var back=document.querySelector('.back');
+        var game=document.getElementById('game_coin2').innerHTML;
+        var zh=document.getElementById('toaccount2').value;
+      
+        var czzh=document.querySelector('.czzh');
+        var czje=document.querySelector('.czje');
+        czje.value=game;
+        czzh.value=zh;
+        win.style.display='block';
+
+    
+        sure.onclick=function(){
+            $("#form_alipay").submit();
+        };
+
+        ret.onclick=function(){
+            win.style.display='none';
+        };
+
+        back.onclick=function(){
+            bounce.style.display='none';
+        };
+        var $amount=$("#game_coin2").html();
+        $("#alipay_amount").val($amount);        
+        }
+    });
+
+
+
+    // $("#action_").on("click", function(){        
+    //     if($.trim($("#toaccount2_").val()).length == 0){
+    //         alert("充值账号不能为空!");
+    //         return false;
+    //     }
+    //     if($.trim($("#retoaccount2_").val()).length != $.trim($("#toaccount2_").val()).length){
+    //         alert("两次账号不相同!");
+    //         return false;
+    //     }
+    //         if($("#game_coin2").html() == 0){
+    //             alert("请输入充值金额");
+    //             return false;
+    //         }
+
+    //         if($.trim($("#toaccount2_").val()).length !== 0){
+    //         $.ajax({
+    //             url:"{:U('Recharge/checkUser')}", async:false,
+    //             data:{username:$("#toaccount2_").val()},
+    //             type:"post",
+    //             dataType:"json",
+    //             success:function(data) {
+    //                 alert(data);
+    //                 verify=0;
+    //             },
+    //             error:function () {
+    //                 return false;
+    //             }
+    //         });
+
+    //    }
+    //    var $amount=$("#game_coin4").html();
+    //    var $account=$("#toaccount2_").val();
+    //    $("#weixin_zl_amount").val($amount);  
+    //    $("#weixin_zl_user").val($account);  
+    //    $('#form_weixin_zl').submit();
+      
+    // });
+
+
+
+
+        //微信支付
+    $("#action_").on("click", function(){
+        var that = $('#form_weixin_zl');
+        if($.trim($("#toaccount2_").val()).length == 0){
+            alert("充值账号不能为空!");
+            return false;
+        }
+        if($.trim($("#retoaccount2_").val()).length != $.trim($("#toaccount2_").val()).length){
+            alert("两次账号不相同!");
+            return false;
+        }
+            if($("#game_coin2").html() == 0){
+                alert("请输入充值金额");
+                return false;
+            }
+
+       var $amount=$("#game_coin4").html();
+       var $account=$("#toaccount2_").val();
+       $("#weixin_zl_amount").val($amount);  
+       $("#weixin_zl_user").val($account);  
+
+        // var loading = new Cute.ui.dialog().loading('加载中...',{mask:true});
+        $.post("/media.php/Recharge/beginPay",that.serialize(), function(json){
+            layer.open({
+                    id:'iframe', 
+                    type:1,
+                    title:'订单确认',
+                    btn:['充值完成','返回'],
+                    skin:'lay_pop',
+                    style: ' background-color:#78BA32; color:#fff;',
+                    content:json.html,
+                    yes:function(index,layero) {
+                        var lay = $(layero.selector); 
+                        window.location.reload();
+                    },
+                    cancel:function(index) {
+                        layer.closeAll();
+                    }
+                });
+        });
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
+</block>

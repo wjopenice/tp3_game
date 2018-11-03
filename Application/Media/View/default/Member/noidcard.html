@@ -1,0 +1,177 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <link rel="stylesheet" href="__CSS__/centerperson.css">
+    <style>
+        /*个人中心的安全中心*/
+        #pc_main_con{
+            width:1200px;margin:0 auto;
+        }
+        #pc_main_con .safeCenter .title{
+            font:16px/50px "Arial"; color:#8C97CB;
+            border-bottom: 1px solid #8C97CB ; padding-top:30px;
+        }
+        #pc_main_con .safeCenter .title span{float: left;width:21px;height: 21px;margin:13px 20px 0 20px;background-image: url(__IMG__/personalcenter/pcsprits.png) ; background-repeat:no-repeat ;
+        }
+        #pc_main_con .safeCenter .content .con_l{
+            width:240px;padding-top:40px;float:left;
+        }
+        #pc_main_con .safeCenter .content .con_l li a{
+            display: block;line-height:60px;
+            font-size:14px;color:#333;
+        }
+        #pc_main_con .safeCenter .content .con_l li a span{
+            float: left;width:21px;height: 21px;margin:20px 12px 0 73px;
+            background-image:  url(__IMG__/personalcenter/pcsprits.png) ; 
+            background-repeat:no-repeat ;
+        }
+        #pc_main_con .safeCenter .content .con_l .current a{
+            color:#fff;background:#8C97CB;
+        }
+        #pc_main_con .safeCenter .content .con_r{
+            float:left;min-height: 400px;
+            width: 960px;
+            padding-top:40px;
+        }
+        #pc_main_con .safeCenter .content .con_r .reset{
+            padding-left: 200px;
+        }
+        #pc_main_con .safeCenter .content .con_r .current{
+            padding-left: 200px;
+        }
+        #pc_main_con .safeCenter .content .con_r .first{
+            padding-left: 70px;
+        }
+        #pc_main_con .safeCenter .content .con_r .completeerror{
+            margin-left: 285px;
+        }
+        #pc_main_con .safeCenter .content .con_r .completesuccess{
+            margin-left: 285px;
+        }
+
+        #pc_main_con .safeCenter .content .con_r .iphone{
+            padding-left: 200px;
+        }
+
+        #pc_main_con .safeCenter .content .con_r .wancheng {
+            margin: 75px auto;
+            text-align: center;
+        }
+        #pc_main_con .safeCenter .content .con_r .wancheng  p{
+            margin-top: 30px;
+        }
+        #nobind2{
+            margin-top:20px;
+        }
+        #nobind1 .basic{
+            font-size: 12px;
+            color: #9a9a9a;
+            display: inline-block;
+            margin-top: 40px;
+            margin-left: 70px;
+           line-height: 20px;
+        }
+        #nobind1{
+            margin-bottom: 40px;
+        }
+        #nobind2{
+            margin-bottom: 40px;
+        }
+        #nobind2 .basic{
+            font-size: 12px;
+            color: #9a9a9a;
+            display: inline-block;
+            margin-top: 40px;
+            margin-left: 70px;
+            line-height: 20px;
+        }
+
+
+
+    </style>
+
+
+
+    <div id="pc_main_con" >
+        <!--个人中心/安全中心-->
+        <div class="safeCenter" >
+            <div class="title">
+                <span style=" background-position: -42px 0;"></span>安全中心
+            </div>
+            <div class="content clearfix">
+                <div class="con_l" id="safeCenter_l">
+                     <ul>
+                        <li ><a href="{:U('Member/pcsafecenter')}"><span style="background-position: 0 -34px;"></span>密码修改</a></li>
+
+                        <if condition="$user['phone'] eq ''">
+                            <li ><a href="{:U('Member/bindphone')}"><span style="background-position: 0 -68px;"></span>绑定手机</a></li>
+                        <else />
+                        <li ><a href="{:U('Member/nobindphone')}"><span style="background-position: 0 -68px;"></span>绑定手机</a></li>
+                        </if>
+
+                       <if condition="$user['email'] eq ''">
+                          <li ><a href="{:U('Member/bindemail')}"><span style="background-position:0 -109px;margin-top: 23px;"></span>绑定邮箱</a></li>
+                       <else />
+                          <li ><a href="{:U('Member/nobindemail')}"><span style="background-position:0 -109px;margin-top: 23px;"></span>绑定邮箱</a></li>
+                       </if>
+
+                       <if condition="$user['idcard'] eq ''">
+                          <li class="current"><a href="{:U('Member/noidcard')}"> <span style="background-position: -42px -141px;"></span>实名认证</a></li>
+                       <else />
+                          <li ><a href="{:U('Member/idcard')}"> <span style="background-position: -42px -141px;"></span>实名认证</a></li>
+                       </if>
+                    </ul>
+                </div>
+                <div class="con_r" id="safeCenter_r">
+                    <!--实名认证-->
+
+                    <div id="nobind1" style="display:block">
+                        <img src="__IMG__/personalcenter/safecenter/1.png" alt="" class="first">
+                        <p class="basic">根据2010年8月1日实施的《网络游戏管理暂行办法》，网络游戏用户需使用有效身份证件进行实名注册。为保证流畅游戏体验，享受健康游戏生活，请广大游戏玩家尽快实名注册，且实名信息将不可更改。</p>
+                        <p class="current" style="margin-top: 45px">当前账号：<span class="account" id="uname">{$user['account']}</span></p>
+                        <div class="reset"><span class="h" style="text-indent: 2em">密码：</span> <input type="password" class="shuru" id="telpassword"> <span id="teltips" class="teltipss"> <i class="star">* </i><span class="zi"> 请输入密码</span></span></div>
+                        <input type="submit" value="完&nbsp;成" class="completeerror" id="achieve">
+                    </div>
+
+                    <div id="nobind2" style="display:  none">
+                        <img src="__IMG__/personalcenter/safecenter/2.png" alt="" class="first">
+                        <p class="basic">根据2010年8月1日实施的《网络游戏管理暂行办法》，网络游戏用户需使用有效身份证件进行实名注册。为保证流畅游戏体验，享受健康游戏生活，请广大游戏玩家尽快实名注册，且实名信息将不可更改。</p>
+                        <p class="current" style="margin-top: 45px">当前账号：<span class="account">{$user['account']}</span></p>
+                        <div class="reset"><span class="h" style="text-indent: 2em">姓名：</span> <input type="text"  id="name"><span id="nametips"><i class="star">* </i><span class="zi"> 请输入您的真实姓名</span></span></div>
+                        <div class="reset"><span class="h">身份证号：</span> <input type="text"  id="idcard"><span id="idcodetips"><i class="star">* </i><span class="zi"> 请输入您的身份证号</span></span></div>
+                        <input type="submit" value="完&nbsp;成" class="completeerror" id="achieve2">
+                    </div>
+                    
+                    <div id="nobind3" style="display: none">
+                        <div class="wancheng">
+                            <img src="__IMG__/personalcenter/safecenter/wancheng.png" alt="">
+                            <p>完成实名认证,<span id="timer" style="color: #8C97CB;">1s</span>后跳到实名认证页面！</p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--小火箭-->
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+<script>
+    var zqimg="__IMG__/wjmm/quanbuzhengquan.png";
+    var verifypwdurl="{:U('Member/verifypwd')}";
+    var cardurl="{:U('Member/card')}";
+    var idcardurl="{:U('Member/idcard')}";
+</script>
+
+</body>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script src="__JS__/verifyidcard.js"></script>
+<script src="__JS__/idcard.js"></script>
+</html>
+</block>

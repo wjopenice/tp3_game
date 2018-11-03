@@ -1,0 +1,99 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>站内信列表</h2>
+	</div>
+	<div class="cf top_nav_list">
+		<div class="fl button_list">
+            <a class="btn blue" href="{:U('letter_add')}">新 增</a>
+        </div>
+
+        <!-- 高级搜索 -->
+		<div class="search-form fr cf">
+			<div class="sleft">
+				<input type="text" name="nickname" class="search-input" value="{:I('nickname')}" placeholder="请输入管理员账号">
+				<!-- <a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a> -->
+			</div>
+            <div class="input-list">
+                <a class="sch-btn" href="javascript:;" id="search" url="{:U('letter')}">搜索</a>
+            </div>
+		</div>
+    </div>
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+	<table class="">
+    <thead>
+        <tr>
+		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+		<th class="">ID</th>
+		<th class="">创建者</th>
+		<th class="">标题</th>
+		<th class="">发送内容</th>
+		<th class="">类型</th>
+		<th class="">状态</th>
+		<th class="">浏览次数</th>
+		<th class="">创建时间</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<notempty name="_list">
+		<volist name="_list" id="vo">
+		<tr>
+            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
+			<td>{$vo.id} </td>
+			<td>{$vo.send_account}</td>
+			<td>{$vo.title}</td>
+			<td><a href="{:U('User/letter_contentlist?id='.$vo['id'])}">查看全文</a></td>
+			<td>{$vo.type}</td>
+			<td>{:get_letter_status($vo['status'])}</td>
+			<td>{$vo.number}</td>
+			<td>{$vo.create_time|time_format}</td>
+			<td>
+			     <a  href="{:U('User/letter_edit?id='.$vo['id'])}" class="">编辑</a>
+                 <a href="{:U('User/letter_delete?id='.$vo['id'])}" class="">删除</a>
+            </td>
+            
+		</tr>
+		</volist>
+		<else/>
+		<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+		</notempty>
+	</tbody>
+    </table>
+	</div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+    //导航高亮
+    highlight_subnav('{:U('User/letter')}');
+	</script>
+</block>

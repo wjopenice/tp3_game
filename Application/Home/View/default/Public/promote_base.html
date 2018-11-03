@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://tui.anfeng.com/users/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{$meta_title}-个人中心</title> 
+    <link href="__CSS__/p_admin.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/Public/Media/image/s_logo.png"/>
+    <script type="text/javascript" src="__JS__/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/layer/layer.js" ></script>
+    <script type="text/javascript" src="__JS__/common.js"></script>
+     <!--[if lt IE 9]>
+    <script type="text/javascript" src="__STATIC__/jquery-1.10.2.min.js"></script>
+    <![endif]--><!--[if gte IE 9]><!-->
+    {:hook('pageHeader')}
+</head>
+
+<body id="member">
+
+<!--头部个人信息-->
+<div id="top_bar">
+  <div id="top_bar_box" class="wrap_w clearfix">
+    <div id="l"><a href="#">合作中心</a></div>
+    <div id="r"><i><?php echo '今天是:'.date('Y',time()).'年-'.date('m',time()).'月-'.date('d',time()).'日';?></i><span>你好：{:session('promote_auth.account')}</span><a href="{:U('Public/logout')}" >退出</a>
+	
+	</div>
+  </div>
+</div>
+<!--结束 头部个人信息-->
+
+<div class="page_main wrap_w clearfix">
+  <div class="page_siderbar">
+    <!--左边导航-->
+    <div id="subnav" class="user_menu">
+      <ul>
+        <li>
+          <h3><span class="ficon ficon-home"></span>管理中心</h3>
+          <p><a href="{:U('Promote/index')}">后台首页</a></p>
+        </li>
+        <li>
+            <h3><span class="ficon ficon-game"></span>游戏管理</h3>
+            <p><a href="{:U('Apply/index')}">申请游戏</a></p>
+            <p><a href="{:U('Apply/my_game')}">我的游戏</a></p>
+            
+        </li>
+        <li>
+              <h3><span class="ficon ficon-pay"></span>充值管理</h3>
+              <p><a href="{:U('Promote/alipay')}">支付宝充值</a></p>
+              <p><a href="{:U('Promote/alipay_list')}">支付宝充值平台币明细</a></p>
+
+          </li>
+        <li>
+            <h3><span class="ficon ficon-act"></span>代充管理</h3>
+             <p><a href="{:U('Charge/agent_pay')}">会长代充</a></p>
+             <p><a href="{:U('Charge/agent_pay_list')}">代充汇总</a></p>
+        <if condition="$parent_id == 0">
+            <!-- <p><a href="{:U('Charge/agency')}">转移平台币</a></p>
+             <p><a href="{:U('Charge/agency_list')}">转移记录</a></p>-->
+           </if>
+	           <p><a href="{:U('Charge/agency')}">转移平台币</a></p>
+             <p><a href="{:U('Charge/agency_list')}">转移平台币记录</a></p>
+             <p><a href="{:U('Charge/agency_bang')}">转移绑定平台币</a></p>
+             <p><a href="{:U('Charge/agency_bang_list')}">转移绑定平台币记录</a></p>  
+             <p><a href="{:U('Charge/promote_game_list')}">游戏绑定平台币余额记录</a></p>
+            <!-- <p><a href="{:U('Charge/agent_list')}">消费平台币</a></p>
+            <p><a href="{:U('Charge/fill_list')}">申请额度</a></p>
+            <p><a href="{:U('Charge/transfer_list')}">平台币交易转移</a></p> -->
+        </li>
+        <li>
+            <h3><span class="ficon ficon-docs"></span>数据管理</h3>
+            <p><a href="{:U('Query/recharge')}">充值明细</a></p>
+            <p><a href="{:U('Query/bindrecharge')}">绑币充值明细</a></p>
+            <p><a href="{:U('Query/register')}">注册明细</a></p>
+        </li>
+        <li>
+            <h3><span class="ficon ficon-star"></span>财务管理</h3>
+            <p><a href="{:U('Query/my_earning')}">我的结算</a></p>
+            <p><a href="{:U('Query/bill')}">账单查询</a></p>
+        </li>
+        <li>
+            <h3><span class="ficon ficon-person"></span>账户管理</h3>
+            <p><a href="{:U('Promote/base_info')}">我的基本信息</a></p>
+            <if condition="PARENT_ID == 0">
+              <p id="mychlid"><a href="{:U('Promote/mychlid')}">子帐号管理</a></p>
+            </if>
+        </li>
+      </ul>
+    </div>
+    <!--结束 左边导航-->  
+  </div>
+
+  <div class="page_content">
+    <div id="container">
+        <block name="body"> </block>
+    </div>
+  </div>
+</div>
+<!--底部信息-->
+<div class="copyright">
+  <div class="links"><a href="{:U('Article/detail',array('id'=>32))}">关于我们</a>|<a href="{:U('Article/lists',array('category'=>tui_gg))}">游戏公告</a>|<a href="{:U('Article/lists',array('category'=>tui_zx))}">游戏资讯</a></div>
+  <div class="kf">
+    <span>
+        <span>客服电话：{:C("MT_SITE_T2")}</span>
+        <span>客服邮箱：{:C("MT_SITE_E2")}</span>
+        <span>服务时间：{:C("MT_SITE_TIME2")}</span>
+    </span>
+  </div>
+  <p>网络备案:{:C('WEB_SITE_ICP2')}&nbsp;&nbsp;网络文化经营许可证编号：{:C('MT_SITE_LICENSE2')}
+                 版权所有:{:C('MT_SITE_B2')}</p>
+</div>
+<!--结束 底部信息-->
+</body>
+</html>
+<script type="text/javascript">
+  var $window = $(window), $subnav = $("#subnav"), url;
+  /* 左边菜单高亮 */
+  url = window.location.pathname + window.location.search;
+  url = url.replace(/(\/(p)\/\d+)|(&p=\d+)|(\/(id)\/\d+)|(&id=\d+)|(\/(group)\/\d+)|(&group=\d+)/, "");
+  $subnav.find("a[href='" + url + "']").parent().addClass("cur");
+  //导航高亮
+  // function highlight_subnav(url){
+  //   alert(url);
+  //   $('.user_menu').find('a[href="'+url+'"]').closest('li').addClass('cur');
+  // }
+ if($('#data_form').length>0){
+   $("#pagehtml a").on("click",function(event){
+    event.preventDefault();//使a自带的方法失效，即无法调整到href中的URL(http://www.baidu.com)
+    var geturl = $(this).attr('href');
+    $('#data_form').attr('action',geturl);
+    $('#data_form').submit();
+
+})
+};
+</script>
+<block name="script"></block>

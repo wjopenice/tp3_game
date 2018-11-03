@@ -1,0 +1,549 @@
+<extend name="Public/base"/>
+<link rel="stylesheet" href="__CSS__/zixun.css">
+<block name="body" >
+<!-- 20180210新增注册和支付二维码 -->
+<!--<div class="czEwm" style="width: 140px;height: 195px;position: fixed;left:0;top:50%;margin-top:-98px;z-index: 999;">
+    <img src="__IMG__/mgwPay.png" alt="">
+</div>
+<div class="czRegister" style="width: 140px;height: 195px;position: fixed;right:0;top:50%;margin-top:-98px;z-index:999;">
+    <img src="__IMG__/mgwRegister.png" alt="">
+</div>-->
+<!--轮播图-->
+    <style>
+        .game .game-right .libao{margin-top: 0;}
+        /*      公共title_box       */
+        .title_box{height: 54px;line-height: 54px;border-bottom: 2px solid #ccc;}
+        .tit_name{height: 54px;font-size: 20px;font-weight: 600;color: #333;padding: 0 20px;border-bottom: 2px solid #ff6b63;float: left;}
+        .more_link{float: right;}
+        .more_link span{font-size: 14px;color: #999;padding-right: 16px;vertical-align: middle;float: right;}
+    </style>
+<!--<div style='width:100%;min-width: 1200px;height:500px;overflow: hidden;'>
+<div id="box" style="width: 1920px;position: relative;left:50%;margin-left:-960px;">
+   <div id="slider">
+   <volist name="carousel" id="lun" >
+    <a href="{$lun.url}" target="{$lun.target}" title="{$lun.title}"><img src="__ROOT__{$lun.data|get_cover='path'}" alt="{$lun.title}" title="" /></a>
+    </volist>
+    </div>
+</div>
+</div>-->
+<div class="pic clearfix">
+        <div class="pic1">
+            <a href="javascript:;"  target="{$left_top['0']['target']}"><img src="__ROOT__{$left_top['0']['data']|get_cover='path'}" alt=""></a>
+            <div class="show">
+                <div class="show-content">
+                    <a href="{$left_top['0']['url']}">{$left_top['0']['title']}</a>
+                </div>
+            </div>
+        </div>
+        <div class="pic2">
+            <div class="pic2-t">
+                <a class="one" href="javascript:; "  target="{$mid_top['0']['target']}"><img src="__ROOT__{$mid_top['0']['data']|get_cover='path'}" alt=""></a>
+                <div class="show">
+                    <a href="{$mid_top['0']['url']}">{$mid_top['0']['title']}</a>
+                </div>
+            </div>
+            <div class="pic2-b">
+                <a class="two" href="javascript:;"  target="{$mid_top['1']['target']}"><img src="__ROOT__{$mid_top['1']['data']|get_cover='path'}" alt=""></a>
+                <div class="show">
+                    <a href="{$mid_top['1']['url']}">{$mid_top['1']['title']}</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="pic3">
+            <a href="javascript:;" target="{$left_top['1']['target']}"><img src="__ROOT__{$left_top['1']['data']|get_cover='path'}" alt=""></a>
+            <div class="show">
+                <div class="show-content">
+                    <a href="{$left_top['1']['url']} ">{$left_top['1']['title']}</a>
+                </div>
+            </div>
+        </div>
+        <div class="pic4">
+            <a href="javascript:;" target="{$rig_top['0']['target']}"><img src="__ROOT__{$rig_top['0']['data']|get_cover='path'}" alt=""></a>
+            <div class="show">
+                <div class="show-content">
+                    <a href="{$rig_top['0']['url']}">{$rig_top['0']['title']}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--推荐游戏-->
+<div class="tjyouxi clearfix">
+    <div class="container">
+        <div class="title_box">
+            <p class="tit_name">推荐游戏</p>
+            <a class="more_link" href="{:U('Game/youxi')}"><span>更多&gt;&gt;</span></a>
+        </div>
+        <!--<div class="youxi-t">
+            <a href="{:U('Game/youxi')}" class="one"><span class="icon-youxi"></span>推荐游戏</a>
+            <a href="{:U('Game/youxi')}" class="more">更多> ></a>
+        </div>-->
+        <div class="youxi-b">
+            <ul>
+
+                <volist name="recommend" id="vo" >
+                <li>
+                    <a href="{:U('Game/game_detail?id='.$vo['id'].'')}" class="one">
+                        <img src="__ROOT__{$vo.cover|get_cover='path'}" class="gpic">
+                        <div class="fbbl">{$vo.game_name}</div>
+                    </a>
+                    <div class="show">
+                        <div class="show-t">
+                            <p>{$vo.game_name}</p>
+                        </div>
+                        <div class="show-b">
+                            <img src="{:U('Game/dow_url_generate?game_id='.$vo['id'])}" alt="">
+                            <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="tj">推荐 <br/> &nbsp;<img src="__IMG__/main/tuijian_wujiaoxing.png" alt=""></a>
+                            <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="xz">下 载</a>
+                        </div>
+                        <!-- <p class="saoma">QQ扫码</p> -->
+                    </div>
+                </li>
+                </volist>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--游戏部分-->
+<div class="game">
+    <div class="container">
+        <!--游戏部分左侧-->
+        <div class="game-left clearfix">
+
+                <!--热门游戏-->
+            <div class="hot-game">
+                <div class="title_box">
+                    <p class="tit_name">热门游戏</p>
+                    <a class="more_link" href="{:U('Game/youxi')}"><span>更多&gt;&gt;</span></a>
+                </div>
+                <!--<div class="hot-game-t">
+                    <a href="javascript:;" class="two"><span class="icon-hot"></span>热门游戏</a>
+                    <a href="{:U('Game/youxi')}" class="gengduo">更多> ></a>
+                </div>-->
+                <div class="hot-game-b">
+                    <ul class="clearfix">
+                        <volist name="hot" id="vo" >
+                            <li>
+                                <div class="hot">
+                                    <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><img src="__ROOT__{$vo.icon|get_cover='path'}"></a>
+                                    <div class="wenzi">
+                                        <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="first">{:msubstr($vo['game_name'],0,7,'UTF-8',false)}</a>
+                                        <p href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="next">{$vo.game_type_name}</p>
+                                        <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="load">下 &nbsp;载</a>
+                                    </div>
+                                </div>
+                                </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--游戏资讯-->
+            <div class="zixun clearfix">
+                <!--<div class="zixun-t">
+                    <div class="zixun-t">
+                        <a href="javascript:;" class="two"><span class="icon-zixun"></span>游戏资讯</a>
+                        <a href="{:U('Category/zixun')}" class="gengduo">更多> ></a>
+                    </div>
+                </div>-->
+                <div class="title_box">
+                    <p class="tit_name">游戏资讯</p>
+                    <a class="more_link" href="{:U('Category/zixun')}"><span>更多&gt;&gt;</span></a>
+                </div>
+                <div class="zixun-b clearfix">
+
+                    <div class="zixun-b-l">
+                        <ul>
+                            <volist name="data_zxadv" id="zxadv" >
+                                <li><a href="{$zxadv.url}" target="{$zxadv.target}"><img src="__ROOT__{$zxadv.data|get_cover='path'}" alt="{$zxadv.title}"></a></li>
+                            </volist>
+                        </ul>
+                    </div>
+
+                    <div class="zixun-b-r">
+                        <ul>
+                            <!-- 公告 -->
+                        <article:limits name="list" category="44" child="true" limit="3">
+                            <li>
+                                <span class="gonggao"></span>
+                                <a href="{:U('Category/zxchildren?id='.$list['id'])}">{$list.title}</a><span class="data">{$list.create_time|date="m/d",###}</span>
+                            </li>
+                        </article:limits>
+
+                        <!-- 资讯 -->
+                            <article:limits name="list" category="43" child="true" limit="3">
+                            <li>
+
+                                <span class="zx"></span><a href="{:U('Category/zxchildren?id='.$list['id'])}">{$list.title}</a><span class="data">{$list.create_time|date="m/d",###}</span>
+                            </li>
+                        </article:limits>
+                        <!-- 活动 -->
+                        <article:limits name="list" category="42" child="true" limit="3">
+                            <li>
+                                <span class="huodong"></span><a href="{:U('Category/zxchildren?id='.$list['id'])}">{$list.title}</a><span class="data">{$list.create_time|date="m/d",###}</span>
+                            </li>
+                        </article:limits>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--新游推荐-->
+            <div class="xinyou clearfix">
+                <div class="title_box">
+                    <p class="tit_name">新游推荐</p>
+                    <a class="more_link" href="{:U('Game/youxi')}"><span>更多&gt;&gt;</span></a>
+                </div>
+                <!--<div class="xinyou-t">
+                    <a href="{:U('Game/youxi')}" class="two"><span class="icon-hot"></span>新游推荐</a>
+                    <a href="{:U('Game/youxi')}" class="gengduo">更多> ></a>
+                </div>-->
+                <div class="xinyou-b">
+                    <ul>
+                        <volist name="xin" id="vo" >
+                        <li>
+                            <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><img src="__ROOT__{$vo.cover|get_cover='path'}" >
+                                <div class="fbbl">
+                                    {$vo.game_name}
+                                </div>
+                            </a>
+                        </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+
+            <!--角色扮演-->
+            <div class="cosplay clearfix">
+                <div class="tab">
+                    <a href="javascript:;" class="tab1"><span class="icon-cosplay"></span>角色扮演 &nbsp;</a>
+                    <a href="javascript:;" class="tab2"> / &nbsp; <span class="icon-kapai"></span>卡牌游戏 &nbsp;&nbsp;</a>
+                    <a href="javascript:;" class="tab2"> / &nbsp; <span class="icon-celue"></span>策略养成 &nbsp;&nbsp;</a>
+                    <a href="javascript:;" class="tab2"> / &nbsp; <span class="icon-yizhi"></span>休闲益智</a>
+                </div>
+                <div class="content" >
+                    <ul>
+                        <li style="display: block">
+                            <div class="box">
+                                <volist name="juese" id="vo">
+                                    <div class="hot">
+                                        <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><img src="__ROOT__{$vo.icon|get_cover='path'}"></a>
+                                        <div class="wenzi">
+                                            <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="first">{$vo.game_name}</a>
+                                            <p class="next">{$vo.game_type_name}</p>
+                                            <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="load"> 下 &nbsp;载</a>
+                                        </div>
+                                    </div>
+                                </volist>
+                             </div>
+                         </li>
+
+                        <li>
+                            <div class="box">
+                                <volist name="kapai" id="vo">
+                                   <div class="hot">
+                                       <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><img src="__ROOT__{$vo.icon|get_cover='path'}"></a>
+                                    <div class="wenzi">
+                                        <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="first">{$vo.game_name}</a>
+                                        <p class="next">{$vo.game_type_name}</p>
+                                        <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="load"> 下 &nbsp;载</a>
+                                        </div>
+                                    </div>
+                                </volist>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <volist name="celue" id="vo">
+                                    <div class="hot">
+                                        <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><img src="__ROOT__{$vo.icon|get_cover='path'}"></a>
+                                        <div class="wenzi">
+                                            <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="first">{$vo.game_name}</a>
+                                            <p class="next">{$vo.game_type_name}</p>
+                                            <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="load"> 下 &nbsp;载</a>
+                                        </div>
+                                    </div>
+                                </volist>
+                             </div>
+                         </li>
+
+                        <li>
+                            <div class="box">
+                                <volist name="xiuxian" id="vo">
+                                   <div class="hot">
+                                       <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><img src="__ROOT__{$vo.icon|get_cover='path'}"></a>
+                                    <div class="wenzi">
+                                        <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="first">{$vo.game_name}</a>
+                                        <p class="next">{$vo.game_type_name}</p>
+                                        <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="load"> 下 &nbsp;载</a>
+                                        </div>
+                                    </div>
+                                </volist>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!--游戏部分右侧-->
+        <div class="game-right clearfix">
+            <!--游戏礼包-->
+            <div class="libao clearfix">
+                <div class="title_box">
+                    <p class="tit_name">游戏礼包</p>
+                    <a class="more_link" href="{:U('Gift/index')}"><span>更多&gt;&gt;</span></a>
+                </div>
+                <!--<div class="libao-t">
+                    <a href="javascript:;" class="one"><span class="icon-libao"></span>游戏礼包</a>
+                    <a href="{:U('Gift/index')}" class="more">更多> ></a>
+                </div>-->
+                <div class="libao-b" >
+                     <ul id="getGift">
+                        <volist name="gift" id="vo" >
+                       <li>
+                            <div class="draw">
+                            <a href="{:U('Game/yxchildren?id='.$vo['game_id'].'&type=2')}" target="_blank"><p class="fengbao">{$vo.game_name}</p> <p class="gifts" id="{$vo.gift_id}">{$vo.giftbag_name}</p></a>
+                                <div class="lingqu">领 &nbsp;取</div>
+                            </div>
+                        </li>                            
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <!--游戏排行-->
+            <div class=" paihang clearfix">
+                <div class="title_box">
+                    <p class="tit_name">游戏排行</p>
+                </div>
+                <!--<div class="paihang-t">
+                    <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏排行</a>
+                </div>-->
+                <div class="paihang-b ">
+                    <ul class="weekly-list">
+                    <volist name="rank" id="vo" >
+                            <li >
+                                <div class="app-show-title clearfix">
+                                    <if condition="$num lt 4"><span class="num s-index-org" style="background-color:#f19ec2;color: #fff;">{$num++}</span>
+                                        <elseif condition="$num lt 7" /><span class="num s-index-org" style="background-color:pink;color: #fff;">{$num++}</span>
+                                        <else /> 
+                                        <span class="num s-index-org" style=";background-color:gray;color: #fff;">{$num++}</span>
+                                    </if>                                    
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}"  class="bl">{$vo.game_name}</a>
+                                    <a href="javascript:;" class="hh">{$vo.game_type_name}</a>
+                                </div>
+
+                                <div class="app-show-block"> 
+                                <if condition="$num lt 5"><span class="num s-index-org" style="background-color:#f19ec2;color: #fff;"></span>
+                                        <elseif condition="$num lt 8" /><span class="num s-index-org" style="background-color:pink;color: #fff;"></span>
+                                        <else /> <span class="num s-index-org" style=";background-color:gray;color: #fff;"></span>
+                                    </if>   
+
+                                <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}" class="pic"><img src="__ROOT__{$vo.icon|get_cover='path'}" alt="{$vo.game_name}"></a>
+                                <div class='xzandli clearfix'>      
+                                    <div class='title clearfix'>
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}"  class="name">{$vo.game_name}</a>
+                                    <a href="javascript:;" class="jiaose">{$vo.game_type_name}</a>
+                                    </div>
+                                    <div class='picandtxt'>   
+                                    <a  class="xz" href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="down">下&nbsp;载</a>                                  
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>2))}" class="lb">礼&nbsp;包</a>
+                                    </div>
+                            </li>
+                        </volist> 
+                        
+                        </ul>
+                </div>
+            </div>
+            <!--游戏开服-->
+            <div class="kaifu clearfix" style="position: relative;">
+                <div class="title_box">
+                    <p class="tit_name">游戏开服</p>
+                </div>
+                <!--<div class="kaifu-t">
+                    <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏开服</a>
+                </div>-->
+                <div class="kaifu-b">
+                    <ul style="height: 385px;overflow: hidden;">
+                        <volist name="area" id="vo" >
+                        <li>
+                            <a href="{:U('Game/yxchildren?id='.$vo['game_id'].'')}"><p class="fengbao">{$vo.start_time|date="m/d",###} <span class="dian"></span>{$vo.game_name}</p> <p class="fuqu_kaifu">{$vo.server_name}</p>
+                                <div class="lingqu">查 &nbsp;看</div></a>
+                        </li>
+                        </volist>
+                    </ul>
+                </div>
+                <p class="circle_div">
+                    
+                </p>
+            </div>
+            <!--游戏客服-->
+        </div>
+
+        <!--活动和客服-->
+        <div class="last container clearfix">
+            <div class="last-l">
+                <!--游戏活动-->
+                <div class="yxactive">
+                    <div class="title_box">
+                        <p class="tit_name">游戏活动</p>
+                        <a class="more_link" href="{:U('Category/zixun')}"><span>更多&gt;&gt;</span></a>
+                    </div>
+                    <!--<div class="yxactive-t">
+                        <a href="javascript:;" class="two"><span class="icon-hot"></span>游戏活动</a>
+                        <a href="{:U('Category/zixun')}" class="gengduo">更多 > ></a>
+                    </div>-->
+                    <div class="yxactive-b">
+                        <ul>
+                            <article:limits name="list" category="44" child="true" limit="3">
+                            <li>
+                                <a href="{:U('Category/zxchildren?id='.$list['id'])}" class="tj"><img src="__ROOT__{$list.cover_id|get_cover='path'}" alt="">
+                                    <div class="fbbl">
+                                        {$list.title}
+                                    </div>
+                                </a>
+                            </li>
+                           </article:limits>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="last-r">
+                <!--游戏客服-->
+                <div class="kefu clearfix">
+                    <div class="title_box">
+                        <p class="tit_name">游戏客服</p>
+                    </div>
+                    <!--<div class="kefu-t">
+                        <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏客服</a>
+                    </div>-->
+                   <div class="kefu-b">
+                        <p class="one"><span class="spans">工&nbsp;作&nbsp;时&nbsp;间：</span>10:00 -- 21:00</p> <br>
+                        <p class="two"><span class="spans" >服&nbsp;务&nbsp;热&nbsp;线：</span>{:C('CH_SET_SERVER_PHONE')}</p><br />
+                        <p class="three"><span class="spans">客&nbsp;服&nbsp;&nbsp;Q&nbsp;Q：</span>{:C('CH_SET_SERVER_QQ')}</p> <br />
+                        <p class="four"><span class="spans">官方玩家群：<span class='gfwjq'></span>{:C('CH_SET_SERVER_QQGROUP')}</span></p>
+                        <div class='publicNum'>
+                              <img src='__IMG__/gzh.jpg'>
+                              <p>微信公众号</p>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--友情连接-->
+        <div class="lianjie clearfix container">
+            <div class="title_box">
+                <p class="tit_name">友情链接</p>
+            </div>
+            <!--<div class="lianjie-t">
+                <a class="one" href="javascript:;"><span class="icon-lianjie"></span> 友情链接 </a>
+            </div>-->
+            <div class="lianjie-b">
+                 <ul>
+                    <volist name=":get_links()" id='data'>
+                    <li><a target="_blank" href="{$data.link_url}" title="{$data.title}" >{$data.title}</a></li>
+                    </volist>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--尾巴部分-->
+
+
+
+
+
+
+
+<!--尾巴固定-->
+<div class="app">
+    <div class="box-text">
+        <img src='__IMG__/dibu/banner.png' class='mainPic' style="width: 1200px;">
+
+
+
+        <span class="app-cha"  id="shift"></span>
+    </div>
+</div>
+
+
+
+</body>
+<script type="text/javascript">
+    var gift_url = "{:U('Member/getGameGift')}";
+    var MODULE = "__MODULE__";
+</script>
+
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/pop.js"></script>
+<script src="__JS__/slider.jquery.js"></script>
+
+<script>
+    $('#box').css('width','$(window).clientWidth()');
+    $( '#slider' ).lateralSlider( {
+        captionPadding: '0',
+        captionHeight: 45
+    } );
+
+// 官方玩家群
+    var wjQQ=$.trim($(".kefu-b").find('.four').find(".gfwjq").html());
+    if(wjQQ==""){
+        $(".kefu-b").find('.four').html("");
+    }
+
+
+
+  var del=document.getElementById("shift");
+   del.onclick=function () {
+         this.parentNode.parentNode.style.display = "none";
+     };
+   $('#getGift').find('li').each(function () {
+    $(this).find('.lingqu').click(function () {
+        $.ajax({
+            type:'post',
+            dataType:'json',
+            data:{
+                gift:$(this).parent(".draw").find('.gifts').html(),
+                giftid:$(this).parent(".draw").find('.gifts').attr('id')
+            },
+            url:"{:U('Member/getGameGift')}",
+            success:function(data) {
+                if (parseInt(data.status) == 1 ) {
+//                    登录成功时候的状态
+                    if(data.msg=='ok'){
+                        login_ok(data);
+                    }
+                    if(data.msg=='no'){
+//                        您已领取过该礼包
+                        login_no(data)
+                    }
+                    if(data.msg=='noc'){
+//                        该礼包已领取完，下次请早
+                        login_noc(data)
+                    }
+                }
+                if (parseInt(data.status) == 0 ) {
+                    //登录失败的时候
+                    nologin_box();
+                }
+            },
+            error:function() {
+                alert('服务器故障，请稍候再试。。。。');
+            }
+        });
+    })
+})
+
+</script>
+
+
+</html>
+</block>

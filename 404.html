@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>404</title>
+	<link rel="stylesheet" type="text/css" href="/Public/Media/css/404.css">
+</head>
+<body>
+	<div class="box">
+		<div class="container">
+			<div class="go-back">返回上一页</div>
+			<div class="go-index"><span id="daojishi">5</span>s返回首页</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	 var btn=document.getElementById('daojishi')
+	 var time=5;
+	 btn.innerHTML=time;
+	 var timer= setInterval(function(){
+		time--;
+		btn.innerHTML=time;
+	 	if(time<=1){
+	 		clearInterval(timer)
+	 		window.location.href="/media.php?s=/Index/index.html";
+	 	}
+	 },1000);
+	 var goBack = document.getElementsByClassName('go-back')[0];
+	 goBack.onclick=function(){
+	 	window.history.back(); 
+	 }
+</script>
+</html>

@@ -1,0 +1,292 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <!-- 标题栏 -->
+    <div class="main-title">
+        <h2>消费统计 列表</h2>
+    </div>
+	<div class="cf top_nav_list">
+		<!-- <div class="fl">
+		<empty name="model.extend">
+			<div class="tools">
+				<a class="btn" href="{:U('add?model='.$model['id'])}">新 增</a>
+				<button class="btn ajax-post confirm" target-form="ids" url="{:U('del?model='.$model['id'])}">删 除</button>
+			</div>
+		</empty>
+		</div> -->
+		<!-- 高级搜索 -->
+		<div class="search-form fr cf">
+        <!-- 20170828消费统计新增时间 -->
+         <!-- <div class="input-list">
+                <label>消费时间：</label>
+                <input type="text" id="time-start" style='width:160px' name="time-start" class="text input-2x time" value="{:I('time-start')}" placeholder="起始时间" />
+                -
+                <div class="input-append date" id="datetimepicker"  style="display:inline-block">
+                    <input type="text" id="time-end" name="time-end" style='width:160px' class="text input-2x time" value="{:I('time-end')}" placeholder="结束时间" />
+                    <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+        </div> -->
+
+        <div class="input-list">
+                <label>时间：</label>
+                <input type="text" id="time-start" name="time-start" class="text input-2x" <if condition="I('time-start')!=''"> value="{:I('time-start')}" <else/>value="{:I('start')}"</if> placeholder="起始时间" /> 
+                -
+                <div class="input-append date" id="datetimepicker"  style="display:inline-block">
+                <input type="text" id="time-end" name="time-end" class="text input-2x" <if condition="I('time-end')!=''"> value="{:I('time-end')}" <else/>value="{:I('end')}"</if> placeholder="结束时间" />
+                <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+            </div>
+          
+       <!--  <div class="i_list" id="" >
+                 <div class="drop-down" id="game">
+                    <if condition="I('game_name') eq ''">
+                    <input type="text" id="i_list_id" class="sort-txt" value="" placeholder="请选择游戏" />
+                    <else />
+                    <input type="text" id="i_list_id" class="sort-txt" value="{:I('game_name')}" placeholder="请选择游戏" />
+                    </if>
+                    <input type="hidden" id="i_list_idh" name="game_name" value="{:I('game_name')}" />
+                    <i class="arrow arrow-down"></i>
+                    <ul id="i_list_li" class="nav-list hidden i_list_li">
+                        <li><a href="javascript:;" value="" >全部</a></li>
+                        <volist name=":get_game_list()" id="vo">                        
+                        <li><a href="javascript:;" value="{$vo.id}" >{$vo.game_name}</a></li>
+                        </volist>
+                    </ul>
+                </div>                
+            </div> -->
+              
+              <!-- 20170828消费统计新增游戏匹配搜索功能 -->
+            <div class="chose_game"  id="sel_game" style="float:left;width:172px;height:28px;line-height:28px;margin:0 5px 0 5px;">
+                <select>
+                    <if condition="I('game_id') eq ''">                                         <option value="" >请选择游戏</option>
+                        <else />
+                        <option value="{:I('game_id')}">请选择游戏</option>
+                    </if>
+                    <option value="">全部游戏</option>
+                    <volist name=":get_game_list()" id="vo">
+                        <option value="{$vo.id}" >{$vo.game_name}</option>
+                    </volist>
+                </select>
+            </div>
+
+           <!--  <div class="i_list">
+                 <div class="drop-down" id="promote">
+                    <if condition="I('promote_name') eq ''">
+                    <input type="text" id="i_list_id" class="sort-txt" value="" placeholder="请选择所属渠道" />
+                    <else />
+                    <input type="text" id="i_list_id" class="sort-txt" value="{:I('promote_name')}" placeholder="请选择所属渠道" />
+                    </if>
+                    <input type="hidden" id="i_list_idh" name="promote_name" value="{:I('promote_name')}" />
+                    <i class="arrow arrow-down"></i>
+                    <ul id="i_list_li" class="nav-list hidden i_list_li">
+                        <li><a href="javascript:;" value="" >全部</a></li>
+                        <li><a href="javascript:;" value="0" >自然注册</a></li>
+                        <volist name=":get_promote_all()" id="vo">                        
+                        <li><a href="javascript:;" value="{$vo.id}" >{$vo.account}</a></li>
+                        </volist>
+                    </ul>
+                </div>                
+            </div> -->
+
+                <!--20170828消费统计新增渠道匹配搜索功能  -->
+             <div class="chose_game"  id="sel_promote" style="float:left;width:172px;height:28px;line-height:28px;margin:0 5px 0 5px;">
+                <select>
+                    <if condition="I('promote_name') eq ''">
+                        <option value="" >请选择所属渠道</option>
+                        <else />
+                        <option value="{:I('promote_name')}">请选择所属渠道</option>
+                    </if>
+                    <option value="">全部渠道</option>
+                    <option value="0">自然注册</option>
+                    <volist name=":get_promote_all()" id="vo">
+                        <option value="{$vo.id}" >{$vo.account}</option>
+                    </volist>
+                </select>
+            </div>
+			<!-- <div class="sleft"> -->
+				<!-- <input type="text" name="{$model['search_key']|default='user_account'}" class="search-input" value="{:I('user_account')}" placeholder="请输入用户账号">
+				 --><!-- <a class="sch-btn" href="javascript:;" id="search" url="{:U('stat/cpa_spend','model='.$model['name'],false)}"><i class="btn-search"></i></a> -->
+			<!-- </div> -->
+            <div class="input-list">
+                <a class="sch-btn" href="javascript:;" id="search" url="{:U('stat/cpa_spend','model='.$model['name'],false)}">搜索</a>
+            </div>
+             <div class="input-list"> 
+                <a class="sch-btn" href="{:U('Export/expUser',array(
+                'id'=>28,
+                'promote_id'=>I('promote_id'),
+                'game_id'=>I('game_id'),
+                'time-start'=>I('time-start'),
+                'time-end'=>I('time-end'),
+                'start'=>I('start'),
+                'end'=>I('end'),
+                ))}">导出</a>
+                <span class="totalvalue">(共计消费<i>{$total}</i>元)</span>
+            </div>
+		</div>
+	</div>
+
+
+    <div class="data-table">
+        <div class="data-table table-striped">
+            <table>
+                <!-- 表头 -->
+                <thead>
+                    <tr>
+                        <th style="text-align:center">游戏名称</th>
+                        <th style="text-align:center">充值金额</th>
+                        <th style="text-align:center">推广员</th>
+                        <th style="text-align:center">充值人数</th>
+                    </tr>
+                </thead>
+                <!-- 列表 -->
+                <tbody>
+                    <volist name="list_data" id="data">
+                        <tr>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">{:get_game_name($data['game_id'],'id')}</td>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">{$data.count}</td>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">
+                              {:get_promote_name($data['promote_id'])}
+                            </td>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">{$data.ucount}</td>
+                        </tr>
+                    </volist>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="page">
+        {$_page|default=''}
+    </div>
+</block>
+
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<!-- 20170619新增功能 -->
+<link rel="stylesheet" type="text/css" href="__CSS__/combo.select.css" media="all">
+<script src="__JS__/jquery.combo.select.js"></script>
+<style>
+    #sel_game .combo-select ,#sel_promote .combo-select{width:172px;border: 1px #fff solid;}
+    #sel_game .text-input ,#sel_promote .text-input{height:28px;}
+    #sel_game .combo-input ,#sel_promote .combo-input{padding:0 0 0 12px;}
+</style>
+<script type="text/javascript">
+        $(function(){
+            var gameBh="{$Think.get.game_id|default=0}";
+            var qdzh="{$Think.get.promote_id}";
+            $("#sel_game").find('select option[value='+gameBh+']').attr("selected","selected");
+            $("#sel_game").find('select').comboSelect();
+            $("#sel_promote").find('select option[value='+qdzh+']').attr("selected","selected");
+            $("#sel_promote").find('select').comboSelect();
+        })
+</script>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+//导航高亮
+highlight_subnav('{:U('stat/cpa_spend')}');
+$(function(){
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        // var query  = $('.search-form').find('input').serialize();
+        
+        var query  = $.param({
+                    'time-start':$.trim($("#time-start").val()),
+                    'time-end':$.trim($("#time-end").val()),
+                    'game_id':$.trim($("#sel_game select").val()),
+                    'promote_id':$.trim($("#sel_promote select").val())                    
+                });
+
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+
+    //回车自动提交
+    $('.search-form').find('input').keyup(function(event){
+        if(event.keyCode===13){
+            $("#search").click();
+        }
+    });
+
+// 20170828新增时间
+  $('#time-start').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+
+    $('#datetimepicker').datetimepicker({
+       format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true,
+        pickerPosition:'bottom-left'
+    })
+
+
+    $("#game").on('click',function(event) {
+        var navlist = $(this).find('.i_list_li');
+        if (navlist.hasClass('hidden')) {
+            navlist.removeClass('hidden');
+            $(this).find('#i_list_id').focus().val('');            
+        } else {
+            navlist.addClass('hidden');
+        }
+        $(document).one("click", function(){
+            navlist.addClass('hidden');
+        });
+        event.stopPropagation();
+    });
+
+    $('#game #i_list_id').on('keyup',function(event) {
+        var val  = $.trim($(this).val()).toLowerCase();
+        $(this).closest('.drop-down').find('#i_list_idh').val(val);
+    });
+    
+    $("#game #i_list_li").find("a").each(function(){
+        $(this).click(function(){
+            var text = $.trim($(this).text()).toLowerCase();
+            $(this).closest('.drop-down').find("#i_list_id").val(text);
+            $(this).closest('.drop-down').find('#i_list_idh').val(text);
+        })
+    });
+    
+    
+    $("#promote").on('click',function(event) {
+        var navlist = $(this).find('.i_list_li');
+        if (navlist.hasClass('hidden')) {
+            navlist.removeClass('hidden');
+            $(this).find('#i_list_id').focus().val('');            
+        } else {
+            navlist.addClass('hidden');
+        }
+        $(document).one("click", function(){
+            navlist.addClass('hidden');
+        });
+        event.stopPropagation();
+    });
+
+    $('#promote #i_list_id').on('keyup',function(event) {
+        var val  = $.trim($(this).val()).toLowerCase();
+        $(this).closest('.drop-down').find('#i_list_idh').val(val);
+    });
+    
+    $("#promote #i_list_li").find("a").each(function(){
+        $(this).click(function(){
+            var text = $.trim($(this).text()).toLowerCase();
+            $(this).closest('.drop-down').find("#i_list_id").val(text);
+            $(this).closest('.drop-down').find('#i_list_idh').val(text);
+        })
+    });
+})
+</script>
+</block>

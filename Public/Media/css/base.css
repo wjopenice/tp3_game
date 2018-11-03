@@ -1,0 +1,352 @@
+*,::before,::after{
+    margin:0;
+    padding:0;
+
+    /*内减模式 */
+    box-sizing: border-box;
+    /* 兼容-webkit-内核*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /*  ie: -ms-
+        chrome:-webkit
+        firefox: -moz-
+        opera:  -o-
+        safair: -webkit-
+    */
+    /* 去除移动端的点击高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,
+fieldset,input,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+img{
+    border:0;
+    outline-style: none;
+    vertical-align: middle;
+}
+body{
+    font-family: "Microsoft Yahei",sans-serif;
+}
+a{
+    text-decoration: none;
+    color:#333;
+}
+a:hover{
+    text-decoration: none;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+input{
+    border:0 none;
+    outline: none;
+    /* 在移动端 去除表单 默认的效果*/
+    -webkit-appearance: none;
+}
+
+/* 清除出浮动*/
+.clearfix::after,
+.clearfix::before{
+    content:"";
+    height:0;
+    visibility: hidden;
+    line-height: 0;
+    clear:both;
+    display: block;
+}
+
+/* CSS Document */
+/****  文字大小初始化,使1em=10px *****/
+body {
+    font-size: 62.5%;
+} /* for IE/Win */
+html>body {
+    font-size: 16px;
+} /* for everything else */
+
+/*字体边框等初始化*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form,
+fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+
+
+address, caption, cite, code, dfn, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color:#333;
+}
+/*万能的清除浮动的样式：调用方式：<div class="clear"></div>*/
+html body div.clear, html body span.clear {
+    background: none;
+    border: 0;
+    clear: both;
+    float: none;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+/*!*使用after清除浮动：调用方式：<div class="clearfix"></div>*!*/
+.clearfix:after {
+    content:"";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1; /*为了兼容IE6/IE7*/
+}
+.pop {
+    display: none;
+    width: 100%;
+    height: 100%;
+    /*background: rgba(0, 0, 0, 0.7);*/
+    background: url("../image/medal.png") left top repeat;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.pop .win-box {
+    width: 570px;
+    height: 260px;
+    background: url("../image/bg.png");
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -130px 0 0 -285px;
+}
+.pop .win-box .mess-t {
+    height: 120px;
+    text-align: center;
+}
+.pop .win-box .mess-t p {
+    display: inline-block;
+    font-size: 20px;
+    color: #ed6557;
+    margin-top: 60px;
+    text-align: center;
+}
+.pop .win-box .mess-b {
+    width: 370px;
+    margin: 40px 0 0 100px;
+}
+.pop .win-box .mess-b .sure {
+    width: 120px;
+    height: 40px;
+    background-color: #ed6557;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+    float: left;
+}
+.pop .win-box .mess-b .return {
+    width: 120px;
+    height: 40px;
+    background-color: #ed6557;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+    float: right;
+}
+.cart-win {
+    display: none;
+    width: 100%;
+    height: 100%;  
+    background: url("../image/medal.png") left top repeat;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.cart-win .win-box {
+    width: 464px;
+    height: 288px;
+    background: url("../image/bg.png");
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -144px 0 0 -232px;
+    text-align: center;
+}
+.cart-win .win-box .success {
+    height: 120px;
+}
+.cart-win .win-box .success > p {
+    display: inline-block;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+.cart-win .win-box .ma {
+    width: 360px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #f6f6f6;
+    margin: 0 auto;
+}
+.cart-win .win-box .ma p {
+    font-size: 14px;
+}
+.cart-win .win-box .ma p .one {
+    color: #ed6557;
+}
+.cart-win .win-box .shut {
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    width: 120px;
+    height: 36px;
+    background-color: #ed6557;
+    color: #fff;
+    font-size: 18px;
+}
+.receiveComplete {
+    display: none;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0, 0, 0, 0.6);
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);*/
+     background: url("../image/medal.png") left top repeat;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.receiveComplete .win-box {
+    width: 464px;
+    height: 288px;
+    background: url("../image/bg.png"); 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -144px 0 0 -232px;
+    text-align: center;
+}
+.receiveComplete .win-box .receivesuccess {
+    height: 120px;
+}
+.receiveComplete .win-box .receivesuccess > p {
+    display: inline-block;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+.receiveComplete .win-box .ma {
+    width: 360px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #f6f6f6;
+    margin: 0 auto;
+}
+.receiveComplete .win-box .ma p {
+    font-size: 14px;
+}
+.receiveComplete .win-box .ma p .one {
+    color: #ed6557;
+}
+.receiveComplete .win-box .shutno {
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    width: 120px;
+    height: 36px;
+    background-color: #ed6557;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+.noreceive {
+    display: none;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0, 0, 0, 0.6);
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);*/
+     background: url("../image/medal.png") left top repeat;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.noreceive .win-box {
+    width: 464px;
+    height: 288px;
+    background: url("../image/bg.png");  
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -144px 0 0 -232px;
+    text-align: center;
+}
+.noreceive .win-box .noreceivetitle {
+    height: 120px;
+}
+.noreceive .win-box .noreceivetitle > p {
+    display: inline-block;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+.noreceive .win-box .shutnoc {
+    margin-top: 50px;
+    border: none;
+    outline: none;
+    width: 120px;
+    height: 36px;
+    background-color: #ed6557;
+    color: #fff;
+    font-size: 18px;
+}

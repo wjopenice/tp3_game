@@ -1,0 +1,180 @@
+<extend name="Public/base"/>
+<block name="body" >
+<style type="text/css">
+.exwrap{width:1200px;margin:0 auto;}
+.exwrap .location  {width:1200px;height: 120px;overflow: hidden ;}
+.exwrap .location  a{display:block;width:1200px;height: 120px;}
+.exwrap .location  a img{width:100%;}
+.exwrap .content{width:1200px;margin:40px 0 0 0;padding-bottom: 30px;}
+.exwrap .content .extab{width:240px;float:left;}
+.exwrap .content .extab li{width:240px;height:60px;}        
+.exwrap .content .extab li a{display:block;width:240px;height:60px;line-height: 60px;text-align: center;color:#333;}
+.exwrap .content .extab li a span{float:left;width:18px;height:18px;background: url(__IMG__/personalcenter/pcsprits.png) no-repeat ;margin: 22px -62px 0 73px;}
+.exwrap .content .extab .two a:hover{background:#ed6557;color:#fff;}
+.exwrap .content .extab .two a:hover span{background-position: -209px -144px!important;}
+.exwrap .content .extab .current a{display:block;width:240px;height:60px;line-height: 60px;text-align: center;background:#ed6557;color:#fff;}
+.exwrap .content .excon{width: 960px;float:left;}
+.exwrap .content .excon .dh-con{float:left;width:500px;margin-left: 130px;}
+.exwrap .content .excon .dh-con .con{width:500px; margin:10px 0;}
+.exwrap .content .excon .dh-con .con-btn{margin-top: 20px;}
+.exwrap .content .excon .dh-con label span{float:left;width:100px;height:36px;line-height:36px;text-align:right; font-size: 14px;color: #333;}
+.exwrap .content .excon .dh-con label input{width:266px;font-size: 14px;color: #333;border:1px solid #ccc;height:36px;line-height:36px;padding: 0 6px;}
+.exwrap .content .excon .dh-con p{width:192px;font-size: 12px;color: #ed6557;margin-left:100px;height:36px;line-height:36px;}
+.exwrap .content .excon .dh-con label .shuru{width:170px;float:left;}
+#identifying{cursor:pointer;display: block;top:0;right: 0;}
+#identifying img{width:96px;height:36px;}
+/*右侧提示*/
+.exwrap .content .excon .dh-tips{float:right;width:330px;background:#f5f5f5;padding:0 30px 20px;}
+.exwrap .content .excon .dh-tips h3{width: 100%;height:50px;line-height: 50px;font-size:16px;color:#fc8e00;}
+.exwrap .content .excon .dh-tips p{width: 100%;line-height: 30px;font-size:12px;color:#666;}
+.exwrap .content .excon .dh-tips p a{color:#ed6557;cursor: pointer;}
+#active-btn{background: #ed6557;color:#fff;font-size:16px;cursor: pointer;border:1px solid #ed6557;font-family: '微软雅黑'}
+</style>
+    
+<div class='exwrap'>
+    <p class='location'>
+        <a><img src="__ROOT__{$adv_duihuan['data']|get_cover='path'}" alt="" /></a>
+    </p>    
+    <div class='content clearfix'>
+        <ul class='extab'>
+            <li class='current'><a href="javascript:;"><span style="background-position: -209px -73px"></span>兑换</a></li>
+            <li class='two'><a href="javascript:;"><span style="background-position: -209px -107px"></span>兑换记录</a></li>
+        </ul>
+       
+        <div class='excon clearfix' id="member_r" >     
+            <div class='dh-con'>
+                <div class="con">
+                        <label>
+                        <span><!-- 输入兑换码：--> </span>
+                       <!-- <input type="text" value="" id="active-code" /> --> 
+                        </label>
+                        <p class='con-tips'></p>
+                </div>
+                <div class="con" style='position: relative;'>
+                        <label>
+                        <span><!-- 输入验证码：--></span>
+                       <!-- <input type="text" class="shuru">                        
+                        </label><span id="identifying"> <img src="__MODULE__/Public/verify" alt="" class="checkcode">
+                        </span>-->
+                        <p class='con-tips'></p>
+                </div>
+                <div class="con con-btn">
+                        <label>
+                        <span></span>
+                        <!-- <input type="button" value="兑&nbsp;&nbsp;换" id="active-btn" />-->
+                        </label>
+                </div>
+            </div>
+            <div class='dh-tips'>
+                <h3>温馨提示</h3>
+                <p>
+                1.单个兑换码只可使用一次。可兑换成平台币在游戏中使用。
+                </p>
+                <p>2.本兑换码由平台活动或线下活动赠送所得，兑换码价值平台币数量请参照具体活动页面。</p>
+                <p>
+                3.兑换完成后可在<a href="javascript:;"  id='dhjl'>兑换记录</a>中查询
+                </p>
+            </div>
+        </div>  
+    </div>
+</div>
+
+
+<script type="text/javascript">
+$(function() {
+    $('.checkcode').click(function() {
+        var e = (new Date).getTime();
+        $('.checkcode').attr('src', MODULE+'/Public/verify/t/'+e);
+    });
+    $("#active-code").focus(function(){
+        $(this).parents('label').siblings('.con-tips').html("");
+    });
+    $(".shuru").focus(function(){
+        $(this).parents('label').siblings('.con-tips').html("");
+    });
+   
+
+    
+   $("#active-btn").click(function(){
+    var acode=$.trim($("#active-code").val());
+    var vcode=$.trim($(".shuru").val());
+    if(acode==""){ 
+        $("#active-code").parents('label').siblings('.con-tips').html("请输入兑换码!");
+        return false;
+    }
+    if(vcode==""){
+        $(".shuru").parents('label').siblings('.con-tips').html("请输入验证码!");
+       return false;
+    }
+    // 兑换码的正则要求
+    if( !/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]+$/.test(acode)){
+       $("#active-code").parents('label').siblings('.con-tips').html("您输入的兑换码有误!");
+       return false;
+    }else if(!(/^[a-zA-Z0-9]{4}$/.test(vcode))){
+        $(".shuru").parents('label').siblings('.con-tips').html("验证码格式错误!");
+       return false;
+    }else{
+        $.ajax({
+                type:'post',
+                dataType:'json',
+                data:{
+                    "code":acode,//兑换码
+                    "verify":vcode//验证码
+                },
+                async:false,
+                url:"{:U('Exchange/index')}",
+                success:function(data) {
+                    if (parseInt(data.status) == 1 ) {
+//                    登录成功时候的状态兑换成功
+                        code_sucess_box();
+                    }else if (parseInt(data.status) == 0 ) {
+                        //未登录的状态
+                        code_login_box();
+                    }else if (parseInt(data.status) ==-7 ) {                        
+                        $(".shuru").parents('label').siblings('.con-tips').html(data.msg);
+                    }else {
+                     $("#active-code").parents('label').siblings('.con-tips').html(data.msg);
+                      $('.checkcode').click();
+                    }
+                },
+                error:function() {
+                    alert('服务器故障，请稍候再试。。。。');
+                }
+            });
+    }
+   });
+
+   // 点击兑换记录判断是否登录跳转到兑换记录的页面
+    $(".extab").find(".two").click(function(){
+       $.ajax({
+                type:'post',
+                dataType:'json',              
+                url:"{:U('Exchange/is_login')}",
+                async:false,
+                success:function(data) {
+                    if (parseInt(data.status) == 1 ) {
+//                    登录成功时候的状态
+                   window.location.href="{:U('record')}";
+                    }
+                    if (parseInt(data.status) == 0 ) {
+                        //未登录的状态
+                        code_login_box();
+                    }
+                },
+                error:function() {
+                    alert('服务器故障，请稍候再试。。。。');
+                }
+            }); 
+    });
+
+    // 点击兑换记录触发同样的事件
+    $("#dhjl").click(function(){
+       $(".extab").find(".two").click() ;
+    })
+})
+
+
+  </script>
+
+</html>
+</block>

@@ -1,0 +1,291 @@
+<extend name="Public/base"/>
+<block name="body" >
+<link rel="stylesheet" href="__CSS__/wjmm.css">
+<switch name="m">
+<case value="1">
+<div id="forget1" style="display: block;">
+    <div class="mm container clearfix">
+        <div class="mm-t">
+            当前位置 ： <a href="javascript:;"> 登录 > </a> <a href="javascript:;">找回密码</a>
+        </div>
+        <div class="mm-c">
+            <span class="one">1.账号信息  </span>
+            <span class="two">2.找回方式</span>
+            <span class="three">3.重置密码</span>
+            <span class="four">4.完成</span>
+        </div>
+        <div class="mm-b">
+            <div class="mm-b-l" style='margin-top;10px'>
+                <div><span class="h">用户账号：</span> <input type="text" class="shuru" id="in"> <span id="tips" class="tip"><i class="star">* </i><span class="zi"> 正确填写账号信息</span></span> </div>               
+                <input type="button" class="next" id="net" value="下一步" />
+            </div>
+            <div class="mm-b-r">
+                <div class="youce">
+                    <p><i>*</i> 请正确填写您要找回的账号信息</p>
+                    <p><i>*</i> 按操作提示依次完成找回</p>
+                    <p><i>*</i> 如您所有的找回方式均不可用，请联系客服</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</case>
+
+<case value="2">
+
+<if condition="($data['phone'] neq '') or ($data['email'] neq '')">
+<!-- 第二步之手机找回 -->
+<div id="forget2" style="display: none;">    
+    <div class="mm container clearfix">
+        <div class="mm-t">
+            当前位置 ： <a href="javascript:;"> 登录 > </a> <a href="javascript:;">找回密码</a>
+        </div>
+        <div class="mm-c">
+            <span class="one">1.账号信息  </span>
+            <span class="two">2.找回方式</span>
+            <span class="three">3.重置密码</span>
+            <span class="four">4.完成</span>
+        </div>
+        <div class="mm-b">
+            <div class="mm-b-t">
+                <a href="javascript:;" class="iphonefindway"><img src="__IMG__/wjmm/shoujizhaohui_1.png" alt=""></a>
+                <a href="javascript:;" class="emailfindway"><img src="__IMG__/wjmm/youxiangzhaohui_2.png" alt=""></a>
+                <a href="{:U('Service/kefu')}"><img src="__IMG__/wjmm/kefuzhaohui_2.png" alt=""></a>
+            </div>
+            <div class="mm-b-b">
+                <div class="mm-b-l">
+                    <div class="iphone">
+                        <span class="h">手机号：</span><input type="text" class="shuru" id="in2"/><input type="button" class="ck" id="fsyzm" value="发送验证码"  style="width:100px;height:30px;cursor: pointer;<span class="tips"><i class="star"> </i><span class="zi"></span></span>
+                    </div>
+                    <div class="ma"><span class="h">验证码：</span> <input type="text" class="shuru" id="code">  <span id="tiped"><i class="star">* </i><span class="msg">请输入短信验证码</span></span></div>
+                </div>
+                <div class="mm-b-r">
+                    <div class="youce">
+                        <p><i>*</i> 请正确填写您要找回的账号信息</p>
+                        <p><i>*</i> 按操作提示依次完成找回</p>
+                        <p><i>*</i> 如您所有的找回方式均不可用，请联系客服</p>
+                    </div>
+                </div>               
+                <input type="button" class="next" id="net2" value="下一步" />
+            </div>
+        </div>
+    </div>    
+    <div class="nobinding" id="nobind">
+        <div class="win-box">
+            <div class="mess-t">
+                <p class="first">未绑定邮箱</p>
+            </div>
+            <div class="mess-t" style=""><p class="next">请前往 <a href="javascript:;" class="find" id="emailfind">手机找回</a> 或 <a
+                    href="{:U('Service/kefu')}" class="find">联系客服</a></p>
+            </div>
+            <div class="mess-b">
+                <a href="javascript:;" class="closed" id="shut">关&nbsp;闭</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--第二步之邮箱找回-->
+<div id="hb_email" style="display: none;">
+    <div id="forgetemail1" >
+        <!--中间部分-->
+        <div class="mm container clearfix">
+            <div class="mm-t">
+                当前位置 ： <a href="javascript:;"> 登录 > </a> <a href="javascript:;">找回密码</a>
+            </div>
+            <div class="mm-c">
+                <span class="one">1.账号信息  </span>
+                <span class="two">2.找回方式</span>
+                <span class="three">3.重置密码</span>
+                <span class="four">4.完成</span>
+            </div>
+            <div class="mm-b">
+
+                <div class="mm-b-t">
+                    <a href="javascript:;" class="iphonefindway"><img src="__IMG__/wjmm/shoujizhaohui_2.png" alt=""></a>
+                    <a href="javascript:;" class="emailfindway"><img src="__IMG__/wjmm/youxiangzhaohui_1.png" alt=""></a>
+                    <a href="{:U('Service/kefu')}"><img src="__IMG__/wjmm/kefuzhaohui_2.png" alt=""></a>
+                </div>
+                <div class="mm-b-b">
+                    <div class="mm-b-l">
+                        <div class="ma"><span class="h">邮箱：</span> <input type="text" class="shuru" id="email" value="">  <span id="tips4"><i class="star"> </i><span class="msg"></span></span></div>
+                         <input type="button" class="color" id="net4" value="下一步" />
+
+                    </div>
+                    <div class="mm-b-r">
+                        <div class="youce">
+                            <p><i>*</i> 请正确填写您要找回的账号信息</p>
+                            <p><i>*</i> 按操作提示依次完成找回</p>
+                            <p><i>*</i> 如您所有的找回方式均不可用，请联系客服</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!--未绑邮箱的弹出框-->
+        <div class="nobindemil" id="nobindemils" style="display: none;">
+            <div class="win-box">
+                <div class="mess-t">
+                    <p class="first">未绑定手机</p>
+                    <p class="next">请前往 <a href="#" class="find" id="email_click">邮箱找回</a> 或 <a href="{:U('Service/kefu')}" class="find">联系客服</a>  </p>
+                </div>
+                <div class="mess-b">
+                    <a href="javascript:;" class="closed" id="shuted">关&nbsp;闭</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="forgetemail2" style="display:none;">
+        <!--中间部分-->
+        <div class="mm container clearfix">
+            <div class="mm-t">
+                当前位置 ： <a href="javascript:;"> 登录 ></a> <a href="javascript:;">找回密码</a>
+            </div>
+            <div class="mm-c">
+                <span class="one">1.账号信息  </span>
+                <span class="two">2.找回方式</span>
+                <span class="three">3.重置密码</span>
+                <span class="four">4.完成</span>
+            </div>
+            <div class="mm-b">
+                <div class="mm-b-t">
+                    <a href="javascript:;"><img src="__IMG__/wjmm/shoujizhaohui_2.png" alt=""></a>
+                    <a href="javascript:;"><img src="__IMG__/wjmm/youxiangzhaohui_1.png" alt=""></a>
+                    <a href="{:U('Service/kefu')}"><img src="__IMG__/wjmm/kefuzhaohui_2.png" alt=""></a>
+                </div>
+                <div class="mm-b-b">
+                    <div class="mm-b-b-t">
+                        <p>验证链接已发送至邮箱 <span class="red" id="get_email">{$em|default=1}</span> ,请在24小时内查收验证</p>
+                        <p>登录邮箱并按邮箱提示操作即可</p>
+                        <a href="javascript:;" class="rightnow" id="atonce">立即登录邮箱</a>
+                    </div>
+                    <div class="mm-b-b-b">
+                        <p><span></span> 请查看您邮箱的垃圾邮件或者广告箱，玩转平台验证邮件可能被误放入</p>
+                        <p><span></span> 如果超过2分钟还没有收到玩转平台验证邮箱，可 <input type="button" value="再次发送邮箱" id="resend" class="red" style="cursor: pointer;"></p>
+                        <p><span></span> 旧邮箱丢失请 <a href="{:U('Service/kefu')}" class="red">联系客服</a></p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>    
+</div>
+
+
+<else />
+
+ <div class="nobindemil" id="nobindemils" style="display: block;">
+        <div class="win-box">
+            <div class="mess-t">
+                <p class="first">未绑定手机和邮箱</p>
+                <p class="next">
+               
+                <a href="{:U('Service/kefu')}" class="find">联系客服</a>  </p>
+            </div>
+            <div class="mess-b">
+                <a href="{:U('Index/wjmm')}" class="closed" id="shuted">关&nbsp;闭</a>
+                
+            </div>
+        </div>
+    </div>
+
+</if>
+
+<div class="noreceive" id="resendsuc" style="display: none;z-index: 999;">
+    <div class="win-box" >     
+        <p class="ni-c" style="width:464px;height:30px;font-size:20px;line-height:30px;text-align: center;margin:60px 0px;color:#ed6557;">
+           再次发送邮箱成功
+        </p>   
+        <p  style="width:464px;height:40px;text-align: center;">
+            <input type="button" id="sureBtn" value="确&nbsp;&nbsp;定" style="width: 100px;height:40px;background:#ed6557;color:#fff;cursor: pointer;font-size:20px;" />
+        </p>    
+    </div>
+</div>
+</case>
+
+<case value="3">
+    <!--第三步 重置密码-->
+<div id="forget3" >
+    
+    <div class="mm container clearfix">
+        <div class="mm-t">
+            当前位置 ： <a href="javascript:;"> 登录 > </a> <a href="javascript:;">找回密码</a>
+        </div>
+        <div class="mm-c">
+            <span class="one">1.账号信息  </span>
+            <span class="two">2.找回方式</span>
+            <span class="three">3.重置密码</span>
+            <span class="four">4.完成</span>
+        </div>
+        <div class="mm-b">
+            <div class="mm-b-l">                  
+                    <div class="reset"><span class="h">重置密码：</span> <input type="password" class="shuru" id="reset" name="password"><span id="password"><i class="star">* </i><span class="zi"> 请输入 6-15 位数字、字母</span></span></div>
+                    <div class="affirm"><span class="h">确认密码：</span> <input type="password" class="shuru" id="confirm"><span id="password2"><i class="star">* </i><span class="zi"> 请再次输入密码</span></span></div>
+                    <input type="hidden" name="user_id" value="{$Think.get.user_id}">
+                    <input type="submit" value="下一步" class="next" id="net3">
+            </div>
+            <div class="mm-b-r">
+                <div class="youce">
+                    <p><i>*</i> 请正确填写您要找回的账号信息</p>
+                    <p><i>*</i> 按操作提示依次完成找回</p>
+                    <p><i>*</i> 如您所有的找回方式均不可用，请联系客服</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</case>
+
+<case value="4">
+    <!--第四步 完成密码-->
+<div id="finishend" >
+        <div class="mm container clearfix">
+            <div class="mm-t">
+                当前位置 ： <a href="javascript:;"> 登录 > </a> <a href="javascript:;">找回密码</a>
+            </div>
+            <div class="mm-c">
+                <span class="one">1.账号信息  </span>
+                <span class="two">2.找回方式</span>
+                <span class="three">3.重置密码</span>
+                <span class="four">4.完成</span>
+            </div>
+            <div class="mm-b">
+                <img src="__IMG__/wjmm/wancheng.png" alt="">
+                <p class="reset">重置密码成功</p>
+                <p id="daojishi" class="dj"></p> &nbsp; &nbsp; &nbsp; &nbsp;<p class="dj">点击 <a href="{:U('Public/login')}">立即登录</a></p>
+            </div>
+        </div>
+</div>
+</case>
+
+</switch>
+</body>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script>
+        var zqimg="__IMG__/wjmm/quanbuzhengquan.png";//图片引入路径
+        var usernameverify ="{:U('Index/wjmm')}";
+        var phoneverifyurl ="{:U('Index/phone_verify')}";        //获取当前玩家手机号
+        var sendvcodeurl ="{:U('Index/sendvcode')}";       //获取当前玩家手机验证码
+        var verifyvcodeurl ="{:U('Index/verifyvcode')}"; //手机号手机验证码验证
+        var tosendemailurl="{:U('Index/tosendemail')}";
+        var reseturl="{:U('Index/reset')}";
+       // 用来
+        var ph="{$ph|default=1}";
+        var em="{$em|default=1}";
+        window.myemail="{$data['email']|default=1}";
+        window.myphone="{$data['phone']|default=1}";
+        var account = "{$Think.get.account}";               //获取当前玩家名称
+        
+        
+       
+        var wjreset_url ="{:U('Index/phonemodify')}";         //密码重置
+        var wjemail_url ="{:U('Index/email_verify')}";   //查询当前玩家邮箱
+        var sendmail_url ="{:U('Index/sendTest')}";      //重置密码接口至当前玩家邮箱
+        var skip_url='__CONTROLLER__/wjemail2/email/';   //wjmail2显示玩家绑定邮箱号码
+</script>
+<script src="__JS__/wjmm.js"></script>
+</html>
+</block>

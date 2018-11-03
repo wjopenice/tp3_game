@@ -1,0 +1,44 @@
+#personalCenter{color:#ed6557;position:relative;}
+#personalCenter .infoNum{
+    display: block;
+    width:14px;
+    height:14px;
+    -moz-border-radius: 7px; 
+    -webkit-border-radius: 7px; 
+    border-radius: 7px;   
+    background:#ed6557;   
+    color:#fff;
+    line-height:14px;
+    text-align:center;
+    position:absolute;
+    top:-8px;right:9px;
+}
+.pc_banner{
+    width:100%;min-width: 1260px;
+    height:170px;
+    background:url("../image/personalcenter/baseinfo/xinxi_bg.jpg") no-repeat center center;
+}
+.pc_banner .container p{
+    font-size:12px;color:#333; line-height:30px;
+    padding-top:40px;
+}
+.pc_main{
+    margin:-170px 0 0 0;
+}
+#pc_main_title_bg{
+    width:100%;height:170px;
+    background:rgba(255,255,255,0.7);
+    /*background:#fff;opacity: 0.7; filter:alpha(opacity=70)\9;*/
+    /*position:relative;*/
+}
+#pc_main_title {
+    width:1200px;height:170px;
+    margin:0 auto;
+}
+#pc_main_title .container li{
+    float:left; margin-right:80px;
+}
+#pc_main_title .container li.last{
+    margin-right:0;
+}
+

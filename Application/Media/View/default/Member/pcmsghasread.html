@@ -1,0 +1,221 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <link rel="stylesheet" href="__CSS__/pcmessage.css">
+    <style>
+     .hasReadMsg a{
+            color:#ccc!important;
+        }
+      #pagation{text-align:center;padding:40px 0;}       
+      #pagation .aBtns{float:left;padding-left:250px;}
+      #pagation .aBtns a{text-decoration: none;font-size:14px;color:#4c4c4c; display: inline-block;padding:5px 10px;  background:#fff;margin:0 5px;float:left;
+            cursor: pointer;
+        }
+    #pagation .aBtns a.active{color:#fff;background:#f19ec2;}
+    #pagation .jump{float:right; font-size:14px;color:#4c4c4c;line-height:20px;padding-right:220px;}
+    #pagation .jump input{width:40px;height:20px;border:1px solid #999;font-size:14px;margin:3px 3px 0 10px;}
+    #pagation .jump span{display: inline-block;font-size:14px;padding:5px 10px;cursor:pointer;color:#4c4c4c;}
+    #pc_main_con .messageCenter .title span{float: left;width:21px;height: 21px;margin:15px 20px 0 20px;background-image: url(__IMG__/personalcenter/pcsprits.png) ; background-repeat:no-repeat ;}
+    </style>
+    <div id="pc_main_con" >
+        <div class="messageCenter" >
+            <div class="title">
+                 <span style=" background-position: -82px 0;"></span>信息中心
+            </div>
+            <div class="content">
+                <ul class="message_title clearfix">
+                    <li ><a href="{:U('Member/pcmessage')}">全部消息</a></li>
+                    <li><a href="{:U('Member/pcmsgunread')}">未读消息</a></li>
+                    <li  class="current" ><a href="{:U('Member/pcmsghasread')}">已读消息</a></li>
+                </ul>
+                <div class="showMessage">
+                    <div class="chose clearfix">
+                        <div class="label" id="choseAll">
+                            <img src="__IMG__/personalcenter/msgcenter/quanxuankuang_1.png"/>
+                            <span>全选</span>
+                        </div>
+                        <div class="buttons clearfix">
+                            <input type="button" id="hasRead" disabled style="color:#ccc;cursor: text;" value="标记已读" />
+                            <input  type="button" id="delete" value="删除"/>
+                        </div>
+                    </div>
+                     <div id="con_title" class="clearfix">                       
+                        <div class="biaoti">标&nbsp;题</div>
+                        <div class="leixing">类&nbsp;型</div>
+                        <div class="account">发送者</div>
+                        <div class="time">时&nbsp;间</div>                           
+                    </div>
+                    <ul class="items">
+                      <volist name="read_data" id="alldata">
+                        <li class="clearfix hasReadMsg" id="{$alldata.id}">
+                            <div class="img">
+                                <img src="__IMG__/personalcenter/msgcenter/quanxuankuang_1.png"/>
+                            </div>
+                            <input type="hidden" value="1"/>
+                            <a href="{:U('Member/detail',array('mid'=>$alldata['id'],'type'=>3))}"  class="clearfix">
+                                <div class="biaoti">{:msubstr($alldata['title'],0,10,'UTF-8',false)}</div>
+                                <div class="leixing">{:msubstr($alldata['type'],0,4,'UTF-8',false)}</div>
+                                <div class="account">{$alldata.send_account}</div>
+                                <div class="time">{$alldata.create_time|date='Y-m-d H:i:s',###}</div>
+                            </a>
+                        </li>
+                      </volist>
+                    </ul>
+                </div>
+                <div id="pagation"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+
+
+</body>
+<script src="__JS__/pagation.js"></script>
+
+<script>
+    var imgArr=[
+        "__IMG__/personalcenter/msgcenter/quanxuankuang_1.png",
+        "__IMG__/personalcenter/msgcenter/quanxuan_2.png"
+    ];
+    $(function() {
+        var check_all_flag = false;
+        var checkArr = [];       
+        for (var i = 0; i < $(".items").find("li").length; i++) {
+            checkArr[i] = false;           
+        }
+        var true_length = 0;
+//        点击全选按钮
+        $("#choseAll").click(function () {
+            if (!check_all_flag) {
+                $(this).find("img").attr("src", imgArr[1]);
+                $(".items").find("li").each(function () {
+                    $(this).find("img").attr("src", imgArr[1]);
+                    checkArr[$(this).index()] = true;
+                });
+                check_all_flag = true;
+                true_length=checkArr.length;
+            } else {
+                $(this).find("img").attr("src", imgArr[0]);
+                $(".items").find("li").each(function () {
+                    $(this).find("img").attr("src", imgArr[0]);
+                    checkArr[$(this).index()] = false;
+                });
+                check_all_flag = false;
+                true_length=0;
+            }
+
+        });
+//        点击单选按钮
+        $(".items").find("li").each(function () {
+            $(this).find("img").click(function () {
+                var $this_index=$(this).parent().parent("li").index();
+                if (!checkArr[$this_index]) {
+                    true_length++;
+                    $(this).attr("src", imgArr[1]);
+                    checkArr[$this_index] = true;
+                }
+                else {
+                    true_length--;
+                    $(this).attr("src", imgArr[0]);
+                    checkArr[$this_index] = false;
+                    check_all_flag = false;
+                    $("#choseAll").find("img").attr("src", imgArr[0]);
+                };
+                if(true_length==checkArr.length){
+                    $("#choseAll").find("img").attr("src", imgArr[1]);
+                    check_all_flag = true;
+                }
+
+            })
+        });
+
+
+        $("#delete").click(function(){
+            var idArr=[];
+            var send_acc=[];
+            if(check_all_flag){
+                for(var i=0;i<checkArr.length;i++){
+                    if(checkArr[i]){
+                        idArr.push($(".items").find("li").eq(i).attr("id"));
+                         send_acc.push($(".items").find("li").eq(i).find("a").find(".account").html());
+                    }
+                  }
+            }else{
+                for(var i=0;i<checkArr.length;i++){
+                    if(checkArr[i]){
+                        idArr.push($(".items").find("li").eq(i).attr("id"));
+                         send_acc.push($(".items").find("li").eq(i).find("a").find(".account").html());
+                    }
+                }
+            }
+            if(idArr.length!=0){
+                var ids_json= JSON.stringify(idArr);
+                var send_acc_json = JSON.stringify(send_acc);
+                $.ajax({
+                    type: 'POST',
+                    async: true,
+                    dataType: 'json',
+                    url:"{:U('Member/del_letter')}",
+                    data: {
+                        ids:ids_json,
+                        send_acc:send_acc_json
+                    },
+                    beforeSend: function () {
+                        $('#delete').attr('disabled', true);
+                        alert("你确定要删除吗？")
+                    },
+                    success: function (data) {
+                        if(parseInt(data.status)==1){
+                            alert(data.msg);
+                        }else{
+                            alert(data.msg); 
+                        }
+                        $('#delete').attr('disabled', false);                       
+                        window.location.reload();
+                    },
+                    error: function () {
+                        alert('服务器故障，稍后再试');
+                        $('#delete').attr('disabled', false);
+                    },
+                    cache: false
+                });
+
+            }
+        })
+
+
+    })
+</script>
+
+
+<script>
+    var dataLength="{$count|default=0}";
+    var pageSize=10;
+    var allPageNum=dataLength%pageSize==0 ? parseInt(dataLength/pageSize):(parseInt(dataLength/pageSize)+1);
+    var p ={$Think.get.p|default=1};   
+       if(dataLength>pageSize){        
+        page({
+            id : 'pagation',
+            nowNum : p,
+            allNum : allPageNum,
+            callBack : function(now,all){
+                window.location.href="http://{$Think.server.http_host}__CONTROLLER__/pcmsghasread/p/"+now+'/pagesize/'+pageSize+'.html';
+            }
+        });
+    }else{
+        $("#pagation").css("display","none");
+    }
+
+    if($("#pagation").find(".jump").length>0){
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 250px");
+    }else{
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 500px");
+    }
+</script>
+</html>
+</block>

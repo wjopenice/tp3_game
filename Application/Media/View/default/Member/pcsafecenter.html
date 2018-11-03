@@ -1,0 +1,96 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <link rel="stylesheet" href="__CSS__/centerperson.css">
+    <style>
+        #pc_main_con{width:1200px;margin:0 auto;}
+        #pc_main_con .safeCenter .title{font:16px/50px "Arial"; color:#8C97CB;
+            border-bottom: 1px solid #8C97CB ; padding-top:30px;
+        }
+        #pc_main_con .safeCenter .title span{float: left;width:21px;height: 21px;margin:13px 20px 0 20px;background-image: url(__IMG__/personalcenter/pcsprits.png) ; background-repeat:no-repeat ;}
+        #pc_main_con .safeCenter .content .con_l{
+            width:240px;padding-top:40px;float:left;
+        }
+        #pc_main_con .safeCenter .content .con_l li a{
+            display: block;line-height:60px;font-size:14px;color:#333;
+        }
+        #pc_main_con .safeCenter .content .con_l li a span{
+            float: left;width:21px;height: 21px;margin:20px 12px 0 73px;
+            background-image:  url(__IMG__/personalcenter/pcsprits.png) ;
+            background-repeat:no-repeat ;
+        }
+        #pc_main_con .safeCenter .content .con_l .current a{color:#fff;background:#8C97CB;}
+        #pc_main_con .safeCenter .content .con_r{
+            float:left;width: 760px;padding-top:40px;margin-left: 200px;min-height: 400px; }
+    </style>
+    <div id="pc_main_con" >
+        <div class="safeCenter" >
+            <div class="title">
+                <span style=" background-position: -42px 0;"></span>安全中心
+            </div>
+            <div class="content clearfix">
+                <div class="con_l" id="safeCenter_l">                    
+                    <ul>
+                        <li class="current"><a href="{:U('Member/pcsafecenter')}"> <span style="background-position: -44px -34px;"></span>密码修改</a></li>
+
+                        <if condition="$user['phone'] eq ''">
+                            <li ><a href="{:U('Member/bindphone')}"> <span style="background-position:   0 -68px;"></span>绑定手机</a></li>
+                        <else />
+                        <li ><a href="{:U('Member/nobindphone')}"> <span style="background-position:   0 -68px;"></span>绑定手机</a></li>
+                        </if>
+
+                       <if condition="$user['email'] eq ''">
+                          <li ><a href="{:U('Member/bindemail')}"> <span style="background-position:  0 -109px;margin-top:24px;"></span>绑定邮箱</a></li>
+                       <else />
+                          <li ><a href="{:U('Member/nobindemail')}"> <span style="background-position:  0 -109px;margin-top:24px;"></span>绑定邮箱</a></li>
+                       </if>
+
+                       <if condition="$user['idcard'] eq ''">
+                          <li ><a href="{:U('Member/noidcard')}"> <span style="background-position:  0 -141px;"></span>实名认证</a></li>
+                       <else />
+                          <li ><a href="{:U('Member/idcard')}"> <span style="background-position:  0 -141px;"></span>实名认证</a></li>
+                       </if>
+                    </ul>
+                    
+                </div>
+                <div class="con_r" id="safeCenter_r">                   
+                    <p class="current">当前账号：<span class="account" id="uname">{$user['account']}</span></p>
+                    <input type="hidden" name="account" value="{$user['account']}">
+                    <div class="reset">
+                        <span class="h">&nbsp;&nbsp;&nbsp;旧密码：</span> 
+                           <input type="password" class="shuru" id="oldpassword" name="password1"> 
+                        <span id="oldtips" class="tip"> <i class="star">* </i>
+                        <span class="zi"> 请输入旧密码</span>
+                        </span>
+                    </div>
+                    <div class="reset">
+                        <span class="h">&nbsp;&nbsp;&nbsp;新密码：</span> 
+                           <input type="password" class="shuru" id="newpassword" name="password2"> 
+                        <span id="newtips"> <i class="star">* </i>
+                        <span class="zi"> 请输入 6-30 位数字、字母</span>
+                        </span>
+                    </div>
+                    <div class="reset">
+                        <span class="h">确认密码：</span> 
+                           <input type="password" class="shuru" id="surepassword"> 
+                        <span id="suretips"> <i class="star">* </i>
+                        <span class="zi"> 请再次输入密码</span>
+                        </span>
+                    </div>
+                    <input type="button" value="完&nbsp;成" class="completeerror" id="achieve" >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var zqimg="__IMG__/wjmm/quanbuzhengquan.png";
+    var verifypwdurl="{:U('Member/verifypwd')}";
+    var pwdsuburl="{:U('Member/pcsafecenter')}";
+    var login="{:U('Public/login')}";
+</script>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script src="__JS__/centerperson.js"></script>
+</html>
+</block>

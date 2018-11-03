@@ -1,0 +1,275 @@
+#TabMain {
+  width: 1200px;
+  height: 720px;
+  margin: 30px auto;
+}
+.tabItemContainer {
+  width: 240px;
+  height: 720px;
+  float: left;
+}
+.tabBodyContainer {
+  width: 955px;
+  height: 720px;
+  float: left;
+  background-color: #fff;
+}
+.tabItemContainer > li {
+  list-style: none;
+  text-align: center;
+}
+.tabItemContainer > li > a {
+  float: left;
+  width: 100%;
+  height:60px;
+  font: 16px "微软雅黑", Arial, Helvetica, sans-serif;
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 60px;
+}
+.tabItemCurrent {color: #fff!important;background-color: #ed6557;position: relative;}
+.tabItemContainer > li > a:hover {color: #fff;background-color: #ed6557;}
+.tabBodyItem {
+  position: absolute;
+  width: 920px;
+  height: 760px;
+  display: none;
+}
+.tabBodyItem .content {
+  margin-top: 20px;
+  margin-left: 80px;
+}
+.tabBodyItem .content .content-t {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 80px;
+}
+.tabBodyItem .content .content-t .title {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.tabBodyItem .content .content-t .title span {
+  color: orange; cursor:pointer;
+}
+.tabBodyItem .content .content-t .left,.tabBodyItem .content .content-t .right {
+display: inline-block;float: left;  padding-top: 5px;font-size: 14px;  margin-right: 10px;}
+.tabBodyItem .content .content-t .right {margin-left: 60px;}
+.tabBodyItem .content .content-t input {width: 290px;height: 30px; border: 1px solid #e5e5e5;float: left;}
+.tabBodyItem .content .content-b {margin-top: 40px;border-bottom: 1px solid #e5e5e5; padding-bottom: 20px;}
+.tabBodyItem .content .content-b .content-b-t {font-size: 16px;color: #323232;margin-bottom: 30px;}
+.tabBodyItem .content .content-b .money a {
+  display: inline-block;
+  color: #666;
+  width: 80px;
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  line-height: 30px;
+  margin: 0 35px 20px 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+.tabBodyItem .content .content-b .jinbi {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.tabBodyItem .content .content-b .jinbi .left {
+  margin-right: 10px;
+  font-size: 14px;
+  display: inline-block;
+  float: left;
+  margin-top: 5px;
+}
+.tabBodyItem .content .content-b .jinbi .right {
+  font-size: 12px;
+  margin-left: 3px;
+  display: inline-block;
+  float: left;
+  margin-top: 5px;
+}
+.tabBodyItem .content .content-b .jinbi input {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  float: left;
+}
+.tabBodyItem .content .content-b .jinbi span {
+  color: orange;
+  margin-left: 20px;
+}
+#game_coin2,#game_coin3{ color: orange;}
+.tabBodyItem .content .content-b .now {
+  display: block;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #ed6557;
+  color: #fff;
+  margin: 40px 0 20px 300px;
+}
+.tabBodyItem .content .content-f {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+}
+.tabBodyItem .content .content-f p {
+  color: #9a9a9a;
+  font-size: 12px;
+}
+.dj {
+  background: #ED6557;
+  color: #fff !important;
+  border: none;
+  border: 1px solid #ed6557!important;
+}
+.tabBodyCurrent {
+  display: block;
+}
+.cart-win {
+  display: none;
+  width: 100%;
+  height: 100%;
+ background: url("../image/medal.png") left top repeat;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+.cart-win .win-box {
+  width: 570px;
+  height: 344px;
+  background: url("../image/bg.png");   position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -172px 0 0 -285px;
+}
+.cart-win .win-box .mess-t {
+  height: 100px;
+  text-align: center;
+}
+.cart-win .win-box .mess-t p {
+  display: inline-block;
+  font-size: 20px;
+  color: #ed6557;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.cart-win .win-box .mess-c {
+  margin-left: 100px;
+}
+.cart-win .win-box .mess-c p {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #656565;
+  text-align: left;
+  padding-left:114px;
+}
+.cart-win .win-box .mess-c p span {
+  color: #333;
+  margin-left: 30px;
+  display: inline-block;
+}
+.cart-win .win-box .mess-b {
+  width: 370px;
+  margin: 30px 0 0 100px;
+}
+.cart-win .win-box .mess-b .sure {
+  width: 120px;
+  height: 40px;
+  background-color: #ed6557;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  display: inline-block;
+  float: left;
+}
+.cart-win .win-box .mess-b .return {
+  width: 120px;
+  height: 40px;
+  background-color: #ed6557;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  display: inline-block;
+  float: right;
+}
+.bounce {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.bounce .box {
+  width: 570px;
+  height: 291px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -145px 0 0 -285px;
+  background-color: #fff;
+  opacity: 1;
+}
+.bounce .box .bounce-t {
+  height: 80px;
+  text-align: center;
+}
+.bounce .box .bounce-t p {
+  display: inline-block;
+  font-size: 20px;
+  color: #ed6557;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.bounce .box .bounce-c p {
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #656565;
+}
+.bounce .box .bounce-b {
+  width: 370px;
+  margin: 30px 0 0 100px;
+}
+.bounce .box .bounce-b .check {
+  width: 120px;
+  height: 40px;
+  background-color: #ed6557;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  display: inline-block;
+  float: left;
+}
+.bounce .box .bounce-b .back {
+  width: 120px;
+  height: 40px;
+  background-color: #ed6557;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  display: inline-block;
+  float: right;
+}
+.czje{
+  width: 55px;
+}
+.dredge {
+  margin: 120px auto;
+  text-align: center;
+}
+.dredge img {
+  width: 104px;
+  height: 102px;
+  margin-bottom: 40px;
+}
+.dredge p {
+  font-size: 20px;
+  color: #666;
+}

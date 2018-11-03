@@ -1,0 +1,130 @@
+.con_r .current {
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+.con_r .current .account {
+  color: #8C97CB;
+  font-size: 12px;
+  margin-left: 20px;
+}
+.con_r .reset {
+  margin-bottom: 30px;
+  height: 30px;
+  width: 800px;
+}
+.con_r .reset .h {
+  padding-top: 5px;
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 12px;
+  color: #333;
+  float: left;
+}
+.con_r .reset input {
+  width: 290px;
+  height: 30px;
+  border: 1px solid #f2f2f2;
+  margin-right: 30px;
+  padding-left: 20px;
+  font-size: 12px;
+  color: #999;
+  float: left;
+}
+.con_r .reset .star {
+  display: inline-block;
+  color: #ED6557;
+  margin-right: 10px;
+  padding-top: 5px;
+}
+.con_r .reset .zi {
+  color: #666;
+  font-size: 12px;
+}
+.con_r .iphone {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.con_r .iphone .h {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 12px;
+  color: #333;
+  float: left;
+  padding-top: 5px;
+}
+.con_r .iphone input {
+  width: 200px;
+  height: 30px;
+  border: 1px solid #f2f2f2;
+  float: left;
+  padding-left: 20px;
+}
+.con_r .iphone .send {
+  display: inline-block;
+  width: 90px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #ccc;
+  color: #fff;
+  margin-right: 30px;
+  font-size: 12px;
+}
+.con_r .iphone .star {
+  display: inline-block;
+  color: #ED6557;
+  margin-right: 10px;
+  padding-top: 5px;
+}
+.con_r .iphone .zi {
+  color: #999;
+  font-size: 12px;
+}
+.con_r .completeerror {
+  width: 290px;
+  height: 30px;
+  background-color: #ccc;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  margin-left: 90px;
+  display: inline-block;
+}
+.red {
+  color: #ed6557;
+  font-size: 12px;
+}
+.completesuccess {
+  width: 290px;
+  height: 30px;
+  background-color: #8C97CB;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  margin-left: 90px;
+  display: inline-block;
+}
+.correct {
+  width: 290px;
+  height: 30px;
+  background-color: #ed6557;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  margin: 50px 0 0 207px;
+  display: inline-block;
+}
+.ck {
+  display: inline-block;
+  width: 90px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #8C97CB;
+  color: #fff;
+  margin-right: 30px;
+  font-size: 12px;
+}
+#achieve,#achieve2,#achieve3,#ident{cursor: pointer;}

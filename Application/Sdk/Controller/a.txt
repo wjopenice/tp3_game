@@ -1,0 +1,1 @@
+{"account":"18244760939","code":"541058","game_appid":"741CD7092EF4F3A9E","game_id":"33","game_name":"\u53bb\u5427\u76ae\u5361\u4e18","password":"1314520yu","promote_account":"\u81ea\u7136\u6ce8\u518c","promote_id":"0","md5_sign":"3da49697ce3d63cf87df37dbe19c00c4"}

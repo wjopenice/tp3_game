@@ -1,0 +1,357 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <link rel="stylesheet" href="__CSS__/comboselect.css">
+    <link rel="stylesheet" href="__CSS__/pctrade.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/jquery.datetimepicker.css"/>
+    <style>
+        #dowebok2,#dowebok3,#dowebok4{ width: 140px;height:30px; font-size:12px;color:#ccc;  }
+        #pc_main_con .trade_record .title span{float: left;width:21px;height: 21px;margin:15px 20px 0 20px;background-image: url(__IMG__/personalcenter/pcsprits.png) ; background-repeat:no-repeat ;
+        }
+       
+    </style>
+    <div id="pc_main_con" >       
+        <div class="trade_record">
+            <div class="title">
+                  <span style=" background-position:  -124px 0;"></span>交易记录
+            </div>
+            <div class="content clearfix">
+                <div class="con_l" id="trade_tab">
+                    <ul>
+                        <li class="current"><a href="#" name="czjl"><span style="background: url(__IMG__/personalcenter/pcsprits.png) no-repeat -126px -34px;"></span>充值记录</a></li>
+                        <li><a href="{:U('pctradexf')}"><span style="background: url(__IMG__/personalcenter/pcsprits.png) no-repeat -85px -70px;"></span>消费记录</a></li> 
+                        <li><a href="{:U('points')}"><span style="background: url(__IMG__/personalcenter/pcsprits.png) no-repeat -84px -107px;"></span>积分记录</a></li>
+                    </ul>
+                </div>
+                <div class="con_r  clearfix" id="trade_con" >
+                    <div class="con_r_cz">
+                        <ul class="trade_con_tab clearfix" id="change">
+                            <li class="current" id="0"><a href="javascript:;">平台币</a></li>
+                            <li id="1"><a href="javascript:;">绑定平台币</a></li>
+                        </ul>
+                        <div class="trade_con_item" >
+                            <div class="clearfix search" id="option1">
+                                <div class="time">
+                                    <span class="cz_time"> 充值时间&nbsp;:</span>
+                                    <input type="text"  value="开始时间" class="start"/>
+                                    <span>—</span>
+                                    <input type="text"  value="结束时间" class="end"/>
+                                </div>
+                                <div class="chose_game"  style="background: url(__IMG__/personalcenter/trade/jiantou.png) no-repeat right center">
+                                    选择游戏                        
+                                </div>
+                                <div  id="dowebok2" class="pay">
+                                    <select >
+                                        <option value="6">充值方式</option>
+                                        <option value="1">支付宝</option>
+                                        <option value="4">渠道代充</option>
+                                        
+                                    </select>
+                                </div>
+                               <div class="search_btn" id="cz_search">
+                                   <input type="button" value="搜索"/>
+                               </div>
+                            </div>
+
+
+
+                            <table id="table1">
+                                 <thead><tr><th class="t_1">序号</th><th class="t_2">金额(元)</th><th class="t_3">充值方式</th><th class="t_4">充值时间</th></tr></thead>
+                                <tbody>
+
+
+                               <volist name='data' id="v4" offset="$off" length="10">
+                                            <tr >
+                                            <th class="t_1">1</th>
+                                            <td class="t_2">{$v4.pay_amount}</td>
+                                            <td class="t_3">
+                                           
+                                            <if condition="$v4['pay_way'] eq 1 " >
+                                            支付宝
+                                            <else />
+                                            渠道代充
+                                             </if>
+
+                                                
+                                            </td>
+                                            <td class="t_4">{$v4.create_time|date='Y-m-d H:i:s',###}</td>
+                                            
+                                            
+                                            </tr>
+                                        </volist>
+
+
+
+
+                                </tbody>
+
+                            </table>                           
+            
+                        </div>
+                        <div class="trade_con_item">
+                            <div class="clearfix search" id="option2">
+                                <div class="time">
+                                    <span class="cz_time"> 充值时间&nbsp;:</span>
+                                    <input type="text"  value="开始时间" class="start"/>
+                                    <span>—</span>
+                                    <input type="text"  value="结束时间" class="end"/>
+                                </div>
+                                <div class="chose_game1"  id="dowebok3">
+                                   
+                                    <select>
+                                        <option value="0">选择游戏</option>
+
+                                        <volist name='game_list' id='v0'>
+                                    <if condition="$Think.get.game eq $v0.game_id">
+                                        <option value="{$v0.game_id}" selected="selected">{$v0.game_name}</option>
+                                    <else />
+                                        <option value="{$v0.game_id}">{$v0.game_name}</option>
+                                    </if>
+                                    </volist>
+                                    </select>
+                                </div>
+                                <div  id="dowebok4" class="pay">
+                                    <select >
+                                        <option value="6">充值方式</option>
+                                        <option value="4">渠道代充</option>
+                                        <option value="5">平台代充</option>
+                                    </select>
+                                </div>
+                               <div class="search_btn" id="cz_search2">
+                                   <input type="button" value="搜索"/>
+                               </div>
+                            </div>
+
+
+
+                            <table id="table2">
+                                <thead><tr><th class="t_1">游戏名称</th><th class="t_2">金额</th><th class="t_3">充值方式</th><th class="t_4">充值时间</th></thead>
+                                <tbody>
+
+                                 <volist name='movebang_data' id="v3">
+                                            <tr class=>
+                                            <td class="t_1">{$v3.game_name}</td>
+                                            <td class="t_2">{$v3.pay_amount}</td>
+                                            
+                                            <td class="t_3">
+                                            
+                                            <if condition="$v3['pay_way'] eq 1">
+                                                支付宝
+                                                <elseif condition="$v3['pay_way'] eq 4" />
+                                                渠道代充
+                                                <elseif condition="$v3['pay_way'] eq 5" />
+                                                平台代充
+                                            </if>
+                                                
+                                                
+                                            </td>
+                                            
+                                            <td class="t_4">{$v3.create_time|date='Y-m-d H:i:s',###}</td>
+                                            
+                                            
+                                            </tr>
+                                        </volist>
+                                
+                                </tbody>
+                            </table>
+
+                           
+                           
+                        </div>
+                        <div id="pagation" class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+</body>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script src="__JS__/jquery.datetimepicker.full.js"></script>
+<script src="__JS__/jquery.combo.select.js"></script>
+<script src="__JS__/pagation.js"></script>
+<script>
+    $("#table1").find("tbody").find("tr").each(function(){
+        $(this).find(".t_1").html($(this).index()+1);
+    })
+</script>
+
+<script>
+    $(function() {       
+         $("#dowebok3").find('select').comboSelect();
+    });
+</script>
+<script>
+$(function(){  
+
+    
+
+	function get_unix_time(dateStr){
+		    var newstr = dateStr.replace(/-/g,'/'); 
+		    var date =  new Date(newstr); 
+		    var time_str = date.getTime().toString();
+		    return time_str.substr(0, 10);
+	}  
+    function showDateTime(time){
+            $.datetimepicker.setLocale('ch');
+            $('.'+time).datetimepicker({
+                'format': 'Y-m-d',
+                'timepicker':false,
+                'maxDate':0,
+                'scrollInput':false,
+                'validateOnBlur':false
+            })
+    }   
+    var type = {$Think.get.type|default=0};
+    var ksTime="{$Think.get.startTime|default='开始时间'}";
+    var jsTime="{$Think.get.endTime|default='结束时间'}"; 
+    var gameBh="{$Think.get.game|default=0}";
+    var zfBh="{$Think.get.payStyles|default=6}";
+
+  
+    var aLi=document.getElementById("change").getElementsByTagName('li');
+        for(var i=0;i<aLi.length;i++){
+                for(var j=0;j<aLi.length;j++){                   
+                    aLi[j].className = "";
+                }        
+        }
+        $('#'+type).addClass('current');    
+
+    function znTime(id){   	
+        $("#"+id).find('.start').click(function(){
+        	 var sTime= $("#"+id).find('.start').val() == "开始时间" ? "" :$("#"+id).find('.start').val();
+        	 var eTime= $("#"+id).find('.end').val() == "结束时间" ? "" :$("#"+id).find('.end').val();
+        	 if(eTime!=""){  
+        	 	 $.datetimepicker.setLocale('ch');
+           		 $("#"+id).find('.start').datetimepicker({
+	                'format': 'Y-m-d',
+	                'timepicker':false,
+	                'maxDate':eTime
+           		 })
+        	 	}       	 	
+        }) 
+
+        $("#"+id).find('.end').click(function(){
+        	 var sTime= $("#"+id).find('.start').val() == "开始时间" ? "" :$("#"+id).find('.start').val();
+        	 var eTime= $("#"+id).find('.end').val() == "结束时间" ? "" :$("#"+id).find('.end').val();        	
+        	 if(sTime!=""){
+        	 	 $.datetimepicker.setLocale('ch');
+           		 $("#"+id).find('.end').datetimepicker({
+	                'format': 'Y-m-d',
+	                'timepicker':false,
+	                'minDate':sTime
+           		 })
+    	 	 }      	 	
+        })
+
+   }
+    if(type==0){
+    	znTime("option1");
+        $("#trade_con").find(".trade_con_item").hide();
+        $("#trade_con").find(".trade_con_item").eq(0).show();       
+        showDateTime('start')
+        showDateTime('end');
+        $("#option1").find(".start").val(ksTime);
+        $("#option1").find(".end").val(jsTime);
+        $("#dowebok2").find('select option[value='+zfBh+']').attr("selected","selected");
+        $("#dowebok2").find('select').comboSelect();      
+        var dataLength={$count|default=0};
+        var pageSize=10;
+        var allPageNum=dataLength%pageSize==0 ? parseInt(dataLength/pageSize):(parseInt(dataLength/pageSize)+1);
+        var p ={$Think.get.p|default=1};  
+        if(dataLength>pageSize){        
+            page({
+                id : 'pagation',
+                nowNum : p,
+                allNum : allPageNum,
+                callBack : function(now,all){       
+                    var sTime= $("#option1").find('.start').val() == "开始时间" ? "" :$("#option1").find('.start').val();
+                    var eTime= $("#option1").find('.end').val() == "结束时间" ? "" :$("#option1").find('.end').val();
+                    var pay_way_num = parseInt($("#dowebok2").find("select").val());
+                    window.location.href='__CONTROLLER__/pctrade/type/'+type+'/p/'+now+'/pagesize/'+pageSize+'/startTime/'+sTime+'/endTime/'+eTime+'/payStyles/'+pay_way_num+'.html';            
+                }
+            });
+        }else{
+            $("#pagation").css("display","none");
+        }
+        if($("#pagation").find(".jump").length>0){
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 150px");
+        }else{
+            $("#pagation").find(".aBtns").css('padding',"0 0 0 260px");
+        }
+
+        $("#cz_search").find("input").bind('click', function () {
+            var sTime= $("#option1").find('.start').val() == "开始时间" ? "" :$("#option1").find('.start').val();
+            var eTime= $("#option1").find('.end').val() == "结束时间" ? "" :$("#option1").find('.end').val();
+            var pay_way_num = parseInt($("#dowebok2").find("select").val()); 
+            window.location.href='__CONTROLLER__/pctrade/type/'+type+'/p/1/pagesize/'+pageSize+'/startTime/'+sTime+'/endTime/'+eTime+'/payStyles/'+pay_way_num+'.html';
+        });
+
+    }
+
+    if(type==1){  
+       znTime("option2");   
+       $("#trade_con").find(".trade_con_item").hide();
+       $("#trade_con").find(".trade_con_item").eq(1).show();
+        showDateTime('start');
+        showDateTime('end');        
+        $("#option2").find(".start").val(ksTime);        
+        $("#option2").find(".end").val(jsTime);       
+        $("#dowebok4").find('select option[value='+zfBh+']').attr("selected","selected");
+        $("#dowebok4").find('select').comboSelect();       
+        $("#dowebok3").find('select option[value='+gameBh+']').attr("selected","selected");
+        $("#dowebok3").find('select').comboSelect();
+        var dataLength={$count|default=0};
+        var pageSize=10;
+        var allPageNum=dataLength%pageSize==0 ? parseInt(dataLength/pageSize):(parseInt(dataLength/pageSize)+1);
+        var p ={$Think.get.p|default=1};  
+        if(dataLength>pageSize){        
+            page({
+                id : 'pagation',
+                nowNum : p,
+                allNum : allPageNum,
+                callBack : function(now,all){    
+                    var sTime= $("#option2").find('.start').val() == "开始时间" ? "" :$("#option2").find('.start').val();
+                    var eTime= $("#option2").find('.end').val() == "结束时间" ? "" :$("#option2").find('.end').val();
+                    var pay_way_num = parseInt($("#dowebok4").find("select").val());
+                    var game = parseInt($("#dowebok3").find("select").val());
+                    window.location.href='__CONTROLLER__/pctrade/type/'+type+'/p/'+now+'/pagesize/'+pageSize+'/startTime/'+sTime+'/endTime/'+eTime+'/game/'+game+'/payStyles/'+pay_way_num+'.html';              
+                }
+            });
+        }else{
+            $("#pagation").css("display","none");
+        }
+        if($("#pagation").find(".jump").length>0){
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 150px");
+        }else{
+            $("#pagation").find(".aBtns").css('padding',"0 0 0 260px");
+        }
+          $("#cz_search2").find("input").bind('click', function () {
+            var sTime= $("#option2").find('.start').val() == "开始时间" ? "" :$("#option2").find('.start').val();
+            var eTime= $("#option2").find('.end').val() == "结束时间" ? "" :$("#option2").find('.end').val();
+            var pay_way_num = parseInt($("#dowebok4").find("select").val());
+           var game = parseInt($("#dowebok3").find("select").val());
+            window.location.href='__CONTROLLER__/pctrade/type/'+type+'/p/1/pagesize/'+pageSize+'/startTime/'+sTime+'/endTime/'+eTime+'/game/'+game+'/payStyles/'+pay_way_num+'.html';
+        });
+    }  
+     for(var i=0;i<aLi.length;i++){
+        aLi[i].index=i;
+        aLi[i].onclick=function () {
+            var type2= aLi[this.index].getAttribute('id');           
+            if(type != type2){
+                p=1;
+            }            
+            window.location.href="http://{$Think.server.http_host}__CONTROLLER__/pctrade/type/"+type2+"/p/"+p+"/pagesize/"+pageSize+'.html';        
+        };
+    }
+
+})
+
+</script>
+
+</html>
+</block>

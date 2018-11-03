@@ -1,0 +1,118 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <link rel="stylesheet" href="__CSS__/pcbaseinfo.css">
+    <style>
+        #xiugai-tk .ni-c{width:364px;margin:60px 50px;}
+        #xiugai-tk .ni-c input{width:364px;font-size:14px;line-height:30px;color:#666;border-bottom:1px solid #ccc;}
+        #xiugai-tk .qd-qx{width:364px;height:40px;margin:0 50px;}
+        #xiugai-tk .qd-qx input{
+            cursor:pointer;width:140px;height:40px;line-height:40px;float:left;border:1px solid #ed6557;
+            background:#fff;color:#ed6557;font-size:14px;line-height:30px
+        }
+        #xiugai-tk .qd-qx  .current{background:#ed6557;color:#fff;}        
+    </style>
+    <div id="pc_main_con" >       
+        <div class="baseInfo" >
+            <div class="title">
+               <span style=" float: left;width:21px;height: 21px;margin:13px 20px 0 20px;background: url(__IMG__/personalcenter/pcsprits.png) no-repeat 0 0;"></span>基本信息
+            </div>
+            <div class="content clearfix">
+                <div class="con_l" id="baseInfo_l">
+                    <div class="info_l_top"><img src="__IMG__/personalcenter/baseinfo/touxiang.png"/></div>
+                    <div class="info_l_bot">
+                        <p class="user_ac">用户账号&nbsp;:&nbsp;<span>{$user.account}</span></p>
+                        <p  class="user_nick">用户昵称&nbsp;:&nbsp;<span>{$user.nickname|default='昵称'}</span></p>
+                        <p><img src="__IMG__/personalcenter/baseinfo/anqundengji.png"/></p>
+                        <p class="safe"> 安全级别：<span class="level_di">低</span></p>
+                    </div>
+                </div>
+                <div class="con_r" id="baseInfo_r">
+                    <div class="con">
+                        <label><span>用户账号：</span><input type="text" value="" disabled="disabled" class="user_account"/></label>
+                        <p style="font-size:12px;color:#666;"><i class="star">*</i>此账号是您唯一的登录账号</p>
+                    </div>
+                    <div class="con" id="yhnic">
+                        <label><span>用户昵称：</span><input id="changeNic" value='{$user.nickname|default='昵称'}' type="text"  readonly /></label>
+                        <p id="xiugia"><input type="button" value="修&nbsp;&nbsp;改" name="xgnc"/><span class="ok"></span></p>
+                    </div>
+                    <div class="con">
+                        <label><span>平台币余额：</span><input type="text" value="" class="plat_yue" disabled/></label>
+                        <p><a href="{:U('Recharge/chongzhi')}">充&nbsp;&nbsp;值</a></p>
+                    </div>
+                    <div class="con">
+                        <label><span>积分：</span><input type="text" value="{$user.points}" disabled/></label>
+                        <p><a href="{:U('Member/points')}">积分记录</a></p>
+                    </div>
+                    <div class="con">
+                        <label><span>绑定手机号：</span><input type="text" value="" id="phoneNum" class="phoneNum" disabled/></label>
+                        <p class="bind_phone"></p>
+                    </div>
+                    <div class="con">
+                        <label><span>真实姓名：</span><input type="text" value="" class="name" disabled/></label>
+                        <p class="rz_name"></p>
+
+                    </div>
+                    <div class="con">
+                        <label><span>身份证号：</span><input type="text" value="" class="idCard" disabled/></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="noreceive" style="display: none;">
+    <div class="win-box" id="xiugai-tk">     
+        <p class="ni-c">
+            <input type="text"  name="niCheng" placeholder="昵称" oninput="if(value.length>30)value=value.slice(0,30)"/> 
+        </p>   
+        <p class="qd-qx">
+            <input type="button" name="sureBtn" value="确&nbsp;&nbsp;定" class="current"/>
+            <input type="button" name="cancelBtn" value="取&nbsp;&nbsp;消" style="float:right"/>
+        </p>    
+    </div>
+</div>
+</body>
+<script>
+   var img="__IMG__/";
+   var  useInfo={
+        user_account:"{$user.account}",
+        user_nickName:"{$user.nickname}",
+        plat_yue:"{$user.balance}",
+        phoneNum:"{$user.phone}",
+        name:"{$user.real_name}",
+        idCard:"{$user.idcard}"
+    };
+    var bindphoneurl="{:U('Member/bindphone')}";
+    var changephoneurl="{:U('Member/nobindphone')}";
+    var bindcard="{:U('Member/noidcard')}";
+</script>
+<script src="__JS__/pcbaseinfo.js"></script>
+</html>
+<script>
+    var pcImgArr=[
+            ["__IMG__/personalcenter/baseinfo/jibenxinxi_1.png","__IMG__/personalcenter/baseinfo/jibenxinxi_2.png"],
+            ["__IMG__/personalcenter/baseinfo/anquanzhongxin_1.png","__IMG__/personalcenter/baseinfo/anquanzhongxin_2.png"],
+            ["__IMG__/personalcenter/baseinfo/xinxizhongxi_1.png","__IMG__/personalcenter/baseinfo/xinxizhongxin_2.png"],
+            ["__IMG__/personalcenter/baseinfo/jiaoyijilv_2.png","__IMG__/personalcenter/baseinfo/jiaoyijilv_1.png"],
+            ["__IMG__/personalcenter/baseinfo/zhanghuyue_2.png","__IMG__/personalcenter/baseinfo/zhanghuyue_1.png"]
+    ];
+    pcUrlArr=[
+            ["personalcenter"],
+            ["pcsafecenter","bindphone","bindemail","noidcard"],
+            ["pcmessage","pcmsgunread","pcmsghasread"],
+            ["pctrade","pctradexf","points"],
+            ["pcaccountyue"]
+    ];   
+    for(var i=0;i<pcUrlArr.length;i++){
+        $("#pc_main_title").find("li").eq(i).find("img").attr("src",pcImgArr[i][1]);
+        if($.inArray(navItem, pcUrlArr[i])!=-1){
+            $("#pc_main_title").find("li").eq(i).find("img").attr("src",pcImgArr[i][0]);
+        }
+    }
+
+
+ 
+</script>
+
+</block>

@@ -1,0 +1,1860 @@
+[ 2018-10-24T15:07:09+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0435s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0388s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0421s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0372s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0387s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0395s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0371s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0384s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.746638s ]
+INFO: [ app_init ] --END-- [ RunTime:1.767039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010619s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0387s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0377s ]
+SQL: SHOW COLUMNS FROM `tab_game` [ RunTime:0.0377s ]
+SQL: SELECT * FROM `tab_game` WHERE `recommend_status` = 2 ORDER BY id DESC LIMIT 20   [ RunTime:0.0776s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0378s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0393s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0374s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0403s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0406s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0399s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2934 LIMIT 1   [ RunTime:0.0411s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2955 LIMIT 1   [ RunTime:0.0384s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2714 LIMIT 1   [ RunTime:0.0384s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2596 LIMIT 1   [ RunTime:0.0385s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2417 LIMIT 1   [ RunTime:0.0382s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2459 LIMIT 1   [ RunTime:0.0388s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2469 LIMIT 1   [ RunTime:0.0390s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2375 LIMIT 1   [ RunTime:0.0378s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2503 LIMIT 1   [ RunTime:0.0374s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2323 LIMIT 1   [ RunTime:0.0417s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2565 LIMIT 1   [ RunTime:0.0373s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2302 LIMIT 1   [ RunTime:0.0397s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2303 LIMIT 1   [ RunTime:0.0393s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2316 LIMIT 1   [ RunTime:0.0385s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1798 LIMIT 1   [ RunTime:0.0386s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1000 LIMIT 1   [ RunTime:0.0402s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1428 LIMIT 1   [ RunTime:0.0385s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1162 LIMIT 1   [ RunTime:0.0373s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1118 LIMIT 1   [ RunTime:0.0394s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1044 LIMIT 1   [ RunTime:0.0373s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0412s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0388s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0378s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540364824 AND ( deadline = 0 OR deadline > 1540364824 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0388s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0377s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0386s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540364824 AND ( deadline = 0 OR deadline > 1540364824 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0386s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.475037s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.475241s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.010789s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010988s ]
+
+[ 2018-10-24T15:07:12+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0419s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0426s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0440s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0452s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0428s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0413s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0417s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0417s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.645794s ]
+INFO: [ app_init ] --END-- [ RunTime:1.646135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001050s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0417s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0402s ]
+SQL: SHOW COLUMNS FROM `tab_game` [ RunTime:0.0414s ]
+SQL: SELECT * FROM `tab_game` WHERE `recommend_status` = 2 ORDER BY id DESC LIMIT 20   [ RunTime:0.0830s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0415s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0411s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000213s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0408s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0412s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0436s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0411s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2934 LIMIT 1   [ RunTime:0.0410s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2955 LIMIT 1   [ RunTime:0.0425s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2714 LIMIT 1   [ RunTime:0.0422s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2596 LIMIT 1   [ RunTime:0.0414s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2417 LIMIT 1   [ RunTime:0.0434s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2459 LIMIT 1   [ RunTime:0.0398s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2469 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2375 LIMIT 1   [ RunTime:0.0409s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2503 LIMIT 1   [ RunTime:0.0416s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2323 LIMIT 1   [ RunTime:0.0417s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2565 LIMIT 1   [ RunTime:0.0428s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2302 LIMIT 1   [ RunTime:0.0398s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2303 LIMIT 1   [ RunTime:0.0410s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2316 LIMIT 1   [ RunTime:0.0443s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1798 LIMIT 1   [ RunTime:0.0408s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1000 LIMIT 1   [ RunTime:0.0409s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1428 LIMIT 1   [ RunTime:0.0398s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1162 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1118 LIMIT 1   [ RunTime:0.0419s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1044 LIMIT 1   [ RunTime:0.0414s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0432s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0423s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0399s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0402s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540364828 AND ( deadline = 0 OR deadline > 1540364828 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0418s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0397s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540364828 AND ( deadline = 0 OR deadline > 1540364828 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0443s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.401133s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.401332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.024197s ]
+INFO: [ app_end ] --END-- [ RunTime:0.024322s ]
+
+[ 2018-10-24T15:07:25+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_gg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0387s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0385s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0382s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0386s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0380s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0397s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.601330s ]
+INFO: [ app_init ] --END-- [ RunTime:1.601607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000160s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0404s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0384s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_gg' LIMIT 1   [ RunTime:0.0385s ]
+
+[ 2018-10-24T15:08:25+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_gg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0396s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0407s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0380s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0413s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0379s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0387s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0398s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.609870s ]
+INFO: [ app_init ] --END-- [ RunTime:1.610135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0426s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0387s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0423s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_gg' LIMIT 1   [ RunTime:0.0426s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0389s ]
+
+[ 2018-10-24T15:09:41+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_gg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0424s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0422s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0424s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0425s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0423s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0422s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0424s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0418s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0426s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0419s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0424s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0418s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.648501s ]
+INFO: [ app_init ] --END-- [ RunTime:1.648765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000164s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0422s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0421s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0425s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_gg' LIMIT 1   [ RunTime:0.0426s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0424s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540364980 AND ( deadline = 0 OR deadline > 1540364980 ) ORDER BY `id` DESC LIMIT 0,10   [ RunTime:0.0425s ]
+
+[ 2018-10-24T15:09:45+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_gg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0399s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0393s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0400s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0399s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.609588s ]
+INFO: [ app_init ] --END-- [ RunTime:1.609891s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000164s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0394s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0399s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0395s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_gg' LIMIT 1   [ RunTime:0.0398s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0397s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540364983 AND ( deadline = 0 OR deadline > 1540364983 ) ORDER BY `id` DESC LIMIT 0,10   [ RunTime:0.0411s ]
+
+[ 2018-10-24T15:11:23+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0394s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0391s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0392s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.604209s ]
+INFO: [ app_init ] --END-- [ RunTime:1.604539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0410s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0397s ]
+SQL: SHOW COLUMNS FROM `tab_game` [ RunTime:0.0393s ]
+SQL: SELECT * FROM `tab_game` WHERE `recommend_status` = 2 ORDER BY id DESC LIMIT 20   [ RunTime:0.0784s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0397s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0394s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0389s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0393s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0396s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0400s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2934 LIMIT 1   [ RunTime:0.0391s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2955 LIMIT 1   [ RunTime:0.0394s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2714 LIMIT 1   [ RunTime:0.0394s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2596 LIMIT 1   [ RunTime:0.0392s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2417 LIMIT 1   [ RunTime:0.0386s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2459 LIMIT 1   [ RunTime:0.0392s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2469 LIMIT 1   [ RunTime:0.0392s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2375 LIMIT 1   [ RunTime:0.0395s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2503 LIMIT 1   [ RunTime:0.0393s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2323 LIMIT 1   [ RunTime:0.0392s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2565 LIMIT 1   [ RunTime:0.0394s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2302 LIMIT 1   [ RunTime:0.0393s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2303 LIMIT 1   [ RunTime:0.0394s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2316 LIMIT 1   [ RunTime:0.0392s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1798 LIMIT 1   [ RunTime:0.0391s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1000 LIMIT 1   [ RunTime:0.0393s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1428 LIMIT 1   [ RunTime:0.0380s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1162 LIMIT 1   [ RunTime:0.0393s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1118 LIMIT 1   [ RunTime:0.0395s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1044 LIMIT 1   [ RunTime:0.0391s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0409s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0389s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0393s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365079 AND ( deadline = 0 OR deadline > 1540365079 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0408s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365079 AND ( deadline = 0 OR deadline > 1540365079 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0409s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.322465s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.322657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000694s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000870s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000249s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000292s ]
+
+[ 2018-10-24T15:11:31+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_gg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0390s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0386s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0388s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0384s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0380s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0382s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0379s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0374s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0387s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.593352s ]
+INFO: [ app_init ] --END-- [ RunTime:1.593622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000160s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0386s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0385s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0388s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_gg' LIMIT 1   [ RunTime:0.0402s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0389s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365089 AND ( deadline = 0 OR deadline > 1540365089 ) ORDER BY `id` DESC LIMIT 0,10   [ RunTime:0.0504s ]
+
+[ 2018-10-24T15:12:08+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0402s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0401s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0401s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0489s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.620957s ]
+INFO: [ app_init ] --END-- [ RunTime:1.621159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000165s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0399s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0403s ]
+SQL: SHOW COLUMNS FROM `tab_game` [ RunTime:0.0401s ]
+SQL: SELECT * FROM `tab_game` WHERE `recommend_status` = 2 ORDER BY id DESC LIMIT 20   [ RunTime:0.0802s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0397s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0402s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0398s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0400s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0398s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0403s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2934 LIMIT 1   [ RunTime:0.0400s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2955 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2714 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2596 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2417 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2459 LIMIT 1   [ RunTime:0.0398s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2469 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2375 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2503 LIMIT 1   [ RunTime:0.0402s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2323 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2565 LIMIT 1   [ RunTime:0.0402s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2302 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2303 LIMIT 1   [ RunTime:0.0477s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2316 LIMIT 1   [ RunTime:0.0402s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1798 LIMIT 1   [ RunTime:0.0400s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1000 LIMIT 1   [ RunTime:0.0400s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1428 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1162 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1118 LIMIT 1   [ RunTime:0.0402s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1044 LIMIT 1   [ RunTime:0.0399s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0407s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0401s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365125 AND ( deadline = 0 OR deadline > 1540365125 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0421s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0408s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365125 AND ( deadline = 0 OR deadline > 1540365125 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0399s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.349456s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.349642s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000879s ]
+
+[ 2018-10-24T15:12:10+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_gg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0401s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0402s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0401s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0401s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.619209s ]
+INFO: [ app_init ] --END-- [ RunTime:1.619426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0402s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0408s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_gg' LIMIT 1   [ RunTime:0.0408s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0405s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365127 AND ( deadline = 0 OR deadline > 1540365127 ) ORDER BY `id` DESC LIMIT 0,10   [ RunTime:0.0405s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0402s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0405s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\9a9e4227b3c0b552fe0f4e7e528d8737.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0403s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0420s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0402s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365127 AND ( deadline = 0 OR deadline > 1540365127 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,10   [ RunTime:0.0420s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.303615s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.303750s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000412s ]
+
+[ 2018-10-24T15:12:15+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0406s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0405s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0401s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0408s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0401s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0409s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0446s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.628459s ]
+INFO: [ app_init ] --END-- [ RunTime:1.628731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000162s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0402s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0411s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_news' LIMIT 1   [ RunTime:0.0411s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0406s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540365133 AND ( deadline = 0 OR deadline > 1540365133 ) ORDER BY `id` DESC LIMIT 0,10   [ RunTime:0.0422s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000333s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0407s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\9a9e4227b3c0b552fe0f4e7e528d8737.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0405s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0418s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540365133 AND ( deadline = 0 OR deadline > 1540365133 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,10   [ RunTime:0.0420s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.315791s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.315931s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000278s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000361s ]
+
+[ 2018-10-24T15:12:19+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_zx.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0399s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0392s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0392s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.614081s ]
+INFO: [ app_init ] --END-- [ RunTime:1.614353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000157s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0395s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0399s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_zx' LIMIT 1   [ RunTime:0.0413s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0398s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365136 AND ( deadline = 0 OR deadline > 1540365136 ) ORDER BY `id` DESC LIMIT 0,10   [ RunTime:0.0412s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0436s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0397s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\9a9e4227b3c0b552fe0f4e7e528d8737.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0395s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0400s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365136 AND ( deadline = 0 OR deadline > 1540365136 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,10   [ RunTime:0.0389s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.317189s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.317300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000163s ]
+
+[ 2018-10-24T15:12:31+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0398s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0395s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0395s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0393s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.607850s ]
+INFO: [ app_init ] --END-- [ RunTime:1.608115s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000160s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0393s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0400s ]
+SQL: SHOW COLUMNS FROM `tab_game` [ RunTime:0.0392s ]
+SQL: SELECT * FROM `tab_game` WHERE `recommend_status` = 2 ORDER BY id DESC LIMIT 20   [ RunTime:0.0794s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0393s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0387s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0392s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0396s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0395s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0403s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2934 LIMIT 1   [ RunTime:0.0390s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2955 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2714 LIMIT 1   [ RunTime:0.0391s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2596 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2417 LIMIT 1   [ RunTime:0.0391s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2459 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2469 LIMIT 1   [ RunTime:0.0391s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2375 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2503 LIMIT 1   [ RunTime:0.0391s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2323 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2565 LIMIT 1   [ RunTime:0.0391s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2302 LIMIT 1   [ RunTime:0.0397s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2303 LIMIT 1   [ RunTime:0.0392s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2316 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1798 LIMIT 1   [ RunTime:0.0397s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1000 LIMIT 1   [ RunTime:0.0390s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1428 LIMIT 1   [ RunTime:0.0397s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1162 LIMIT 1   [ RunTime:0.0390s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1118 LIMIT 1   [ RunTime:0.0395s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1044 LIMIT 1   [ RunTime:0.0392s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0408s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0399s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0388s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365148 AND ( deadline = 0 OR deadline > 1540365148 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365148 AND ( deadline = 0 OR deadline > 1540365148 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0399s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.327318s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.327505s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000567s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2018-10-24T15:12:39+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0388s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0383s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0386s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0383s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0387s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0381s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0381s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.594107s ]
+INFO: [ app_init ] --END-- [ RunTime:1.594366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000149s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0385s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0388s ]
+SQL: SHOW COLUMNS FROM `tab_promote` [ RunTime:0.0384s ]
+SQL: SELECT * FROM `tab_promote` WHERE `account` = 'openice' LIMIT 1   [ RunTime:0.0392s ]
+
+[ 2018-10-24T15:12:43+08:00 ] 127.0.0.1 /index.php?s=/Home/Promote/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0405s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0402s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0452s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0401s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.677643s ]
+INFO: [ app_init ] --END-- [ RunTime:1.677896s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000160s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0403s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0409s ]
+SQL: SHOW COLUMNS FROM `tab_promote` [ RunTime:0.0403s ]
+SQL: SELECT * FROM `tab_promote` WHERE `id` = 1167 LIMIT 1   [ RunTime:0.0405s ]
+SQL: SHOW COLUMNS FROM `tab_promote` [ RunTime:0.0404s ]
+SQL: SHOW COLUMNS FROM `tab_promote` [ RunTime:0.0403s ]
+SQL: SELECT * FROM `tab_promote` WHERE `id` = 1167 LIMIT 1   [ RunTime:0.0405s ]
+NOTIC: [8] Undefined index: balance_status F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 29 行.
+NOTIC: [8] Undefined index: promote_id F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 40 行.
+SQL: SELECT `id` FROM `tab_promote` WHERE ( parent_id=1167 )  [ RunTime:0.0405s ]
+SQL: SHOW COLUMNS FROM `tab_spend` [ RunTime:0.0404s ]
+SQL: SELECT SUM(pay_amount) as amount FROM `tab_spend` WHERE `promote_id` IN ('1167','1168') AND `pay_status` = 1 AND `pay_time` BETWEEN 1540310400 AND 1540396799 GROUP BY promote_id  [ RunTime:0.0406s ]
+NOTIC: [8] Undefined index: promote_id F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 40 行.
+SQL: SELECT `id` FROM `tab_promote` WHERE ( parent_id=1167 )  [ RunTime:0.0407s ]
+SQL: SELECT SUM(pay_amount) as amount FROM `tab_spend` WHERE `promote_id` IN ('1167','1168') AND `pay_status` = 1 AND `pay_time` BETWEEN 1538323200 AND 1541001599 GROUP BY promote_id  [ RunTime:0.0399s ]
+NOTIC: [2] Missing argument 1 for Home\Controller\PromoteController::total(), called in F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php on line 32 and defined F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 39 行.
+NOTIC: [8] Undefined index: promote_id F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 40 行.
+SQL: SELECT `id` FROM `tab_promote` WHERE ( parent_id=1167 )  [ RunTime:0.0406s ]
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 51 行.
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 56 行.
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 62 行.
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 68 行.
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 73 行.
+SQL: SELECT SUM(pay_amount) as amount FROM `tab_spend` WHERE `promote_id` IN ('1167','1168') AND `pay_status` = 1 GROUP BY promote_id  [ RunTime:0.0409s ]
+NOTIC: [8] Undefined index: promote_id F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 40 行.
+SQL: SELECT `id` FROM `tab_promote` WHERE ( parent_id=1167 )  [ RunTime:0.0402s ]
+SQL: SELECT SUM(pay_amount) as amount FROM `tab_spend` WHERE `promote_id` IN ('1167','1168') AND `pay_status` = 1 AND `pay_time` BETWEEN 1540224000 AND 1540310400 GROUP BY promote_id  [ RunTime:0.0406s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_document` WHERE ( category_id=40 )  [ RunTime:0.0404s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+NOTIC: [8] Undefined variable: meta_title F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\3d51458f3e93a9520f81cfd556c93c31.php 第 6 行.
+NOTIC: [8] Use of undefined constant PARENT_ID - assumed 'PARENT_ID' F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\3d51458f3e93a9520f81cfd556c93c31.php 第 81 行.
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0398s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0404s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365160 AND ( deadline = 0 OR deadline > 1540365160 ) ORDER BY `level` DESC,`id` DESC LIMIT 20   [ RunTime:0.0418s ]
+NOTIC: [8] Use of undefined constant tui_gg - assumed 'tui_gg' F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\3d51458f3e93a9520f81cfd556c93c31.php 第 219 行.
+NOTIC: [8] Use of undefined constant tui_zx - assumed 'tui_zx' F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\3d51458f3e93a9520f81cfd556c93c31.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.244652s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.244775s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000557s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000740s ]
+
+[ 2018-10-24T15:12:49+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/detail/id/189.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0413s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0411s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0409s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0412s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0401s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0413s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0415s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0415s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0413s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0409s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.632920s ]
+INFO: [ app_init ] --END-- [ RunTime:1.633199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000166s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0410s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0425s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0413s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `id` = 189 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SHOW COLUMNS FROM `sys_model` [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name`,`title`,`extend`,`relation`,`need_pk`,`field_sort`,`field_group`,`attribute_list`,`attribute_alias`,`template_list`,`template_add`,`template_edit`,`list_grid`,`list_row`,`search_key`,`search_list`,`create_time`,`update_time`,`status`,`engine_type` FROM `sys_model` WHERE `status` = 1 AND `extend` = 1  [ RunTime:0.0412s ]
+SQL: SHOW COLUMNS FROM `sys_document_article` [ RunTime:0.0421s ]
+SQL: SELECT `id`,`parse`,`content`,`template`,`bookmark` FROM `sys_document_article` WHERE `id` = 189 LIMIT 1   [ RunTime:0.0420s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0412s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0412s ]
+SQL: UPDATE `sys_document` SET `view`=view+1 WHERE `id` = 189 [ RunTime:0.0428s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0414s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0413s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\2a0c0417d04a5512c695aac7a43a6732.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0410s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0417s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `id` < '189' AND `pid` = 0 AND `category_id` = 39 AND `status` = 1 AND `create_time` < 1540365167 AND ( deadline = 0 OR deadline > 1540365167 ) ORDER BY id DESC LIMIT 1   [ RunTime:0.0417s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `id` > '189' AND `pid` = 0 AND `category_id` = 39 AND `status` = 1 AND `create_time` < 1540365167 AND ( deadline = 0 OR deadline > 1540365167 ) ORDER BY id LIMIT 1   [ RunTime:0.0423s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.266284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.266469s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000878s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000549s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000726s ]
+
+[ 2018-10-24T15:13:01+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/detail/id/189.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0401s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0392s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0390s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.605641s ]
+INFO: [ app_init ] --END-- [ RunTime:1.606009s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0394s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0398s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0395s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `id` = 189 LIMIT 1   [ RunTime:0.0398s ]
+SQL: SHOW COLUMNS FROM `sys_model` [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name`,`title`,`extend`,`relation`,`need_pk`,`field_sort`,`field_group`,`attribute_list`,`attribute_alias`,`template_list`,`template_add`,`template_edit`,`list_grid`,`list_row`,`search_key`,`search_list`,`create_time`,`update_time`,`status`,`engine_type` FROM `sys_model` WHERE `status` = 1 AND `extend` = 1  [ RunTime:0.0407s ]
+SQL: SHOW COLUMNS FROM `sys_document_article` [ RunTime:0.0391s ]
+SQL: SELECT `id`,`parse`,`content`,`template`,`bookmark` FROM `sys_document_article` WHERE `id` = 189 LIMIT 1   [ RunTime:0.0398s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0493s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0409s ]
+SQL: UPDATE `sys_document` SET `view`=view+1 WHERE `id` = 189 [ RunTime:0.0414s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0391s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0395s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\2a0c0417d04a5512c695aac7a43a6732.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0393s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0395s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `id` < '189' AND `pid` = 0 AND `category_id` = 39 AND `status` = 1 AND `create_time` < 1540365179 AND ( deadline = 0 OR deadline > 1540365179 ) ORDER BY id DESC LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `id` > '189' AND `pid` = 0 AND `category_id` = 39 AND `status` = 1 AND `create_time` < 1540365179 AND ( deadline = 0 OR deadline > 1540365179 ) ORDER BY id LIMIT 1   [ RunTime:0.0403s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.267473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.267674s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000864s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000534s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2018-10-24T15:13:09+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0403s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0401s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0401s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.618974s ]
+INFO: [ app_init ] --END-- [ RunTime:1.619242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000156s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0400s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0407s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_news' LIMIT 1   [ RunTime:0.0486s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0401s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540365187 AND ( deadline = 0 OR deadline > 1540365187 ) ORDER BY `id` DESC LIMIT 0,10   [ RunTime:0.0401s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0399s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0403s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\9a9e4227b3c0b552fe0f4e7e528d8737.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0399s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0421s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0400s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540365187 AND ( deadline = 0 OR deadline > 1540365187 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,10   [ RunTime:0.0417s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.302501s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.302699s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000861s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000705s ]
+
+[ 2018-10-24T15:13:28+08:00 ] 127.0.0.1 /index.php?s=/Home/Promote/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0453s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0428s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0425s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0425s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0425s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0466s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0415s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0427s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0418s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0421s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0441s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0424s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.658251s ]
+INFO: [ app_init ] --END-- [ RunTime:1.658498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000176s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0438s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0428s ]
+SQL: SHOW COLUMNS FROM `tab_promote` [ RunTime:0.0422s ]
+SQL: SELECT * FROM `tab_promote` WHERE `id` = 1167 LIMIT 1   [ RunTime:0.0430s ]
+SQL: SHOW COLUMNS FROM `tab_promote` [ RunTime:0.0427s ]
+SQL: SHOW COLUMNS FROM `tab_promote` [ RunTime:0.0415s ]
+SQL: SELECT * FROM `tab_promote` WHERE `id` = 1167 LIMIT 1   [ RunTime:0.0515s ]
+NOTIC: [8] Undefined index: balance_status F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 29 行.
+NOTIC: [8] Undefined index: promote_id F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 40 行.
+SQL: SELECT `id` FROM `tab_promote` WHERE ( parent_id=1167 )  [ RunTime:0.0431s ]
+SQL: SHOW COLUMNS FROM `tab_spend` [ RunTime:0.0446s ]
+SQL: SELECT SUM(pay_amount) as amount FROM `tab_spend` WHERE `promote_id` IN ('1167','1168') AND `pay_status` = 1 AND `pay_time` BETWEEN 1540310400 AND 1540396799 GROUP BY promote_id  [ RunTime:0.0433s ]
+NOTIC: [8] Undefined index: promote_id F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 40 行.
+SQL: SELECT `id` FROM `tab_promote` WHERE ( parent_id=1167 )  [ RunTime:0.0428s ]
+SQL: SELECT SUM(pay_amount) as amount FROM `tab_spend` WHERE `promote_id` IN ('1167','1168') AND `pay_status` = 1 AND `pay_time` BETWEEN 1538323200 AND 1541001599 GROUP BY promote_id  [ RunTime:0.0434s ]
+NOTIC: [2] Missing argument 1 for Home\Controller\PromoteController::total(), called in F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php on line 32 and defined F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 39 行.
+NOTIC: [8] Undefined index: promote_id F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 40 行.
+SQL: SELECT `id` FROM `tab_promote` WHERE ( parent_id=1167 )  [ RunTime:0.0428s ]
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 51 行.
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 56 行.
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 62 行.
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 68 行.
+NOTIC: [8] Undefined variable: type F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 73 行.
+SQL: SELECT SUM(pay_amount) as amount FROM `tab_spend` WHERE `promote_id` IN ('1167','1168') AND `pay_status` = 1 GROUP BY promote_id  [ RunTime:0.0425s ]
+NOTIC: [8] Undefined index: promote_id F:\Visual-NMP-x64\www\zswh\Application\Home\Controller\PromoteController.class.php 第 40 行.
+SQL: SELECT `id` FROM `tab_promote` WHERE ( parent_id=1167 )  [ RunTime:0.0437s ]
+SQL: SELECT SUM(pay_amount) as amount FROM `tab_spend` WHERE `promote_id` IN ('1167','1168') AND `pay_status` = 1 AND `pay_time` BETWEEN 1540224000 AND 1540310400 GROUP BY promote_id  [ RunTime:0.0429s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0428s ]
+SQL: SELECT * FROM `sys_document` WHERE ( category_id=40 )  [ RunTime:0.0415s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined variable: meta_title F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\3d51458f3e93a9520f81cfd556c93c31.php 第 6 行.
+NOTIC: [8] Use of undefined constant PARENT_ID - assumed 'PARENT_ID' F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\3d51458f3e93a9520f81cfd556c93c31.php 第 81 行.
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0425s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0435s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0431s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0427s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365205 AND ( deadline = 0 OR deadline > 1540365205 ) ORDER BY `level` DESC,`id` DESC LIMIT 20   [ RunTime:0.0442s ]
+NOTIC: [8] Use of undefined constant tui_gg - assumed 'tui_gg' F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\3d51458f3e93a9520f81cfd556c93c31.php 第 219 行.
+NOTIC: [8] Use of undefined constant tui_zx - assumed 'tui_zx' F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\3d51458f3e93a9520f81cfd556c93c31.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.236351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.236517s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000842s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000733s ]
+
+[ 2018-10-24T15:24:58+08:00 ] 127.0.0.1 /index.php?s=/Home/Public/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0405s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0400s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0400s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0397s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.619688s ]
+INFO: [ app_init ] --END-- [ RunTime:1.619882s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000171s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0401s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0408s ]
+
+[ 2018-10-24T15:25:01+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ����Ŀ����������ܾ����޷����ӡ�
+ (10061) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ����Ŀ����������ܾ����޷����ӡ�
+ (10061) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0391s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0386s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0413s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0379s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0388s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0390s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.684858s ]
+INFO: [ app_init ] --END-- [ RunTime:1.685050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0390s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0393s ]
+SQL: SHOW COLUMNS FROM `tab_game` [ RunTime:0.0388s ]
+SQL: SELECT * FROM `tab_game` WHERE `recommend_status` = 2 ORDER BY id DESC LIMIT 20   [ RunTime:0.0777s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0393s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0390s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0385s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0383s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0387s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0392s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2934 LIMIT 1   [ RunTime:0.0390s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2955 LIMIT 1   [ RunTime:0.0384s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2714 LIMIT 1   [ RunTime:0.0390s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2596 LIMIT 1   [ RunTime:0.0389s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2417 LIMIT 1   [ RunTime:0.0388s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2459 LIMIT 1   [ RunTime:0.0384s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2469 LIMIT 1   [ RunTime:0.0383s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2375 LIMIT 1   [ RunTime:0.0383s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2503 LIMIT 1   [ RunTime:0.0383s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2323 LIMIT 1   [ RunTime:0.0383s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2565 LIMIT 1   [ RunTime:0.0383s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2302 LIMIT 1   [ RunTime:0.0384s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2303 LIMIT 1   [ RunTime:0.0383s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2316 LIMIT 1   [ RunTime:0.0384s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1798 LIMIT 1   [ RunTime:0.0383s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1000 LIMIT 1   [ RunTime:0.0384s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1428 LIMIT 1   [ RunTime:0.0384s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1162 LIMIT 1   [ RunTime:0.0384s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1118 LIMIT 1   [ RunTime:0.0389s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1044 LIMIT 1   [ RunTime:0.0378s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0379s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0395s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0389s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0387s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365898 AND ( deadline = 0 OR deadline > 1540365898 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0388s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365898 AND ( deadline = 0 OR deadline > 1540365898 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0381s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365898 AND ( deadline = 0 OR deadline > 1540365898 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0388s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365898 AND ( deadline = 0 OR deadline > 1540365898 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0389s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.559509s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.559705s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000915s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000808s ]
+
+[ 2018-10-24T15:25:11+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0415s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0411s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0413s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0413s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0412s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0412s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0412s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0417s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0411s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.635135s ]
+INFO: [ app_init ] --END-- [ RunTime:1.635410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000171s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0411s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0417s ]
+SQL: SHOW COLUMNS FROM `tab_game` [ RunTime:0.0413s ]
+SQL: SELECT * FROM `tab_game` WHERE `recommend_status` = 2 ORDER BY id DESC LIMIT 20   [ RunTime:0.0831s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0433s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0408s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0409s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0413s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0410s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0406s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2934 LIMIT 1   [ RunTime:0.0411s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2955 LIMIT 1   [ RunTime:0.0414s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2714 LIMIT 1   [ RunTime:0.0413s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2596 LIMIT 1   [ RunTime:0.0413s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2417 LIMIT 1   [ RunTime:0.0414s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2459 LIMIT 1   [ RunTime:0.0414s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2469 LIMIT 1   [ RunTime:0.0413s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2375 LIMIT 1   [ RunTime:0.0413s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2503 LIMIT 1   [ RunTime:0.0415s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2323 LIMIT 1   [ RunTime:0.0408s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2565 LIMIT 1   [ RunTime:0.0453s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2302 LIMIT 1   [ RunTime:0.0412s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2303 LIMIT 1   [ RunTime:0.0413s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2316 LIMIT 1   [ RunTime:0.0411s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1798 LIMIT 1   [ RunTime:0.0410s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1000 LIMIT 1   [ RunTime:0.0411s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1428 LIMIT 1   [ RunTime:0.0406s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1162 LIMIT 1   [ RunTime:0.0413s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1118 LIMIT 1   [ RunTime:0.0413s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1044 LIMIT 1   [ RunTime:0.0411s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0413s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0420s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0409s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0414s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365908 AND ( deadline = 0 OR deadline > 1540365908 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0419s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0426s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0415s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365908 AND ( deadline = 0 OR deadline > 1540365908 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0427s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0413s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0411s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540365908 AND ( deadline = 0 OR deadline > 1540365908 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0427s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0448s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0409s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540365908 AND ( deadline = 0 OR deadline > 1540365908 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0417s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.642511s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.642616s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000184s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000133s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000172s ]
+
+[ 2018-10-24T15:25:40+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0411s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0409s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0409s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0408s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0409s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0411s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.631372s ]
+INFO: [ app_init ] --END-- [ RunTime:1.631637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000157s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0405s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0415s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_news' LIMIT 1   [ RunTime:0.0417s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0411s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540365938 AND ( deadline = 0 OR deadline > 1540365938 ) ORDER BY `id` DESC LIMIT 0,10   [ RunTime:0.0411s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0405s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0410s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\9a9e4227b3c0b552fe0f4e7e528d8737.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0409s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0420s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0408s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540365938 AND ( deadline = 0 OR deadline > 1540365938 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,10   [ RunTime:0.0427s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.320450s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.320654s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000860s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2018-10-24T15:33:49+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0404s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0397s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0400s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0401s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0403s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.613625s ]
+INFO: [ app_init ] --END-- [ RunTime:1.613902s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000170s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0400s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0403s ]
+SQL: SHOW COLUMNS FROM `tab_game` [ RunTime:0.0404s ]
+SQL: SELECT * FROM `tab_game` WHERE `recommend_status` = 2 ORDER BY id DESC LIMIT 20   [ RunTime:0.0846s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0399s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0404s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0399s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0403s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0399s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0411s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2934 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2955 LIMIT 1   [ RunTime:0.0403s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2714 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2596 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2417 LIMIT 1   [ RunTime:0.0402s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2459 LIMIT 1   [ RunTime:0.0399s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2469 LIMIT 1   [ RunTime:0.0403s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2375 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2503 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2323 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2565 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2302 LIMIT 1   [ RunTime:0.0395s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2303 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2316 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1798 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1000 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1428 LIMIT 1   [ RunTime:0.0400s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1162 LIMIT 1   [ RunTime:0.0400s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1118 LIMIT 1   [ RunTime:0.0399s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1044 LIMIT 1   [ RunTime:0.0401s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0399s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0402s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540366426 AND ( deadline = 0 OR deadline > 1540366426 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0401s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0412s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540366426 AND ( deadline = 0 OR deadline > 1540366426 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0418s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.355903s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.356084s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000858s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000802s ]
+
+[ 2018-10-24T15:36:20+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0403s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0401s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0400s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0405s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.649034s ]
+INFO: [ app_init ] --END-- [ RunTime:1.649299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000137s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0401s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0407s ]
+SQL: SHOW COLUMNS FROM `tab_game` [ RunTime:0.0404s ]
+SQL: SELECT * FROM `tab_game` WHERE `recommend_status` = 2 ORDER BY id DESC LIMIT 15   [ RunTime:0.0805s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0400s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0400s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000339s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0397s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0397s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0402s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0405s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2934 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2955 LIMIT 1   [ RunTime:0.0403s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2714 LIMIT 1   [ RunTime:0.0422s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2596 LIMIT 1   [ RunTime:0.0406s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2417 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2459 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2469 LIMIT 1   [ RunTime:0.0405s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2375 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2503 LIMIT 1   [ RunTime:0.0403s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2323 LIMIT 1   [ RunTime:0.0398s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2565 LIMIT 1   [ RunTime:0.0408s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2302 LIMIT 1   [ RunTime:0.0400s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2303 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 2316 LIMIT 1   [ RunTime:0.0403s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1798 LIMIT 1   [ RunTime:0.0404s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0412s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0405s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0403s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540366577 AND ( deadline = 0 OR deadline > 1540366577 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0419s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0400s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 39 AND `create_time` < 1540366577 AND ( deadline = 0 OR deadline > 1540366577 ) ORDER BY `level` DESC,`id` DESC LIMIT 5   [ RunTime:0.0418s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.161346s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.161536s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000903s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000811s ]
+
+[ 2018-10-24T16:22:02+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0421s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0419s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0416s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0423s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0418s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0419s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0416s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0417s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0417s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0419s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0416s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0408s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.631842s ]
+INFO: [ app_init ] --END-- [ RunTime:1.632032s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000174s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0420s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0479s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0414s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0416s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0419s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0416s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0415s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0431s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0417s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0421s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0416s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0416s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540369320 AND ( deadline = 0 OR deadline > 1540369320 ) ORDER BY `level` DESC,`id` DESC LIMIT 2   [ RunTime:0.0419s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.388287s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.388329s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000140s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000179s ]
+
+[ 2018-10-24T16:22:14+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0406s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0404s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0400s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0403s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0401s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0396s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.609742s ]
+INFO: [ app_init ] --END-- [ RunTime:1.609980s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0402s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0419s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0398s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0399s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0401s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0402s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0399s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0411s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0408s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0397s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0398s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540369332 AND ( deadline = 0 OR deadline > 1540369332 ) ORDER BY `level` DESC,`id` DESC LIMIT 2   [ RunTime:0.0416s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.374567s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.374608s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000189s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000122s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000160s ]
+
+[ 2018-10-24T16:22:29+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0406s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0403s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0409s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0408s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0408s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0510s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.625432s ]
+INFO: [ app_init ] --END-- [ RunTime:1.625541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000171s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0397s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0409s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0411s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0406s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0411s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0405s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0404s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0407s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0420s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0405s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0440s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540369347 AND ( deadline = 0 OR deadline > 1540369347 ) ORDER BY `level` DESC,`id` DESC LIMIT 2   [ RunTime:0.0404s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.380880s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.380921s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000131s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000170s ]
+
+[ 2018-10-24T16:22:34+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0398s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0396s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0400s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0398s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.601475s ]
+INFO: [ app_init ] --END-- [ RunTime:1.601585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000158s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000202s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0397s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0402s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0396s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0396s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0390s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0400s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0398s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0407s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0396s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0399s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540369352 AND ( deadline = 0 OR deadline > 1540369352 ) ORDER BY `level` DESC,`id` DESC LIMIT 2   [ RunTime:0.0414s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.372540s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.372590s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000178s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000236s ]
+
+[ 2018-10-24T16:22:35+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ����Ŀ����������ܾ����޷����ӡ�
+ (10061) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ����Ŀ����������ܾ����޷����ӡ�
+ (10061) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0394s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0413s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0391s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0395s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0395s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0399s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0395s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0389s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.598989s ]
+INFO: [ app_init ] --END-- [ RunTime:1.599098s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0394s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0387s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0388s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0396s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0392s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0391s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0393s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0404s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0400s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0396s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0396s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540369352 AND ( deadline = 0 OR deadline > 1540369352 ) ORDER BY `level` DESC,`id` DESC LIMIT 2   [ RunTime:0.0401s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.368532s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.368574s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000183s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000112s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000153s ]
+
+[ 2018-10-24T16:22:37+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0411s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0408s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0417s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0416s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0418s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0415s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0409s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.623658s ]
+INFO: [ app_init ] --END-- [ RunTime:1.623845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000158s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0411s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0415s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0415s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0413s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0409s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0411s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0413s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0414s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0420s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0417s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0410s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540369355 AND ( deadline = 0 OR deadline > 1540369355 ) ORDER BY `level` DESC,`id` DESC LIMIT 2   [ RunTime:0.0418s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.383327s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.383369s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000191s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000122s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000161s ]
+
+[ 2018-10-24T16:22:46+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0400s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0391s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0388s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0393s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0392s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0395s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0389s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0377s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.594085s ]
+INFO: [ app_init ] --END-- [ RunTime:1.594621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0388s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0396s ]
+SQL: SHOW COLUMNS FROM `tab_links` [ RunTime:0.0398s ]
+SQL: SELECT * FROM `tab_links` WHERE ( mark='1' and status=1 )  [ RunTime:0.0391s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0434s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0398s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\769e70f2e46f34ceb60619bbda5e4691.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0389s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0399s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0401s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 51 LIMIT 1   [ RunTime:0.0396s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0391s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0392s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 51 AND `create_time` < 1540369364 AND ( deadline = 0 OR deadline > 1540369364 ) ORDER BY `level` DESC,`id` DESC LIMIT 2   [ RunTime:0.0401s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.371179s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.371222s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000122s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000161s ]
+
+[ 2018-10-24T16:23:06+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0404s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0397s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0397s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0402s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0394s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0398s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0398s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.602839s ]
+INFO: [ app_init ] --END-- [ RunTime:1.602999s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000461s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0400s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0404s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0397s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0394s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\ab1f381c956196c3ff78624bd9e6a320.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0400s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0398s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.166220s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.166262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000119s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000156s ]
+
+[ 2018-10-24T16:23:50+08:00 ] 127.0.0.1 /index.php?s=/Home/Article/lists/category/tui_gg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0404s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0404s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0406s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0400s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0405s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0485s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0410s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0404s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.625600s ]
+INFO: [ app_init ] --END-- [ RunTime:1.625845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000170s ]
+SQL: SHOW COLUMNS FROM `sys_config` [ RunTime:0.0404s ]
+SQL: SELECT `type`,`name`,`value` FROM `sys_config` WHERE `status` = 1  [ RunTime:0.0418s ]
+SQL: SHOW COLUMNS FROM `sys_category` [ RunTime:0.0404s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `name` = 'tui_gg' LIMIT 1   [ RunTime:0.0416s ]
+SQL: SHOW COLUMNS FROM `sys_document` [ RunTime:0.0410s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540369428 AND ( deadline = 0 OR deadline > 1540369428 ) ORDER BY `id` DESC LIMIT 0,10   [ RunTime:0.0416s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+SQL: SHOW COLUMNS FROM `sys_picture` [ RunTime:0.0404s ]
+SQL: SELECT * FROM `sys_picture` WHERE `status` = 1 AND `id` = 1911 LIMIT 1   [ RunTime:0.0406s ]
+NOTIC: [8] Undefined variable: ad F:\Visual-NMP-x64\www\zswh\Runtime\Cache\Home\9a9e4227b3c0b552fe0f4e7e528d8737.php 第 40 行.
+SQL: SHOW COLUMNS FROM `sys_channel` [ RunTime:0.0407s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `sys_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0418s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `sys_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0418s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `sys_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0416s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`admin`,`status` FROM `sys_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` = 2 AND `create_time` < 1540369428 AND ( deadline = 0 OR deadline > 1540369428 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,10   [ RunTime:0.0412s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.298737s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.298781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000119s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000157s ]
+

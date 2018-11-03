@@ -1,0 +1,407 @@
+<extend name="Public/base"/>
+<block name="body" >
+
+<!--轮播图-->
+<div id="slider">
+    <a href="javascript:;"><img src="__IMG__/banner/banner.jpg" alt="" title="" /></a>
+    <a href="javascript:;"><img src="__IMG__/banner/banner1.jpg"  alt="" title="" /></a>
+    <a href="javascript:;"><img src="__IMG__/banner/banner.jpg" alt="" title="" /></a>
+    <a href="javascript:;"><img src="__IMG__/banner/banner1.jpg" alt="" title="" /></a>
+    <a href="javascript:;"><img src="__IMG__/banner/banner.jpg" alt="" title="" /></a>
+    <a href="javascript:;"><img src="__IMG__/banner/banner1.jpg" alt="" title="" /></a>
+</div>
+
+
+
+<!--推荐游戏-->
+<div class="tjyouxi clearfix">
+    <div class="container">
+        <div class="youxi-t">
+            <a href="{:U('Game/game_list')}" class="one"><span class="icon-youxi"></span>推荐游戏</a>
+            <a href="javascript:;" class="more">更多> ></a>
+        </div>
+        <div class="youxi-b">
+            <ul>
+
+                <volist name="recommend" id="vo" >
+                <li>
+                    <a href="{:U('Game/game_detail?id='.$vo['id'].'')}" class="one">
+                        <img src="__ROOT__{$vo.cover|get_cover='path'}" class="gpic">
+                        <div class="fbbl">{$vo.game_name}</div>
+                    </a>
+                    <div class="show">
+                        <div class="show-t">
+                            <p>{$vo.game_name}</p>
+                        </div>
+                        <div class="show-b">
+                            <img src="__IMG__/main/tuijian_erweima.png" alt="">
+                            <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="tj">推荐 &nbsp; &nbsp; <img src="__IMG__/main/tuijian_wujiaoxing.png" alt=""></a><br>
+                            <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="xz">下 &nbsp;载</a>
+                        </div>
+                    </div>
+                </li>
+                </volist>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<!--游戏部分-->
+<div class="game">
+    <div class="container">
+        <!--游戏部分左侧-->
+        <div class="game-left clearfix">
+
+
+                <!--热门游戏-->
+            <div class="hot-game">
+                <div class="hot-game-t">
+                    <a href="javascript:;" class="two"><span class="icon-hot"></span>热门游戏</a>
+                    <a href="javascript:;" class="gengduo">更多> ></a>
+                </div>
+                <div class="hot-game-b">
+                    <ul class="clearfix">
+                        <volist name="hot" id="vo" >
+                            <li>
+                                <!--<a href="{:U('Game/yxchildren')}">-->
+                                    <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" target="_blank">
+                                    <img src="__ROOT__{$vo.icon|get_cover='path'}">
+                                    <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="down">
+                                        <div class="wenzi">
+                                        <p class="first">{:msubstr($vo['game_name'],0,7,'UTF-8',false)}</p>
+                                        <p class="next">{$vo.game_type_name}</p>
+                                        <div class="load"> 下 &nbsp;载</div>
+                                        </div></a>
+                                </a>
+                            </li>
+                        </volist >
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--资讯-->
+            <div class="zixun">
+                <div class="zixun-t">
+                    <div class="zixun-t">
+                        <a href="javascript:;" class="two"><span class="icon-zixun"></span>游戏资讯</a>
+                        <a href="javascript:;" class="gengduo">更多> ></a>
+                    </div>
+                </div>
+                <div class="zixun-b clearfix">
+
+                    <div class="zixun-b-l">
+                        <ul>
+                            <li><a href="javascript:;"><img src="__IMG__/main/youxizixun_picture.png" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="__IMG__/main/youxizixun_picture1.png" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="__IMG__/main/youxizixun_picture2.png" alt=""></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="zixun-b-r">
+                        <ul>
+                            <!-- 公告 -->
+                        <article:limits name="list" category="43" child="true" limit="3">
+                            <li>
+                                <span class="gonggao"></span><a href="javascript:;">{:msubstr($list['title'],0,15)}...&nbsp;&nbsp;&nbsp;</a><span class="data">{$list.create_time|date="m/d",###}</span>
+                            </li>
+                        </article:limits>
+
+                        <!-- 资讯 -->
+                            <article:limits name="list" category="42" child="true" limit="3">
+                            <li>
+
+                                <span class="zx"></span><a href="javascript:;">{:msubstr($list['title'],0,15)}...&nbsp;&nbsp;&nbsp;</a><span class="data">{$list.create_time|date="m/d",###}</span>
+                            </li>
+                        </article:limits>
+                        <!-- 活动 -->
+                        <article:limits name="list" category="44" child="true" limit="3">
+                            <li>
+                                <span class="huodong"></span><a href="javascript:;">{:msubstr($list['title'],0,15)}...&nbsp;&nbsp;&nbsp;</a><span class="data">{$list.create_time|date="m/d",###}</span>
+                            </li>
+                        </article:limits>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--新游推荐-->
+            <div class="xinyou clearfix">
+                <div class="xinyou-t">
+                    <a href="{:U('Game/game_list')}" class="two"><span class="icon-hot"></span>新游推荐</a>
+                    <a href="{:U('Game/game_list')}" class="gengduo">更多> ></a>
+                </div>
+                <div class="xinyou-b">
+                    <ul>
+                        <volist name="xin" id="vo" >
+                        <li>
+                            <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><img src="__ROOT__{$vo.cover|get_cover='path'}" >
+                                <div class="fbbl">
+                                    {$vo.game_name}
+                                </div>
+                            </a>
+                        </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+
+            <!--角色扮演-->
+         <!--   <div class="cosplay clearfix">
+                <div class="tab">
+                    <a href="javascript:;" class="tab1"><span class="icon-cosplay"></span>角色扮演 &nbsp;</a>
+                    <a href="javascript:;" class="tab2"> / &nbsp; <span class="icon-kapai"></span>卡牌游戏</a>
+                </div>
+                <div class="content" >
+                    <ul>
+                        <volist name="juese" id="vo" >
+                            <li style="display: block">
+                                <div class="box">
+                                    <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}">
+                                        <img src="__ROOT__{$vo.icon|get_cover='path'}">
+                                        <div class="wenzi">
+                                            <p class="first"></p>
+                                            <p class="next">{$vo.game_type_name}</p>
+                                            <div class="load"> 下 &nbsp;载</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+
+
+
+            <!--角色扮演-->
+            <div class="cosplay clearfix">
+                <div class="tab">
+                    <a href="javascript:;" class="tab1"><span class="icon-cosplay"></span>角色扮演 &nbsp;</a>
+                    <a href="javascript:;" class="tab2"> / &nbsp; <span class="icon-kapai"></span>卡牌游戏</a>
+                </div>
+                <div class="content" >
+                    <ul>
+
+                        <li style="display: block">
+                            <div class="box">
+                                <volist name="juese" id="vo">
+                                    <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="down">
+                                    <img src="__ROOT__{$vo.icon|get_cover='path'}">
+                                    <div class="wenzi">
+                                        <p class="first">{$vo.game_name}</p>
+                                        <p class="next">{$vo.game_type_name}</p>
+                                        <div class="load"> 下 &nbsp;载</div>
+                                    </div>
+                                </a>
+                                </volist>
+                         </li>
+
+
+
+                        <li>
+                            <div class="box">
+                                <volist name="kapai" id="vo">
+                                    <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="down">
+                                    <img src="__ROOT__{$vo.icon|get_cover='path'}">
+                                    <div class="wenzi">
+                                        <p class="first">{$vo.game_name}</p>
+                                        <p class="next">{$vo.game_type_name}</p>
+                                        <div class="load"> 下 &nbsp;载</div>
+                                    </div>
+                                </a>
+                                </volist>
+
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--游戏部分右侧-->
+        <div class="game-right clearfix">
+            <!--游戏礼包-->
+            <div class="libao clearfix">
+                <div class="libao-t">
+                    <a href="javascript:;" class="more"><span class="icon-libao"></span>游戏礼包</a>
+                    <a href="javascript:;" class="more">更多> ></a>
+                </div>
+                <div class="libao-b">
+                    <ul>
+                        <volist name="gift" id="vo" >
+                        <li>
+                            <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" target="_blank"><p class="fengbao">{$vo.game_name}</p> <p>{$vo.giftbag_name}</p>
+                                <div class="lingqu">领 &nbsp;取</div>
+                            </a>
+                        </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <!--游戏排行-->
+            <div class=" paihang clearfix">
+                <div class="paihang-t">
+                    <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏排行</a>
+                </div>
+                <div class="paihang-b clearfix">
+                    <ul class="weekly-list clearfix">
+                    
+                    <volist name="rank" id="vo" >
+                            <li >
+                                <div class="app-show-title">
+                                    <if condition="$num lt 5"><span class="num s-index-org" style="display:inline-block;width: 20px;height: 20px;background-color:#f19ec2;color: #ffffff;text-align: center;line-height: 20px;margin-right: 20px">{$num++}</span>
+                                        <elseif condition="$num lt 7" /><span class="num s-index-org" style="display:inline-block;width: 20px;height: 20px;background-color:pink;color: #ffffff;text-align: center;line-height: 20px;margin-right: 20px">{$num++}</span>
+                                        <else /> <span class="num s-index-org" style="display:inline-block;width: 20px;height: 20px;background-color:gray;color: #ffffff;text-align: center;line-height: 20px;margin-right: 20px">{$num++}</span>
+                                    </if>
+                        
+                                    <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="bl">{$vo.game_name}</a>
+                                    <a href="javascript:;" class="hh">{$vo.game_type_name}</a>
+                                </div>
+                                <div class="app-show-block">
+                                    <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="pic"><img src="__ROOT__{$vo.icon|get_cover='path'}" alt="{$vo.game_name}"></a>
+                                    <a  class="xz" href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>">下&nbsp;载</a>
+                                    <a  class="lb" href="javascript:;">礼&nbsp;包</a>
+                                </div>
+                            </li>
+                        </volist> 
+                        
+                        </ul>
+                </div>
+            </div>
+
+            <!--游戏开服-->
+            <div class="kaifu clearfix">
+                <div class="kaifu-t">
+                    <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"  class="one"><span class="icon-libao"></span>游戏开服</a>
+                </div>
+                <div class="kaifu-b">
+                    <ul>
+                        <volist name="area" id="vo" >
+                        <li>
+                            <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><p class="fengbao">{$vo.create_time|date="m/d",###} <span class="dian"></span>{$vo.game_name}</p> <p>{$vo.server_name}</p>
+                                <div class="lingqu">查 &nbsp;看</div></a>
+                        </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <!--游戏客服-->
+        </div>
+
+        <!--活动和客服-->
+        <div class="last container">
+            <div class="last-l">
+                <!--游戏活动-->
+                <div class="yxactive">
+                    <div class="yxactive-t">
+                        <a href="javascript:;" class="two"><span class="icon-hot"></span>游戏活动</a>
+                        <a href="javascript:;" class="gengduo">更多 > ></a>
+                    </div>
+                    <div class="yxactive-b">
+                        <ul>
+                            <article:limits name="list" category="44" child="true" limit="3">
+                            <li>
+                                <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="tj"><img src="__ROOT__{$list.cover_id|get_cover='path'}" alt="">
+                                    <div class="fbbl">
+                                        {$list.title}...
+                                    </div>
+                                </a>
+                            </li>
+                           </article:limits>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="last-r">
+                <!--游戏客服-->
+                <div class="kefu clearfix">
+                    <div class="kefu-t">
+                        <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏客服</a>
+                    </div>
+                    <div class="kefu-b">
+                        <p class="one">工作时间：10:00 -- 21:00</p> <br>
+                        <p class="two">服务热线：<span class="hao">010-855655922  &nbsp;&nbsp;183014677889</span></p>
+                        <p class="three">客服邮箱：1620214981@qq.com</p>
+                        <p class="four">2356643339@qq.com</p>
+                        <p>投诉邮箱：49901410 @qq.com </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--友情连接-->
+        <div class="lianjie clearfix container">
+            <div class="lianjie-t">
+                <a class="one" href="javascript:;"><span class="icon-lianjie"></span> 友情链接 </a>
+            </div>
+            <div class="lianjie-b">
+                <a href="https://baidu.com">百度搜索</a>
+                <a href="http://www.wanmei.com/">完美世界</a>
+                <a href="http://www.gyyx.cn/">光宇游戏</a>
+                <a href="http://games.qq.com/">腾讯游戏</a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--尾巴部分-->
+
+
+<!--小火箭-->
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+
+<!--右侧固定-->
+<!--<div class="contact">-->
+<!--<div class="contact-cha" id="cha"></div>-->
+<!--<div class="contact-t"></div>-->
+<!--</div>-->
+
+
+
+<!--尾巴固定-->
+<div class="app">
+    <div class="box-text">
+        <div class="app-code" onclick="window.location.href='youxi.html';">
+            <img  class="c" src="__IMG__/dibu/dibu_weixinxiazai.png" alt="">
+        </div>
+        <span class="app-cha" id="shift"></span>
+    </div>
+</div>
+
+
+
+</body>
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/js.js"></script>
+<script src="__JS__/slider.jquery.js"></script>
+<script src="__JS__/src/IE8.js"></script>
+<script src="__JS__/src/IE9.js"></script>
+<script>
+    $( '#slider' ).lateralSlider( {
+        captionPadding: '0',
+        captionHeight: 45
+    } );
+
+
+
+</script>
+<script>
+    var del=document.getElementById("shift");
+    del.onclick=function () {
+        this.parentNode.parentNode.style.display = "none";
+    }
+</script>
+</html>
+</block>

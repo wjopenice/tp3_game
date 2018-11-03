@@ -1,0 +1,70 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/youxi.css">
+    <link rel="stylesheet" href="__CSS__/kefu.css">
+
+<!--中间问题-->
+<div class="kefu container clearfix">
+    <ul>
+        <li><a class="one" href="{:U('Service/kfmm')}"></a></li>
+        <li><a class="two" href="{:U('Service/kfcz')}"></a></li>
+        <li><a class="three" href="{:U('Service/kfzh')}"></a></li>
+        <li><a class="four" href="{:U('Service/kflb')}"></a></li>
+
+    </ul>
+</div>
+
+<!--下边部分-->
+<div class="section clearfix container">
+    <!--常见问题-->
+    <div class="section-l">
+        <div class="section-l-t">
+            <a href="javascript:;"><span class="icon-fenlei"></span>常见问题</a>
+        </div>
+        <div class="section-l-b">
+            <ul>
+                <li><a href="{:U('Service/kfmm#2')}">我换了手机，但他哪里提示要输入密码，我注册的时候是自动登录进去的？ 该怎么找回密码?</a></li>
+                <li><a href="{:U('Service/kfcz#12')}">在充值返利活动中，你们平台为什么要在平台官方网站上充值平台币才行，直充不行？</a></li>
+                <li><a href="{:U('Service/kfcz#13')}">我不小心点错了，但没付款，导致消费记录里面显示“支付中”，该怎么办？会扣费吗？</a></li>
+                <li><a href="{:U('Service/kfcz#14')}">我想在游戏里面充值，但我不知道怎么充值，具体步骤是什么？如何取消支付宝快速支付？ </a></li>
+                <li><a href="{:U('Service/kfcz#31')}">账号在登陆时系统提示“账号被冻结或被锁定”怎么办? </a></li>
+                <li><a href="{:U('Service/kflb#35')}"> 如何查看是否已领取过同类型礼包？</a></li>
+                <li><a href="{:U('Service/kflb#36')}">不同渠道获得的礼包，都可以使用吗？ </a></li>
+                <li><a href="{:U('Service/kfzj#41')}">为什么我登录游戏的时候，登不上去，没有任何提示？ </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-r">
+        <div class="kefu clearfix">
+            <div class="kefu-t">
+                <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏客服</a>
+            </div>
+            <div class="kefu-b">              
+               <p class="one">工作时间：10:00 -- 21:00</p> <br>
+                <p class="two">服务热线：<span class="hao">{:C('CH_SET_ZUOJI_PHONE')} &nbsp;&nbsp;{:C('CH_SET_SERVER_PHONE')}</span></p><br />
+                <p class="three">客服&nbsp;QQ：{:C('CH_SET_SERVER_QQ')}&nbsp;&nbsp;&nbsp;&nbsp;{:C('CH_SET_SERVER_QQ1')}</p> <br />
+                <p class="four">官方玩家群：<span>{:C('CH_SET_SERVER_QQGROUP')}</span></p>
+                <div class="erweima">
+                    <img src="__IMG__/gzh.jpg" alt="" style="width: 120px;height: 120px">
+                    <a href="javascript:;">扫描关注<br/>玩转公众号</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+</body>
+<script>
+$(function(){
+    // 官方玩家群
+    var wjQQ=$.trim($(".kefu-b").find('.four').find("span").html());
+    if(wjQQ==""){
+        $(".kefu-b").find('.four').html("");
+    }
+})
+</script>
+
+</html>
+</block>

@@ -1,0 +1,56 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+.box{
+	height: 800px;
+}
+.container{
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+	padding-top: 70px;
+	background:url(/Public/Media/image/error/bk_big.jpg) 0 0 no-repeat;	
+}
+.go-back{
+	position: absolute;
+	width: 111px;
+	height: 32px;
+	line-height: 32px;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	top: 573px;
+	left: 156px;
+	letter-spacing: 2px;
+	background:url(/Public/Media/image/error/anniu.png) 0 0 no-repeat;	
+	cursor: pointer;
+}
+.go-index{
+	position: absolute;
+	width: 111px;
+	height: 32px;
+	line-height: 32px;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	top: 573px;
+	left: 303px;
+	letter-spacing: 2px;
+	background:url(/Public/Media/image/error/anniu.png) 0 0 no-repeat;	
+	cursor: pointer;
+}
+

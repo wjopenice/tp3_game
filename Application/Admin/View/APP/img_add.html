@@ -1,0 +1,336 @@
+<extend name="Public/base" />
+
+<block name="body">
+<link rel="stylesheet" type="text/css" href="__CSS__/admin_table.css" media="all">
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <div class="main-title cf">
+        <h2>新增 [APP图片]</h2>
+    </div>
+    <!-- 标签页导航 -->
+<div class="tab-wrap">
+    <div class="tab-content zc_for">
+    <!-- 表单 -->
+    <form id="form" action="{:U('img_add')}" method="post" class="form-horizontal" onsubmit="return kong()">
+        <!-- 基础 -->
+        <div id="tab1" class="tab-pane in tab1 tab-look">
+    		<table  border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td class="l">标题：</td>
+                    <td class="r">
+                        <input type="text" class="txt" name="title" id="title" value="" placeholder="请输入图片标题">
+                        <span id="title1" style="color:red;"></span>
+                    </td>
+                  </tr>
+                  
+            <tr>
+              <td class="l">游戏名称：</td>
+              <td class="">
+                <!--   <select id="game_id" name="game_id">
+                 <option value="">请选择游戏</option>
+                 <volist name=":get_game_list()" id="vo">
+                  <option value="{$vo.id}">{$vo.game_name}</option>
+                 </volist>
+                 </select>
+                <span id="game_id1" style="color:red;"></span> -->
+               <div class="chose_game"  id="sel_game" style="float:left;height: 35px;width: 260px;font-size: 14px;margin:0 5px 0 0px;">
+                  <select name="game_id">
+                      <option value="" >请选择游戏</option>
+                      <option value="全部">全部</option>
+                      <volist name=":get_game_list()" id="vo">
+                          <if condition="$vo[id] eq $edit_data[game_id]">
+                             <option value="{$vo.id}" selected>{$vo.game_name}</option>
+                             <else />
+                                <option value="{$vo.id}" >{$vo.game_name}</option>
+                          </if>
+                      </volist>
+                  </select>
+              </div>
+              </td>  
+            </tr>
+             
+
+               
+                   <tr>
+                    <td class="l">生成链接地址：</td>
+                    <td class="r">
+                        <select name="adv_type">
+                            <volist name=":get_adv_type_list()" id="vo">
+                                                    <option value="{$vo.adv_type}" >{$vo.adv_msg}</option>
+                                        </volist>
+                        </select>
+                        <!-- <input type="radio" name="adv_type" value="0" class="inp_radio"/>不跳转
+                        <input type="radio" name="adv_type" value="1" class="inp_radio"/>游戏
+                        <input type="radio" name="adv_type" value="2" class="inp_radio"/>资讯 -->
+                        <input type="text" name="adv_jump_id" placeholder="请输入链接id参数" class="txt">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="l">链接地址：</td>
+                    <td class="r">
+                        <input type="text" class="" name="adv_url" id="adv_url" value="{$edit_data.adv_url}" placeholder="请输入图片的链接地址" style="width:650px;">
+                        <span id="adv_url1" style="color:red;"></span>
+                    </td>
+                  </tr>
+                 
+                  <tr>
+                    <td class="l">游戏排序：</td>
+                    <td class="r">
+                        <input type="text" class="txt" name="sort" id="sort" value="">
+                        <span id="sort1" style="color:red;"></span>
+                    </td>
+                  
+                  </tr>
+                    <td class="l">显示状态：</td>
+                    <td class="r">
+                        <label class="inp_radio">
+                            <input type="radio" class="inp_radio" value="0" name="status">关闭
+                            <input type="radio" class="inp_radio" value="1" name="status" checked="checked">开启
+                        </label>
+                    </td>
+                  <tr>
+                      
+                  </tr>
+                     <tr>
+                    <td class="l">图片位置：</td>
+                    <td class="r">
+                       <select id="location" name="pos_id">    
+                            <option value="">请选择图片位置</option>                          
+                            <volist name=":get_applocation_list()" id="v">
+                            <option value="{$v.pos_id}">{$v.location}</option>
+                            </volist>
+                        </select>
+                       <span id="location1" style="color:red;"></span>
+                        <input type="hidden" name="location" value="" id='loc_pos'>
+                    </td>  
+                  </tr>
+                     <tr>
+                    <td class="l">图片尺寸</td>
+                    <td class="r">
+                        <input type="text" name="size" value=""  class="txt" />
+                    </td>  
+                  </tr>
+                  <tr>
+                      <td class="l">选择上传图片
+                      <!-- ：<span class="infonotice2">(尺寸：210*350px)</span>  -->
+                        </td>
+                      <td class="r" >
+                          {:hook('UploadImages', array('name'=>'image_url','value'=>''))}
+        
+                      </td>
+                  </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+     
+
+                </tbody>
+            </table>
+        </div>
+        <!-- <button type="submit">确定</button> -->
+        <!-- <div class="form-item cf">
+            <button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <a class="btn btn-return" href="javascript:history.back(-1);">返 回</a>
+        </div> -->
+        <div class="form-item">
+            <input  type="submit" name="submit" value="确 定" style="border:none;width:70px;height: 40px;color:#fff; background-color: #2062b0;   margin: 30px 10px;padding: 10px;line-height: 20px;" id='subBtn'>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+    </div>
+</div>
+</block>
+
+<block name="script">
+<link rel="stylesheet" type="text/css" href="__CSS__/combo.select.css" media="all">
+<script src="__JS__/jquery.combo.select.js"></script>
+<style>
+   #sel_game .combo-select {width:260px;border: 1px #fff solid;}
+   #sel_game .text-input {height:35px;}
+   #sel_game .combo-input{padding:0 0 0 12px;}
+  .zc_for input{width: 260px;margin-left:0;}
+  .option-hover span{color: #fff!important; }
+  .option-item span{color:#404040;}  
+  .option-item:hover span{color:#fff;} 
+ 
+</style>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+//alert($("#cover_id_icon").parent().find('.upload-img-box').html());
+//导航高亮
+$(function(){
+ 
+  $("#sel_game").find('select').comboSelect(); 
+  $('#sel_game').find('.combo-select').on('click',function(){
+     var gameBh=$('.option-selected').attr('data-value');
+     $('input[name=adv_jump_id]').val(gameBh);    
+  })
+
+<<<<<<< .mine
+||||||| .r1505
+  $('#sel_game').find('input').keydown(function (e) {
+      if (e.which == 13) {
+        
+        console.log($('.option-hover').eq(1).text()) 
+        $('.combo-dropdown li').each(function(i,el){
+            if($(el).text() == $('.option-hover').eq(1).text()){
+              console.log($(this).attr('data-value'));
+              $('.txt').val($(this).attr('data-value'));
+            }
+        })
+      }
+  });
+=======
+  $('#sel_game').find('input').keydown(function (e) {
+      if (e.which == 13) {
+        
+        console.log($('.option-hover:visible').eq(1).text()) 
+        $('.combo-dropdown li').each(function(i,el){
+            console.log(i);
+            if($(el).text() == $('.option-hover').eq(1).text()){
+              console.log($(this).attr('data-value'));
+              $('.txt').val($(this).attr('data-value'));
+            }
+        })
+      }
+  });
+>>>>>>> .r1513
+  
+  
+
+
+
+  var txt=$('#location').find('option:selected').text();
+    $('#loc_pos').val(txt);
+    $('#location').on('change',function(){
+    var txt=$('#location').find('option:selected').text();
+    $('#loc_pos').val(txt);
+   })
+})
+highlight_subnav('{:U('APP/index')}');
+$('#subBtn').click(function(){
+    $('#form').submit();
+});
+
+$(function(){
+    $("input[name='game_appid']").val("{:generate_game_appid()}");
+    $("#game_type_name").val($("#game_type_id option:selected").text());
+    
+    $('.date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    $('.time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    showTab();
+
+});
+
+
+
+//上传游戏图标
+/* 初始化上传插件 */
+$("#upload_picture_icon").uploadify({
+    "height"          : 30,
+    "swf"             : "__STATIC__/uploadify/uploadify.swf",
+    "fileObjName"     : "download",
+    "buttonText"      : "上传图标",
+    "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+    "width"           : 120,
+    'removeTimeout'   : 1,
+    'fileTypeExts'    : '*.jpg; *.png; *.gif;',
+    "onUploadSuccess" : upload_picture_icon{$field.name},
+    'onFallback' : function() {
+        alert('未检测到兼容版本的Flash.');
+    }
+});
+function upload_picture_icon{$field.name}(file, data){
+    var data = $.parseJSON(data);
+    var src = '';
+    if(data.status){
+        $("#cover_id_icon").val(data.id);
+        src = data.url || '__ROOT__' + data.path;
+        $("#cover_id_icon").parent().find('.upload-img-box').html(
+            '<div class="upload-pre-item"><img src="' + src + '"/></div>'
+        );
+    } else {
+        updateAlert(data.info);
+        setTimeout(function(){
+            $('#top-alert').find('button').click();
+            $(that).removeClass('disabled').prop('disabled',false);
+        },1500);
+    }
+}
+
+
+//上传游戏封面
+/* 初始化上传插件 */
+$("#upload_picture_cover").uploadify({
+    "height"          : 30,
+    "swf"             : "__STATIC__/uploadify/uploadify.swf",
+    "fileObjName"     : "download",
+    "buttonText"      : "上传封面",
+    "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+    "width"           : 120,
+    'removeTimeout'   : 1,
+    'fileTypeExts'    : '*.jpg; *.png; *.gif;',
+    "onUploadSuccess" : upload_picture_cover{$field.name},
+    'onFallback' : function() {
+        alert('未检测到兼容版本的Flash.');
+    }
+});
+function upload_picture_cover{$field.name}(file, data){
+    var data = $.parseJSON(data);
+    var src = '';
+    if(data.status){
+        $("#cover_id_cover").val(data.id);
+        src = data.url || '__ROOT__' + data.path;
+        $("#cover_id_cover").parent().find('.upload-img-box').html(
+            '<div class="upload-pre-item"><img src="' + src + '"/></div>'
+        );
+    } else {
+        updateAlert(data.info);
+        setTimeout(function(){
+            $('#top-alert').find('button').click();
+            $(that).removeClass('disabled').prop('disabled',false);
+        },1500);
+    }
+}
+
+// 20170803修改图片的删除功能
+ $('body').on('click','.btn-close-image_url',function(){
+      event.preventDefault();
+      $(this).parent().remove();
+  });
+ 
+function kong(){
+            if(document.getElementById('title').value==''){
+               /*alert('标题不能为空');*/
+               $('#title1').text('标题不能为空！！！');
+               return false;
+            }
+
+           if(document.getElementById('game_id').value==''){
+               $('#game_id1').text('请选择游戏！！！');
+               return false;
+           }
+            if(document.getElementById('location').value==''){
+               $('#location1').text('请选择图片位置！！！');
+               return false;
+           }
+            if(document.getElementById('sort').value==''){
+               $('#sort1').text('排序不能为空！！！');
+               return false;
+           }
+           
+       }
+</script>
+</block>

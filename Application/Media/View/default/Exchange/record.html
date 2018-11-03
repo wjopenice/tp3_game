@@ -1,0 +1,70 @@
+<extend name="Public/base"/>
+<block name="body" >
+<style type="text/css">
+.exwrap{width:1200px;margin:0 auto;min-height: 400px;}
+.exwrap .location  {width:1200px;height: 120px;overflow: hidden ;margin-bottom: 40px;}
+.exwrap .location  a{display:block;width:1200px;height: 120px;}
+.exwrap .location  a img{width:100%;}
+.exwrap .content{width:1200px;}
+.exwrap .content .extab{width:240px;float:left;}
+.exwrap .content .extab li{width:240px;height:60px;}        
+.exwrap .content .extab li a{display:block;width:240px;height:60px;line-height: 60px;text-align: center;color:#333;}
+.exwrap .content .extab li a span{float:left;width:18px;height:18px;background: url(__IMG__/personalcenter/pcsprits.png) no-repeat ;margin: 22px -62px 0 73px;}
+.exwrap .content .extab .two a:hover{background:#ed6557;color:#fff;}
+.exwrap .content .extab .two a:hover span{background-position: -209px -73px!important;}
+.exwrap .content .extab .current a{display:block;width:240px;height:60px;line-height: 60px;text-align: center;background:#ed6557;color:#fff;}
+.exwrap .content .excon{width:960px;padding:0 20px; float:left;}
+.exwrap .content .excon p{width:960px;padding:20px 20px;height:60px;line-height:20px;font-size:14px; text-align: left;}
+.exwrap .content .excon table{margin-bottom: 20px;width: 100%;}
+.exwrap .content .excon table tr{display: table-row; vertical-align: inherit; border-color: inherit;border-bottom:1px solid #cfd3d2; }
+.exwrap .content .excon table tr td,.exwrap .content .excon table tr th{text-align: center;height: 38px;font-size:12px;}
+</style>
+    
+<div class='exwrap'>
+     <p class='location'>
+        <a><img src="__ROOT__{$adv_duihuan['data']|get_cover='path'}" alt="" /></a>
+    </p>       
+    <div class='content clearfix'>
+        <ul class='extab'>
+            <li class='two'><a href="{:U('index')}"><span style="background-position: -209px -36px"></span>兑换</a></li>
+            <li class='current'><a href="javascript:;"><span style="background-position: -209px -144px"></span>兑换记录</a></li>
+        </ul>
+       
+        <div class='excon' id="member_r" >
+          <p>最近10笔的兑换记录</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>时间</th>
+                  <th>兑换码</th>
+                  <th>商品内容</th>
+                  <th>状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <volist id="v" name="list" >
+                  <tr>
+                    <td>{:set_show_time($v['create_time'])}</td>
+                    <td>{$v.cdkey}</td>
+                    <td>{$v.describe}*{$v.goods_num}</td>
+                    <td>
+                      <if condition="$v.status eq 0" >处理中
+                      <else />已成功
+                      </if>
+                    </td>
+                  </tr>
+                </volist>
+               
+              </tbody>
+            </table>
+        </div>  
+    </div>
+</div>
+
+
+
+
+
+
+</html>
+</block>

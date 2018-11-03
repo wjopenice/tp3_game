@@ -1,0 +1,136 @@
+/*个人中心的基本信息*/
+
+#pc_main_con{
+    width:1200px;margin:0 auto;
+}
+#pc_main_con .messageCenter .title{
+    font:16px/50px "Arial"; color:#F19EC2;
+    border-bottom: 1px solid #F19EC2 ; padding-top:30px;
+}
+#pc_main_con .messageCenter .title img{
+    padding:0 20px ;
+}
+#pc_main_con .messageCenter .content{
+    width:1200px;margin:0 auto;min-height: 400px;
+}
+
+.message_title{
+    padding:40px 0 0 70px;
+}
+.message_title li{
+   float:left;margin-right:40px;
+}
+.message_title .current a{background:#F19EC2;}
+.message_title li a:hover{background:#F19EC2;}
+.message_title li a{
+    display: block;
+    width:160px;height:40px;
+    font-size:12px;
+    text-align: center;
+    line-height:40px;
+    background:#999;
+    color:#fff;
+}
+.showMessage{
+     padding:0 40px 0 60px;
+     width:1100px;
+ }
+
+
+
+.showMessage .chose {
+    width: 1100px;
+    padding:20px 0 14px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.showMessage .chose .label{
+  float:left;  color:#333;font-size: 12px;
+    padding:6px 0 0 10px; cursor:pointer;
+}
+.showMessage .chose .label img{
+    vertical-align: top;padding-top:2px;
+}
+.showMessage .chose .label span{
+    padding-left:5px;
+}
+.showMessage .chose .buttons{
+    float:right;  padding-right:10px;
+}
+.showMessage .chose .buttons .hasMsg {
+    color:#666;
+}
+.showMessage .chose .buttons input{
+	cursor:pointer;
+    width:76px;height:24px;color:#333;background:#fff;
+    text-align: center;line-height: 24px;font-size:12px;
+    border:1px solid #E6E6E6;margin-left: 20px;
+ }
+.showMessage #con_title{
+     width: 1100px;padding:20px 0;letter-spacing: 1px;
+    border-bottom: 1px solid #E6E6E6; color:#333;font-size: 14px;
+    padding-left:32px;
+}
+
+#con_title .biaoti{width:25%; text-align:left;float:left;}
+#con_title .leixing{width:25%;float:left;text-align:center;}
+#con_title .account{width:25%;float:left;text-align:center;}
+#con_title .time{width:25%;text-align: center;float:left;padding-left:64px;}
+
+
+
+
+.showMessage .items li {
+    width: 1100px;letter-spacing: 1px;
+    border-bottom: 1px solid #E6E6E6;
+
+}
+.showMessage .items li .img{
+    width: 12px;height:12px;
+    padding:2px 0 0 10px;
+    float:left;margin: 20px 0;
+}
+.showMessage .items li .img img{
+    width: 12px;vertical-align: top;
+}
+.showMessage .items li a{
+    display: block;
+    width:1068px;margin-left:10px;
+    color:#333;font-size: 12px;
+    float:right;padding:20px 0;
+ }
+.showMessage .items li:hover {background:#f1f1f1;cursor: pointer;}
+.showMessage .items li a .biaoti,
+.showMessage .items li a .leixing,
+.showMessage .items li a .account,
+.showMessage .items li a .time
+{
+    float:left;text-align:center;
+}
+.showMessage .items li a .biaoti{width:25%; text-align:left;}
+.showMessage .items li a .leixing{width:25%;}
+.showMessage .items li a .account{width:25%;}
+.showMessage .items li a .time{width:25%;text-align: right;padding-right:30px;}
+
+
+
+
+#msgPage{
+    width: 1100px;text-align: center;
+    padding-top:40px;font-size:14px;color:#999;
+}
+
+#msgPage a{
+    font-size:14px;color:#999;
+    display: inline-block;padding:5px 10px;
+    background:#fff;margin:0 8px;
+}
+
+#msgPage .current
+{color:#fff;background:#a6937c;}
+
+#msgPage input
+{
+    width:50px;padding:5px;
+    border:1px solid #E6E6E6;margin:0 5px;
+}

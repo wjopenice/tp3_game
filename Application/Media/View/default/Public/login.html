@@ -1,0 +1,273 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/login.css">
+
+    <!--登录部分-->
+
+    <div class="dl">
+        <div style="width:1200px;margin:0 auto;position: relative;">
+        <div class="login">
+            <div class="login-t">
+                <p>平台登录</p>
+            </div>
+            <div class="login-b">
+                <form action="" method="post" id="submit" style="position: relative;">
+                    <div class="ajax_tips" style="font-size:11px;color:#ed6557;position: absolute;top:10px;left:92px;"></div>
+
+                    <div class="login-zh">
+                        <input  class="zh" id="account" type="text" name="account" placeholder="账号"  />
+                        <span class="icon-zh"></span>
+                    </div>
+                    <div class="zh_tips" style="font-size:11px;color:#ed6557;position: absolute;top:78px;left:92px;"></div>
+
+                    <div class="login-mima">
+                        <input  class="mima"  id="password" type="password" name="password" placeholder="密码"  />
+                        <span class="icon-mima"></span>
+                    </div>
+                    <div class="mima_tips" style="font-size:11px;color:#ed6557;position: absolute;top:144px;left:92px;"></div>
+
+                    <div class="login-code" style="display:none;"">
+                        <input  class="code"  id="identify" type="text" name="verify" placeholder="验证码"  />
+                        <span class="icon-code"></span>
+                        <span id="identifying"> <img src="__MODULE__/Public/verify" alt="" class="checkcode"> </span>
+                    </div>
+
+                    <div class="code_tips" style="font-size:11px;color:#ed6557;position: absolute;top:210px;left:92px;display:none"></div>
+
+                    <input type="button" value="登 &nbsp;录" class="denglu" id="login">
+                    <div class="jzmm">
+                        <a href="javascript:;">
+                            <img src="__IMG__/login/jizhumima-2.png" alt="" id="remember">
+                            记住密码</a>
+                    </div>
+                    <div class="wjmm">
+                        <a href="{:U('Index/wjmm')}">忘记密码 | </a>
+                        <a href="{:U('Public/register')}">立即注册</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!--友情链接-->
+    <div class="lianjie clearfix container">
+        <div class="lianjie-t">
+            <a class="one" href="javascript:;"><span class="icon-lianjie"></span> 友情链接 </a>
+        </div>
+        <div class="lianjie-b">
+            <ul>
+                    <volist name=":get_links()" id='data'>
+                    <li><a target="_blank" href="{$data.link_url}" title="{$data.title}" >{$data.title}</a></li>
+                    </volist>
+            </ul>
+        </div>
+    </div>
+    <!--尾巴部分-->
+
+</body>
+
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script src="__JS__/jquery.cookie.js"></script>
+<script>
+$(function(){
+
+    // 记住密码功能
+    var remFlag=false;
+    $(".jzmm").click(function(){
+        remFlag=!remFlag;
+        if(remFlag){
+            $("#remember").attr("src", "__IMG__/login/jizhumima.png");
+        }else{
+            $("#remember").attr("src", "__IMG__/login/jizhumima-2.png");
+        }
+    });
+    if ($.cookie("remFlag") == "true") {
+        $("#remember").attr("src", "__IMG__/login/jizhumima.png");
+        remFlag=true;
+        $.cookie("username")[0].type = 'password';
+        $("#account").val($.cookie("username"));
+        $("#password").val($.cookie("password"));
+    }
+
+    //验证账号
+    $("#account").blur(function(){
+        var $txt= $.trim($(this).val());
+        if($txt==""){
+            $(".zh_tips").html("*请输入账号");
+            return false;
+        };
+        if(!/^[a-zA-Z0-9_]{6,30}$/.test($txt)){
+            $(".zh_tips").html("*用户名格式不正确");
+            return false;
+        }else{
+            $(".zh_tips").html("");
+        }
+    });
+    //验证密码
+    $("#password").blur(function(){
+        var $psd= $.trim($(this).val());
+        if($psd==''){
+            $(".mima_tips").html("*请输入密码");
+            return false;
+        }
+        if(!/^[a-zA-Z0-9_]{6,16}$/.test($psd)){
+            $(".mima_tips").html("*密码格式不正确");
+            return false;
+        }else{
+            $(".mima_tips").html("");
+        }
+    });    
+
+        
+    // 点击图片验证码进行切换       
+    $('.checkcode').on('click',function(){
+         var e = (new Date).getTime();
+        $(this).attr('src', MODULE+'/Public/verify/t/'+e);
+    })   
+
+    // 验证验证码
+    $("#identify").blur(function(){
+        var $code= $.trim($('#identify').val());
+        if($code==''){
+            $(".code_tips").html("*验证码不能为空");
+            return false;
+        }
+        if(!(/^[a-zA-Z0-9]{4}$/.test($code))){
+            $(".code_tips").html("*验证码格式错误");
+            return false;
+        }else{
+            $(".code_tips").html("");
+        }
+    });
+
+    // 显示隐藏的验证码；
+    function showcode(){
+        $('.login-code').show();
+        $('.code_tips').show();        
+    }
+
+    $("#login").click(function() {
+
+        // 记住密码功能
+        if (remFlag) {
+            var str_username = $("#account").val();
+            var str_password = $("#password").val();
+            $("#remember").attr("src", "__IMG__/login/jizhumima.png");
+            $.cookie("remFlag", "true", { expires: 7 }); //存储一个带7天期限的cookie
+            $.cookie("username", str_username, { expires: 7 });
+            $.cookie("password", str_password, { expires: 7 });
+        }
+        else {
+            $("#remember").attr("src", "__IMG__/login/jizhumima-2.png");
+            $.cookie("remFlag", "false", { expire: -1 });
+            $.cookie("username", "", { expires: -1 });
+            $.cookie("password", "", { expires: -1 });
+        }
+
+
+        //账号和密码验证// 账号
+        $(".ajax_tips").html('') ;        
+        var $txt= $.trim($("#account").val());
+        if($txt==""){
+            $(".zh_tips").html("*请输入账号");
+            return false;
+        };
+        if(!/^[a-zA-Z0-9_]{6,30}$/.test($txt)){
+            $(".zh_tips").html("*用户名格式不正确");
+            return false;
+        }else{
+            $(".zh_tips").html("");
+        }
+
+
+        //密码
+        var $psd= $.trim($("#password").val());
+        if($psd==''){
+            $(".mima_tips").html("*请输入密码");
+            return false;
+        }
+        if(!/^[a-zA-Z0-9_]{6,16}$/.test($psd)){
+            $(".mima_tips").html("*密码格式不正确");
+            return false;
+        }else{
+            $(".mima_tips").html("");
+        }
+
+
+        // 验证验证码
+        if($('.login-code').is(':visible')){
+            var $code= $.trim($('#identify').val());
+            if($code==''){
+                $(".code_tips").html("*验证码不能为空");
+                return false;
+            }
+            if(!(/^[a-zA-Z0-9]{4}$/.test($code))){
+                $(".code_tips").html("*验证码格式错误");
+                return false;
+            }else{
+                $(".code_tips").html("");
+            }
+            
+        }
+
+        // return;
+        // ajax提交
+        $.ajax({
+                type: 'POST',
+                async: true,
+                dataType: 'json',
+                url: "{:U('Member/login')}",//提交给后台的地址
+                data: $('#submit').serialize(),
+                beforeSend: function () {
+                    $('#login').val('登录中').attr('disabled', true);
+                },
+                success: function (data) {
+                    switch (parseInt(data['status'])) {
+                        case 0:
+                            $(".ajax_tips").html('*'+data['msg']);
+                            $('#login').val('登录').attr('disabled', false);
+                            break;
+                        case 1:
+                            $(".ajax_tips").html('');
+                            setTimeout(function (){
+                                var reurl = data['reurl'];//跳转的地址
+                                if (reurl) {
+                                    location.href = reurl;//跳转的地址
+                                } else {
+                                    location.reload();
+                                }
+                            }, 1000); break;
+                        case -999:
+                            showcode();
+                            $(".ajax_tips").html('*'+data['msg']);
+                            $('#login').val('登录').attr('disabled', false);
+                            $('.checkcode').click();
+                            break;
+                        default:
+                            $('#login').val('登录').attr('disabled', false);
+                            break;
+                    }
+                    return false;
+                },
+                error: function () {
+                    alert('服务器故障，稍后再试');
+                    $('#login').val('登录').attr('disabled', false);
+                },
+                cache: false
+        });
+        
+    });
+    
+
+    $("#password").keydown(function (e) {
+        if (e.which == 13) {
+            $('#login').trigger("click");
+            //触发搜索按钮的点击事件
+        }
+    });
+
+});
+</script>
+</html>
+</block>

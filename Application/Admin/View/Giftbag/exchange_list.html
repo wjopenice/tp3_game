@@ -1,0 +1,113 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <!-- 标题栏 -->
+    <div class="main-title">
+        <h2>激活码列表</h2>
+    </div>
+	<div class="cf top_nav_list">
+		<div class="fl button_list">
+		<empty name="model.extend">
+			<div class="tools">
+				<a class="btn blue" href="{:U('exchange_add')}">新 增</a>
+<!--                 <button class="btn ajax-post confirm red" target-form="ids" url="{:U('Giftbag/exchange_del?id='.$vo['id'])}">删 除</button> -->
+			</div>
+		</empty>
+		</div>
+		<!-- 高级搜索 -->
+		<div class="search-form fr cf">
+            <!-- {:W('Search/game_list')} -->
+			<div class="sleft">
+				<input type="text" name="{$model['search_key']|default='title'}" class="search-input" value="{:I('title')}" placeholder="请输入激活码名称">
+				<!-- <a class="sch-btn" href="javascript:;" id="search" url="{:U('Giftbag/lists','model='.$model['name'],false)}"><i class="btn-search"></i></a> -->
+			</div>
+            <div class="input-list">
+                <a class="sch-btn" href="javascript:;" id="search" url="{:U('Giftbag/exchange_list','model='.$model['name'],false)}">搜素</a>
+            </div>
+		</div>
+	</div>
+
+
+   <!-- 数据列表 -->
+    <div class="data-table table-striped">
+    <table class="">
+    <thead>
+        <tr>
+        <th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+        <th class="">编号</th>
+        <th class="">激活码名称</th>
+        <th class="">激活码前缀</th>
+        <th class="">剩余数量</th>
+        <th class="">状态</th>
+        <th class="">开始时间</th>
+        <th class="">结束时间</th>
+        <th class="">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <notempty name="_list">
+        <volist name="_list" id="vo">
+        <tr>
+            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}" /></td>
+            <td>{$vo.id} </td>
+            <td>{$vo.title}</td>
+            <td>{$vo.sign}</td>
+            <td>{$vo.novice|arr_count}</td>
+            <td>
+                 <if condition="$vo['status'] eq 0">关闭
+                        <elseif condition="$vo['status'] eq 1"/>开启
+                        <else />未知
+                 </if>
+
+            </td>
+            <td>{$vo.start_time|time_format}</td>
+            <td>{$vo.end_time|time_format}</td>
+
+            <td>
+              <a  href="{:U('Giftbag/exchange_edit?id='.$vo['id'])}" class="">编辑</a> 
+              <a href="{:U('Giftbag/exchange_del?id='.$vo['id'])}" class="confirm ajax-get">删除</a>
+            </td>
+        </tr>
+        </volist>
+        <else/>
+        <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+        </notempty>
+    </tbody>
+    </table>
+    </div>
+
+    <div class="page">
+        {$_page|default=''}
+    </div>
+</block>
+
+<block name="script">
+<script type="text/javascript">
+//导航高亮
+highlight_subnav('{:U('Giftbag/exchange_list')}');
+$(function(){
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+
+    //回车自动提交
+    $('.search-form').find('input').keyup(function(event){
+        if(event.keyCode===13){
+            $("#search").click();
+        }
+    });
+
+  
+})
+</script>
+</block>

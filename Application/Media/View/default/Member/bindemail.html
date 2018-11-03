@@ -1,0 +1,234 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <link rel="stylesheet" href="__CSS__/centerperson.css">
+    <style>      
+        #pc_main_con{
+            width:1200px;margin:0 auto;}
+        #pc_main_con .safeCenter .title{
+            font:16px/50px "Arial"; color:#8C97CB;
+            border-bottom: 1px solid #8C97CB ; padding-top:30px;
+        }
+        #pc_main_con .safeCenter .title span{float: left;width:21px;height: 21px;margin:13px 20px 0 20px;background-image: url(__IMG__/personalcenter/pcsprits.png) ; background-repeat:no-repeat ;}
+        #pc_main_con .safeCenter .content .con_l{
+            width:240px;padding-top:40px;float:left;
+        }
+        #pc_main_con .safeCenter .content .con_l li a{
+            display: block;line-height:60px;
+            font-size:14px;color:#333;
+        }
+        #pc_main_con .safeCenter .content .con_l li a span{
+            float: left;width:21px;height: 21px;margin:20px 12px 0 73px;
+            background-image:  url(__IMG__/personalcenter/pcsprits.png) ; 
+            background-repeat:no-repeat ;
+        }
+        #pc_main_con .safeCenter .content .con_l .current a{
+            color:#fff;background:#8C97CB;
+        }
+        #pc_main_con .safeCenter .content .con_r{
+            float:left;
+            width: 960px;min-height: 400px;
+            padding-top:40px;
+        }
+        #pc_main_con .safeCenter .content .con_r .reset{
+            padding-left: 200px;
+        }
+        #pc_main_con .safeCenter .content .con_r .current{
+            padding-left: 200px;
+        }
+        #pc_main_con .safeCenter .content .con_r .first{
+            padding-left: 70px;
+        }
+        #pc_main_con .safeCenter .content .con_r .completeerror{
+            margin-left: 285px;
+        }
+        #pc_main_con .safeCenter .content .con_r .completesuccess {
+            margin-left: 285px;
+        }
+        #pc_main_con .safeCenter .content .con_r .wancheng {
+            margin: 75px auto;
+            text-align: center;
+
+        }
+        #pc_main_con .safeCenter .content .con_r .confirm{
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        #pc_main_con .safeCenter .content .con_r .confirm a{
+            color: #8C97CB;
+        }
+        #pc_main_con .safeCenter .content .con_r .confirm2{
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        #pc_main_con .safeCenter .content .con_r .wancheng  p{
+            margin-top: 30px;
+        }
+        #pc_main_con .safeCenter .content .con_r .messages{
+            margin-top: 80px;
+            margin-left: 250px;
+        }
+        #pc_main_con .safeCenter .content .con_r .messages span{
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #8C97CB;
+            margin-right: 10px;
+            display: inline-block;
+            float: left;
+            margin-top: 8px;
+        }
+        #pc_main_con .safeCenter .content .con_r .messages p{
+            font-size: 12px;
+            color: #b2b2b2;
+
+        }
+        #pc_main_con .safeCenter .content .con_r .messages a{
+            font-size: 12px;
+            color: #8C97CB;
+        }
+        #pc_main_con .safeCenter .content .con_r .messages #resend{
+            font-size: 12px;
+            color: #8C97CB;
+            background:#fff;
+            cursor: pointer;
+        }
+        
+        #pc_main_con .safeCenter .content .con_r #nobind3 .completesuccess {
+            margin-left: 340px;
+            margin-top: 16px;
+        }
+        #nobind2{
+            margin-top: 20px;
+        }
+     #nobind2 #completeerror{
+           display: inline-block;
+        }
+        
+    </style>
+
+ <div id="pc_main_con" >        
+        <div class="safeCenter" >
+            <div class="title">
+                <span style=" background-position: -42px 0;"></span>安全中心
+            </div>
+            <div class="content clearfix">
+                <div class="con_l" id="safeCenter_l">
+
+                     <ul>
+                        <li ><a href="{:U('Member/pcsafecenter')}"> <span style="background-position: 0 -34px;"></span>密码修改</a></li>
+
+                        <if condition="$user['phone'] eq ''">
+                            <li ><a href="{:U('Member/bindphone')}"><span style="background-position: 0 -68px;"></span>绑定手机</a></li>
+                        <else />
+                        <li ><a href="{:U('Member/nobindphone')}"><span style="background-position: 0 -68px;"></span>绑定手机</a></li>
+                        </if>
+
+                       <if condition="$user['email'] eq ''">
+                          <li class="current"><a href="{:U('Member/bindemail')}"> <span style="background-position:-42px -109px;margin-top: 23px;"></span>绑定邮箱</a></li>
+                       <else />
+                          <li class="current"><a href="{:U('Member/nobindemail')}"><span style="background-position: -42px -109px;margin-top: 23px;"></span>绑定邮箱</a></li>
+                       </if>
+
+                       <if condition="$user['idcard'] eq ''">
+                          <li ><a href="{:U('Member/noidcard')}"><span style="background-position:  0 -141px;"></span>实名认证</a></li>
+                       <else />
+                          <li ><a href="{:U('Member/idcard')}"><span style="background-position:  0 -141px;"></span>实名认证</a></li>
+                       </if>
+                    </ul>
+
+                </div>
+                <div class="con_r" id="safeCenter_r">                   
+                    <switch name="m">
+                    <case value="1">
+                    <div id="nobind1" style="display: block ">
+                        <p class="current" style="margin-top: 45px">
+                            当前账号：
+                            <span class="account" id="uname"> {$user.account}</span>
+                        </p>
+                        <div class="reset">
+                            <span class="h" style="text-indent: 2em">密码：</span>
+                            <input type="password" class="shuru" id="telpassword"/>
+                            <span id="teltips" class="teltipss">
+                              <i class="star">* </i>
+                              <span class="zi"> 请输入密码</span>
+                            </span>
+                        </div>
+                        <input type="submit" value="完&nbsp;成" class="completeerror" id="achieve">
+                    </div>
+                    </case>                   
+                    <case value="2">
+                    <div  id="nobind2" >
+                        <div class="reset">
+                            <span class="h" style="text-indent: 2em">邮箱：</span> 
+                            <input type="text"  id="emailcenter"/>
+                            <span id="centeremailtips" class="teltips">
+                                <i class="star">* </i>
+                                <span class="zi"> 请输入您的常用邮箱</span>
+                            </span>
+                        </div>
+                    
+                        <input type="button" value="发送邮箱链接" class="completeerror" id="achieve2"/>
+                    </div>
+                   
+                    <div id="nobind3" style="display: none;">
+                        <div >
+                            <p class="confirm">验证链接已发送至邮箱<a href="javascript:;"  class="mail" id="mails"></a>,请在24小时内查收验证</p>
+                            <p class="confirm2">登录邮箱并按邮箱提示操作即可</p>
+                        </div>
+                        <a  class="completesuccess " id="achieve3">点击登录邮箱</a>
+
+                        <div class="messages">
+                            <span></span><p>请查看您邮箱的垃圾邮件或广告箱，玩转平台验证邮件可能被误放入</p>
+                            <span></span><p>如果超过2分钟还没收到玩转平台验证邮件，可 
+                            <input type="button" value="再次发送邮箱" id="resend" >
+                            </p>
+
+                            <span></span><p>旧邮箱丢失请 <a href="{:U('Service/kefu')}">联系客服</a></p>
+                        </div>
+                    </div>
+
+                    <div class="noreceive" id="resendsuc" style="display: none;z-index: 999;">
+    <div class="win-box" >     
+        <p class="ni-c" style="width:464px;height:30px;font-size:20px;line-height:30px;text-align: center;margin:60px 0px;color:#8C97CB;">
+           再次发送邮箱成功
+        </p>   
+        <p  style="width:464px;height:40px;text-align: center;">
+            <input type="button" id="sureBtn" value="确&nbsp;&nbsp;定" style="width: 100px;height:40px;background:#8C97CB;color:#fff;cursor: pointer;font-size:20px;" />
+        </p>    
+    </div>
+</div>
+                    </case>
+                    </switch>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+
+</body>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script src="__JS__/centerbindemail.js"></script>
+<script>
+    var zqimg="__IMG__/wjmm/quanbuzhengquan.png";
+    var verifypwdurl="{:U('Member/verifypwd')}";
+    var emailbangcheck="{:U('Member/emailbangcheck')}";
+    var tosendemailurl="{:U('Member/tosendemail')}"; 
+    var account = "{$Think.get.account}"; 
+</script>
+
+
+
+</html>
+</block>

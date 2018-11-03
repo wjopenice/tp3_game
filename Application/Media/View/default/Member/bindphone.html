@@ -1,0 +1,167 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <link rel="stylesheet" href="__CSS__/centerperson.css">
+    <style>      
+        #pc_main_con{
+            width:1200px;margin:0 auto;
+        }
+        #pc_main_con .safeCenter .title{
+            font:16px/50px "Arial"; color:#8C97CB;
+            border-bottom: 1px solid #8C97CB ; padding-top:30px;
+        }
+        #pc_main_con .safeCenter .title span{float: left;width:21px;height: 21px;margin:13px 20px 0 20px;background-image: url(__IMG__/personalcenter/pcsprits.png) ; background-repeat:no-repeat ;}
+        #pc_main_con .safeCenter .content .con_l{
+            width:240px;padding-top:40px;float:left;
+        }
+        #pc_main_con .safeCenter .content .con_l li a{
+            display: block;line-height:60px;
+            font-size:14px;color:#333;
+        }
+        #pc_main_con .safeCenter .content .con_l li a span{
+            float: left;width:21px;height: 21px;margin:20px 12px 0 73px;
+            background-image:  url(__IMG__/personalcenter/pcsprits.png) ; 
+            background-repeat:no-repeat ;
+        }
+        #pc_main_con .safeCenter .content .con_l .current a{
+            color:#fff;background:#8C97CB;
+        }
+        #pc_main_con .safeCenter .content .con_r{
+            float:left;min-height: 400px;
+            width: 960px;
+            padding-top:40px;
+        }
+        #pc_main_con .safeCenter .content .con_r .reset{
+            padding-left: 200px;
+        }
+        #pc_main_con .safeCenter .content .con_r .current{
+            padding-left: 200px;
+        }
+        #pc_main_con .safeCenter .content .con_r .first{
+            padding-left: 70px;
+        }
+        #pc_main_con .safeCenter .content .con_r .completeerror{
+            margin-left: 285px;
+        }
+        #pc_main_con .safeCenter .content .con_r .completesuccess{
+            margin-left: 285px;
+        }
+
+        #pc_main_con .safeCenter .content .con_r .iphone{
+            padding-left: 200px;
+        }
+
+        #pc_main_con .safeCenter .content .con_r .wancheng {
+            margin: 75px auto;
+            text-align: center;
+
+        }
+        #pc_main_con .safeCenter .content .con_r .wancheng  p{
+            margin-top: 30px;
+        }
+
+        #ident{
+            width:90px;line-height:30px;text-align: center;padding-left:0!important;
+        }
+
+    </style>
+
+
+    <div id="pc_main_con" >
+      
+        <div class="safeCenter" >
+            <div class="title">
+                <span style=" background-position: -42px 0;"></span>安全中心
+            </div>
+            <div class="content clearfix">
+                <div class="con_l" id="safeCenter_l">
+                      <ul>
+                        <li><a href="{:U('Member/pcsafecenter')}"> <span style="background-position: 0 -34px;"></span>密码修改</a></li>
+
+                        <if condition="$user['phone'] eq ''">
+                            <li class="current"><a href="{:U('Member/bindphone')}"> <span style="background-position: -45px -68px;"></span>绑定手机</a></li>
+                        <else />
+                        <li class="current"><a href="{:U('Member/nobindphone')}"> <span style="background-position: -45px -68px"></span>绑定手机</a></li>
+                        </if>
+
+                       <if condition="$user['email'] eq ''">
+                          <li ><a href="{:U('Member/bindemail')}"> <span style="background-position: 0 -109px;margin-top:23px;"></span>绑定邮箱</a></li>
+                       <else />
+                          <li ><a href="{:U('Member/nobindemail')}"> <span style="background-position: 0 -109px;margin-top:23px;"></span>绑定邮箱</a></li>
+                       </if>
+
+                       <if condition="$user['idcard'] eq ''">
+                          <li ><a href="{:U('Member/noidcard')}"> <span style="background-position: 0 -141px;"></span>实名认证</a></li>
+                       <else />
+                          <li ><a href="{:U('Member/idcard')}"> <span style="background-position: 0 -141px"></span>实名认证</a></li>
+                       </if>
+                    </ul>
+                </div>
+                <div class="con_r" id="safeCenter_r">
+                <!--绑定手机第一步-->
+                    <switch name="m">
+                    <case value="1">
+                        <div class="iphone1"  id="nobind1">
+                            <!--绑定手机-->
+                            <img src="__IMG__/personalcenter/safecenter/bind_phone1.png" alt="" class="first">
+                            <p class="current" style="margin-top: 45px">当前账号：<span class="account" id="uname">{$user['account']}</span></p>
+                            <div class="reset">
+                                <span class="h" style="text-indent: 2em">密码：</span> 
+                                    <input type="password" class="shuru" id="telpassword"> 
+                                    <span id="teltips" class="teltipss"> <i class="star">* </i>
+                                    <span class="zi"> 请输入密码</span>
+                                </span>
+                            </div>
+                            <input type="submit" value="完&nbsp;成" class="completeerror" id="achieve">
+                        </div>
+                    </case>
+                    
+                    <case value="2">
+                    <!-- <script>alert(123)</script> -->
+                     <!--绑定手机第二步-->
+                    <div class="iphone2"  id="nobind2">
+                        <!--绑定手机-->
+                    <img src="__IMG__/personalcenter/safecenter/bind_phone2.png" alt="" class="first">
+                    <p class="current" style="margin-top: 45px">当前账号：<span class="account">{$user['account']}</span></p>
+                    <div class="iphone clearfix"><span class="h">&nbsp;&nbsp;&nbsp;手机号：</span> <input type="text"  id="telnumber">
+                    <input type="button" class="send" id="ident" value="发送验证码"/> 
+                    <span id="numtips"><i class="star">* </i><span class="zi">请输入您的手机号</span></span></div>
+                    <div class="reset"><span class="h">&nbsp;&nbsp;&nbsp;验证码：</span> <input type="text"  id="code"><span id="codetips"><i class="star">* </i><span class="zi"> 请输入您的验证码</span></span></div>
+                    <input type="submit" value="完&nbsp;成" class="completeerror" id="achieve2">
+                    </div>
+                    </case>
+
+                    <!--绑定手机第三步-->
+                    <case value="3">
+                    <div class="iphone3"  id="nobind3">
+                          <img src="__IMG__/personalcenter/safecenter/bind_phone3.png" alt="" class="first">
+                          <div class="wancheng">
+                              <img src="__IMG__/personalcenter/safecenter/wancheng.png" alt="">
+                              <p>绑定手机号成功!</p>
+                          </div>
+                    </div>
+                    </case>
+
+                </switch>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script src="__JS__/centerbindphone.js"></script>
+<script>
+    var zqimg="__IMG__/wjmm/quanbuzhengquan.png";
+    var account="{$user['account']}";
+    var verifypwdurl="{:U('Member/verifypwd')}";
+    var phonebangcheck="{:U('Member/phonebangcheck')}";
+    var sendvcodeurl="{:U('Member/sendvcode')}"; 
+    var phoneurl= "{:U('Member/phone')}";
+    var nobindphoneurl="{:U('Member/nobindphone')}"; 
+    var account = "{$Think.get.account}";  
+</script>
+</html>
+</block>

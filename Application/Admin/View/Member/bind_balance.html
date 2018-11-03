@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta charset="UTF-8">
+    <title>绑定平台币余额|玩转平台管理平台</title>
+    <link href="http://admin.vlcms.com/Public/icon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="__CSS__/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="__CSS__/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="__CSS__/module.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="__CSS__/blue_color.css" media="all">
+        <script type="text/javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
+
+</head>
+    <style>
+body{ padding: 0px; }
+    </style>
+<body>  
+    <div id="main" class="main" style="min-height: 342px;">       
+    <!-- 标题栏 -->
+    <div class="main-title">
+        <h2>[绑定平台币余额] 列表</h2>
+    </div>
+    <div class="cf">
+    
+    </div>
+
+    <!-- 数据列表 -->
+    <div class="data-table">
+        <div class="data-table table-striped">
+            <table>
+                <!-- 表头 -->
+                <thead>
+                    <tr>
+                                                
+                        <th style="text-align:center">用户</th>
+                        <th style="text-align:center">游戏名称</th>
+                        <th style="text-align:center">游戏ID</th>
+                        <th style="text-align:center">绑定平台币余额</th>
+                        <th style="text-align:center">操作</th>
+                    </tr>
+                </thead>
+
+                <!-- 列表 -->
+                <tbody>
+                   <volist name="list_data" id="data">
+                        <tr>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">{$data.user_account}</td>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">{$data.game_name}</td>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">{$data.game_id}</td>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">{$data.bind_balance}元</td>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center"><a href="javascript:void(0);" onclick="che({$data['user_id']},{$data['game_id']},{$data['bind_balance']})">修改</a></td>
+
+                        </tr>
+                    </volist>
+                          </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="page">
+    {$_page}
+            </div>
+    ﻿         
+        </div>
+    <script src="__STATIC__/layer/layer.js" type="text/javascript"></script>
+    <script src="__STATIC__/layer/extend/layer.ext.js" type="text/javascript"></script>
+    <script>
+
+function che(id,game_id,prev_money) {
+  layer.prompt({
+    title: '请设置账户余额，并确认',
+    formType: 0 //prompt风格，支持0-2
+  }, function(pass){
+    layer.msg('确认操作？', {
+    time: 0 //不自动关闭
+    ,btn: ['确定', '取消']
+    ,yes: function(index){
+     if(isNaN(pass)){
+      layer.alert('金额不正确', {icon: 5});
+      }else{
+      var che="{:U('bind_recall')}";
+      $.ajax({
+        url: che,
+        type: 'POST',
+        dataType: 'json',
+        data: {id:id,game_id:game_id,bind_balance:pass,prev_money:prev_money},
+        success:function(data){
+         if(data.status==1){
+          layer.alert('修改成功', {icon: 6});
+         location.reload();
+
+        }else{
+          layer.alert('修改失败', {icon: 6});
+         location.reload();
+        }
+        },
+        error:function(){
+        }
+      })
+      }
+  }
+});
+  });
+}
+
+    </script>

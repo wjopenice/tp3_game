@@ -1,0 +1,90 @@
+<extend name="Public/base"/>
+<!-- 20170801新增页面 -->
+<block name="body">
+    <div class="main-title">
+        <h2>新增APP版本</h2>
+    </div>
+    <form action="{:U('version_add')}" method="post" class="form-horizontal tab-list" id='form01'>
+        <div class="form-item">
+            <label class="item-label">服务器端版本号<span class="check-tips">（升级至此版本）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="serverversion" value="" placeholder="">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">app版本名<span class="check-tips">（说明）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="appname" value="">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">服务器标识</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="serverflag" value="">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">lastForce<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="lastforce" value="">
+            </div>
+        </div>
+        <div class="form-item">
+             <label class="item-label">更新说明<span class="check-tips">（说明）</span></label>
+            <div class="controls">
+               <label class="textarea input-large">
+                    <textarea name="upgradeinfo"></textarea>
+                </label>                
+            </div>
+        </div>
+        <div class="form-item">
+             <label class="item-label">更新状态<span class="check-tips">（说明）</span></label>
+            <select name="is_must">
+                    <option value="1" checked>强制更新</option>
+                    <option value="0">不强制更新</option>
+            </select>
+        </div>
+        <div class="form-item">
+         <!--    <button class="btn submit-btn" id="submit" type="submit" target-form="form-horizontal">确 定</button> -->
+         <input type="submit" name="submit" value="确 定" style="border:none;width:70px;height: 40px;color:#fff; background-color: #2062b0;   margin: 30px 10px;padding: 10px;line-height: 20px; cursor: pointer;" id='sub-btn' >
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('APP/version_add')}');
+       
+        $(function(){
+            // function kong(){
+            //     var serverVersion=$.trim($('input[name=serverVersion]').val());
+            //     if(serverVersion==''){
+            //         alert('请输入服务器端版本号')
+            //        return false;
+            //     } 
+            //     var reg=/^\d+$/g;
+            //     if(!reg.test(serverVersion)){
+            //         alert('请输入正确的服务器端版本号')
+            //         return false;
+            //     } 
+            // }
+            $('#sub-btn').click(function(){
+                var serverVersion=$.trim($('input[name=serverversion]').val());
+                if(serverVersion==''){
+                    alert('请输入服务器端版本号')
+                   return false;
+                } 
+                var reg=/^\d+$/g;
+                if(!reg.test(serverVersion)){
+                    alert('请输入正确的服务器端版本号')
+                    return false;
+                } 
+               $('#form01').submit();
+            })
+        })
+
+       
+    </script>
+</block>

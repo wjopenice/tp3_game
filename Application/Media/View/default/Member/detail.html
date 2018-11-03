@@ -1,0 +1,104 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <style>
+        #pc_main_con{
+            width:1200px;margin:0 auto;
+        }
+        #pc_main_con .messageCenter .title{
+            font:16px/50px "Arial"; color:#F19EC2;
+            border-bottom: 1px solid #F19EC2 ; padding-top:30px;
+        }
+        #pc_main_con .messageCenter .title span{float: left;width:21px;height: 21px;margin:15px 20px 0 20px;background-image: url(__IMG__/personalcenter/pcsprits.png) ; background-repeat:no-repeat ;
+        }
+        #pc_main_con .messageCenter .content{
+            width:1200px;margin:0 auto;
+        }
+        #pc_main_con .messageCenter .content .title_panel,
+        #pc_main_con .messageCenter .content .con_panel,
+        #pc_main_con .messageCenter .content .check_page
+        {
+            padding:0 100px;
+        }
+
+        #pc_main_con .messageCenter .content .title_panel h2{
+            padding:40px 0 30px 0;
+            text-align:center;
+            font-size:26px;color:#343434;
+        }
+        #pc_main_con .messageCenter .content .title_panel h5{
+            padding-bottom:54px;
+            text-align:center;
+            font-size:12px;color:#999;
+        }
+        #pc_main_con .messageCenter .content .con_panel p{
+            font-size:16px;color:#676767;text-indent: 2em;line-height:28px;
+        }
+        #pc_main_con .messageCenter .content .check_page{
+            padding-top:40px;
+        }
+        #pc_main_con .messageCenter .content .check_page a{
+            font-size:12px;color:#999;margin-left:34px;
+        }
+    </style>
+    <div id="pc_main_con" >
+        <div class="messageCenter" >
+            <div class="title">
+                <span style=" background-position: -82px 0;"></span>信息中心
+            </div>
+            <div class="content">
+                <div class="title_panel">
+                    <h2>{$data.title}</h2>
+                    <h5>
+                        作者：<span>{$data.send_account}</span>
+                        类型: <span>{$data.type}</span>
+                        时间：<span>{$data.create_time|date='Y-m-d H:i:s',###} </span>
+                    </h5>
+                </div>
+                <div class="con_panel">
+                    {$data.send_content}
+                </div>
+
+                 <div class="check_page">
+                    <if condition="$data['preid'] eq '' and $data['nextid'] neq ''">
+                    <a href="{:U('Member/detail',array('mid'=>$data['nextid'],'type'=>$data['type']))}" class="next">下一页</a>
+                    <a href="{:U('Member/pcmessage')}" >返回信息中心</a>
+
+                    <elseif condition="$data['nextid'] eq '' and $data['preid'] neq ''"/>
+                    <a href="{:U('Member/detail',array('mid'=>$data['preid'],'type'=>$data['type']))}" class="prev">上一页</a>
+                    <a href="{:U('Member/pcmessage')}" >返回信息中心</a>
+
+                    <elseif condition="$data['nextid'] eq '' and $data['preid'] eq ''"/>
+                    <a href="{:U('Member/pcmessage')}" >返回信息中心</a>
+
+                    <else />
+                    
+                    <a href="{:U('Member/detail',array('mid'=>$data['preid'],'type'=>$data['type']))}" class="prev">上一页</a>
+                    <a href="{:U('Member/detail',array('mid'=>$data['nextid'],'type'=>$data['type']))}" class="next">下一页</a>
+                    <a href="{:U('Member/pcmessage')}" >返回信息中心</a>
+                    </if>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--小火箭-->
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+
+
+
+</body>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script>
+    var imgArr=[
+        "__IMG__/personalcenter/msgcenter/quanxuankuang_1.png",
+        "__IMG__/personalcenter/msgcenter/quanxuan_2.png"
+    ];
+</script>
+</html>
+</block>

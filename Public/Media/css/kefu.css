@@ -1,0 +1,175 @@
+.list .bgc {
+  color: #ed6557;
+}
+.list .menu-7 {
+  background: url("../image/header/kefu_selected.png");
+  display: block;
+  width: 10px;
+  height: 14px;
+}
+.kefu {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.kefu ul {
+  width: 1200px;
+}
+.kefu ul li {
+  float: left;
+  width: 280px;
+  margin-right: 20px;
+}
+.kefu ul li .one {
+  display: block;
+  width: 280px;
+  height: 240px;
+  background: url(../image/kefu/mima.png);
+  outline: 1px solid #ED6557;
+}
+.kefu ul li .one:hover {
+  background: url(../image/kefu/mima_selected.png);
+  outline: 1px solid #ED6557;
+}
+.kefu ul li .two {
+  display: block;
+  width: 280px;
+  height: 240px;
+  background: url(../image/kefu/chongzhi.png);
+  outline: 1px solid #f6c15b;
+}
+.kefu ul li .two:hover {
+  background: url(../image/kefu/chongzhi_selected.png);
+  outline: 1px solid #f6c15b;
+}
+.kefu ul li .three {
+  display: block;
+  width: 280px;
+  height: 240px;
+  background: url(../image/kefu/zhanghao.png);
+  outline: 1px solid #8C97CB;
+}
+.kefu ul li .three:hover {
+  background: url(../image/kefu/zhanghu_selected.png);
+  outline: 1px solid #8C97CB;
+}
+.kefu ul li .four {
+  display: block;
+  width: 280px;
+  height: 240px;
+  background: url(../image/kefu/libao.png);
+  outline: 1px solid #F19EC2;
+}
+.kefu ul li .four:hover {
+  background: url(../image/kefu/libao_selected.png);
+  outline: 1px solid #F19EC2;
+}
+.section .section-l {
+  width: 800px;
+  float: left;
+}
+.section .section-l .section-l-t {
+  height: 40px;
+  border-bottom: 1px solid #ED6557;
+}
+.section .section-l .section-l-t a {
+  display: block;
+  font-size: 20px;
+  color: #ED6557;
+}
+.section .section-l .section-l-t .icon-fenlei {
+  margin-right: 10px;
+  display: inline-block;
+  background: url("../image/newsprits.png") no-repeat -60px -8px;
+  width: 14px;
+  height: 13px;
+}
+.section .section-l .section-l-b ul {
+  width: 800px;
+  margin-top: 16px;
+}
+.section .section-l .section-l-b ul li {
+  width: 800px;
+  height: 38px;line-height: 38px;
+  cursor: pointer;
+}
+.section .section-l .section-l-b ul li a {
+  font-size: 14px;
+  display: block;
+}
+.section .section-l .section-l-b ul li:hover a {
+  color: #ed6557;
+  margin-left: 15px;
+}
+.section .section-r {
+  width: 375px;
+  float: right;
+}
+.section .section-r .kefu{
+  margin-top:0;
+}
+.section .section-r .kefu .kefu-t {
+  height: 40px ;
+  font-size: 18px;
+  border-bottom: 1px solid #8C97CB;
+}
+.section .section-r .kefu .kefu-t .one {
+  font-size: 20px;
+  float: left;
+  color: #8C97CB;
+}
+.section .section-r .kefu .kefu-t .one > span {
+  width: 15px;
+  height: 17px;
+  display: inline-block;
+  background: url("../image/newsprits.png") no-repeat -10px -36px;
+  margin-right: 10px;
+}
+.section .section-r .kefu .kefu-b {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #323232;
+}
+/*.section .section-r .kefu .kefu-b p {margin:10px;}
+.section .section-r .kefu .kefu-b p span{display:inline-block;text-align: left;}
+.section .section-r .kefu .kefu-b p .title{width: 100px;}
+.section .section-r .kefu .kefu-b p .con{width: 200px;}
+
+*/
+.section .section-r .kefu .kefu-b p{
+  display: inline-block;
+}
+.section .section-r .kefu .kefu-b .one {
+  margin-top: 10px;
+}
+.section .section-r .kefu .kefu-b .two {
+  margin: 15px 0 15px 0;
+}
+/*.section .section-r .kefu .kefu-b .two .hao {
+  color: #8C97CB;
+  font-size: 18px;
+}*/
+.section .section-r .kefu .kefu-b .three {
+  margin-bottom: 5px;
+  /*margin-top: 10px;*/
+}
+.section .section-r .kefu .kefu-b .four {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.section .section-r .kefu .kefu-b .erweima {
+  margin: 0 0 0 -7px;
+}
+.section .section-r .kefu .kefu-b .erweima img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+  float: left;
+}
+.section .section-r .kefu .kefu-b .erweima a {
+  float: left;
+  display: block;
+  font-size: 14px;
+  color: #323232;
+  margin-top: 40px;
+}

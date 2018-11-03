@@ -1,0 +1,389 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <!-- 标题栏 -->
+    <div class="main-title">
+        <h2>[CPA登陆统计] 列表</h2>
+    </div>
+
+    <div class="cf top_nav_list">
+        <div class="fl button_list">
+        </div>
+        <!-- 高级搜索 -->
+        <div class="search-form fr cf">
+            {:W('Search/game_list')}
+            {:W('Search/promote_list')}
+            <div class="i_list" id="" >
+            <div class="input-list">
+                <label>登陆时间：</label>
+                <input type="text" id="time-start" name="time-start" class="text input-2x" value="{:I('time_start')}" placeholder="起始时间" /> 
+                -
+                <div class="input-append date" id="datetimepicker"  style="display:inline-block">
+                <input type="text" id="time-end" name="time-end" class="text input-2x" value="{:I('time_end')}" placeholder="结束时间" />
+                <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+            </div>
+
+              
+                      
+            </div>
+
+             <div class="chose_game"  id="sel_game" style="float:left;width:200px;height:28px;line-height:28px;margin:0 5px 0 -5px;">
+                        <select>
+                            <option value="-2" >请选择游戏</option>
+                            <if condition="I('get.game_id') eq -3"> 
+                            <option value="-3" selected="selected">全部</option>
+                            <else />
+                            <option value="-3">全部</option>
+                            </if>
+                            <if condition="I('get.game_id') heq '0'"> 
+                            <option value="0" selected="selected">官网</option>
+                            <else />
+                            <option value="0" >官网</option>
+                            </if>
+                            
+                            <volist name=':get_game_list()' id='vo'>
+
+                             <if condition="I('get.game_id') eq $vo['id']">
+                            <option value="{$vo.id}" selected="selected">{$vo.game_name}</option>
+                            <else />
+                             <option value="{$vo.id}" >{$vo.game_name}</option>
+                             </if>
+
+                           
+                            </volist>
+                        </select>
+                </div>  
+
+                 <div class="chose_qudao"  id="sel_qudao" style="float:left;margin:0 5px;width:200px;height:28px;line-height:28px;">
+                        <select>
+                            <option value="-2" >请选择所属渠道</option>
+                            <if condition="I('get.promote_id') eq -3"> 
+                            <option value="-3" selected="selected">全部</option>
+                            <else />
+                            <option value="-3">全部</option>
+                            </if>
+                            
+                            <if condition="I('get.promote_id') heq '0'"> 
+                            <option value="0" selected="selected">自然注册</option>
+                            <else />
+                            <option value="0" >自然注册</option>
+                            </if>
+                            <volist name=':get_promote_all()' id='vo'>
+                            <if condition="I('get.promote_id') eq $vo['id']">
+                            <option value="{$vo.id}" selected="selected">{$vo.account}</option>
+                            <else />
+                             <option value="{$vo.id}" >{$vo.account}</option>
+                             </if>
+                            </volist>
+                        </select>
+                </div>   
+           
+            <div class="input-list">
+                <a class="sch-btn" href="javascript:;" id="search" url="{:U('Stat/cpa_login','model='.$model['name'],false)}">搜索</a>
+            </div>
+            <div class="input-list">
+                <a class="sch-btn" href="
+                {:U('Export/expUser',
+                 array(
+                'id'=>27,
+                'time_start'=>I('get.time_start'),
+                'time_end'=>I('get.time_end'),
+                'game_id'=>I('get.game_id'),
+                'promote_id'=>I('get.promote_id'),
+                ))}">导出</a>
+                <span class="totalvalue"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 数据列表 -->
+ <div class="data-table">
+        <div class="data-table table-striped">
+            <table>
+                <!-- 表头 -->
+                <thead>
+                    <tr>
+                        <th style="text-align:center">游戏名称</th>
+                        
+                        <th style="text-align:center">渠道账号</th>
+                        <th style="text-align:center">登陆数</th>
+                        
+                    </tr>
+                </thead>
+                <!-- 列表 -->
+                <tbody>
+                  
+                    <volist name="list_data" id="data">
+                        <tr>
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">{$data['game_name']|default='官网'}</td>
+                           
+                            <td style="border-right:1px solid #DDDDDD;text-align:center">
+                              {$data.promote_account}
+                            </td>
+                             <td style="border-right:1px solid #DDDDDD;text-align:center">{$data.num}</td>
+                           
+                        </tr>
+                    </volist> 
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="page">
+        {$_page|default=''}
+    </div>
+</block>
+
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<link href="__CSS__/combo.select.css" rel="stylesheet" type="text/css">
+<style>
+    #sel_qudao .combo-select,#sel_game .combo-select{width:200px;border: 1px #fff solid;}
+    #sel_qudao .text-input,#sel_game .text-input{height:28px;}
+</style>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script src="__STATIC__/laypage/laypage.js"></script>
+<script src="__JS__/jquery.combo.select.js"></script>
+<script>
+    $(function(){
+        $("#sel_qudao").find("select").comboSelect(); 
+        $("#sel_game").find("select").comboSelect();
+    })
+</script>
+<script type="text/javascript">
+$(function(){
+//导航高亮
+highlight_subnav('{:U('stat/cpa_login')}');
+    //搜索功能
+    $("#search").click(function(){
+        if($('#time-start').val() != '' && $('#time-end').val() == ''){
+            alert('请选择正确的时间范围，范围一个月以内！');
+            return false;
+        }
+        if($('#time-start').val() == '' && $('#time-end').val() != ''){
+            alert('请选择正确的时间范围，范围一个月以内！');
+            return false;
+        }
+        var url = $(this).attr('url');
+        // var guild = $("#sch-sort-txt1").attr("data");
+        // var query  = $('.search-form').find('input').serialize();
+        var query  = $.param({
+            'time_start':$("#time-start").val(),
+            'time_end':$("#time-end").val(),
+            'game_id':$("#sel_game select").val(),
+            'promote_id':$("#sel_qudao select").val()
+        });
+        // console.log(guild+'\r\n');
+        // console.log(query);return;
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+
+        // if(guild != ''){
+        //     query += '&PromoteName=' + guild + "&";
+        // }
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+        window.location.href = url;
+    });
+    /* 游戏名称搜索子菜单 */
+    $("#game-down").find(".drop-down").hover(function(){
+        $("#sub-sch-menu-game").removeClass("hidden");
+    },function(){
+        $("#sub-sch-menu-game").addClass("hidden");
+    });
+    $("#sub-sch-menu-game li").find("a").each(function(){
+        $(this).click(function(){
+            var text = $(this).text();
+            $("#sch-sort-txt-game").text(text).attr("data",$(this).attr("value"));
+            $("#GameName").val($(this).attr("value"));
+            $("#sub-sch-menu-game").addClass("hidden");
+            AreaBind();
+        })
+    });
+    /* 审核状态搜索子菜单 */
+    $("#reco_drow").find(".drop-down").hover(function(){
+        $("#sub-sch-menu-reco").removeClass("hidden");
+    },function(){
+        $("#sub-sch-menu-reco").addClass("hidden");
+    });
+    $("#sub-sch-menu-reco li").find("a").each(function(){
+        $(this).click(function(){
+            var text = $(this).text();
+            $("#sch-sort-txt-reco").text(text).attr("data",$(this).attr("value"));
+            $("#time").val($(this).attr("value"));
+            $("#sub-sch-menu-reco").addClass("hidden");
+        })
+    });
+    /* 区服名称搜索子菜单 */
+    $("#area-down").find(".drop-down").hover(function(){
+        $("#sub-sch-menu-area").removeClass("hidden");
+    },function(){
+        $("#sub-sch-menu-area").addClass("hidden");
+    });
+    $("#sub-sch-menu-area li").find("a").each(function(){
+        $(this).click(function(){
+            var text = $(this).text();
+            $("#sch-sort-txt-area").text(text).attr("data",$(this).attr("value"));
+            $("#sub-sch-menu-area").addClass("hidden");
+        })
+    });
+    
+
+    $("#guil-ddown .drop-down").on('click',function() {
+        var record = {:count($promotelist)};
+        popups('promotelists',record);
+    });
+
+    /* 推广员名称搜索子菜单 */
+    $("#promote-down").find(".drop-down").hover(function(){
+        $("#sub-sch-menu-promote").removeClass("hidden");
+    },function(){
+        $("#sub-sch-menu-promote").addClass("hidden");
+    });
+    $("#sub-sch-menu-promote li").find("a").each(function(){
+        $(this).click(function(){
+            var text = $(this).text();
+            $("#sch-sort-txt-promote").text(text).attr("data",$(this).attr("value"));
+            $("#sub-sch-menu-promote").addClass("hidden");
+        })
+    });
+    var date = new Date();
+    var endOne;
+    $('#time-start').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true,
+        endDate: date
+    }).on('hide', function(event) {  
+        event.preventDefault();  
+        event.stopPropagation();  
+        var startTime = event.date; 
+        endOne = new Date(startTime.getTime()+1000 * 60 * 60 * 24 * 30);
+        $('#datetimepicker').datetimepicker('setStartDate',startTime);
+        $('#datetimepicker').val("");  
+    });
+
+    $('#datetimepicker').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true,
+        pickerPosition:'bottom-left',
+        endDate: date
+    }).on('hide', function(event) {  
+        event.preventDefault();  
+        event.stopPropagation(); 
+        var endTime = event.date;
+        if(endTime.getTime() > endOne.getTime()){
+            alert('请选择时间范围在一个月内的时间');
+            $('#time-end').val('');
+            return false;
+        }  
+        $('#time-start').datetimepicker('setEndDate',endTime);
+    });
+
+   
+         function aaa(){
+        $("#sub-sch-menu-game li").find("a").each(function(){
+            $(this).click(function(){
+                var text = $(this).text();
+                $("#sch-sort-txt-game").text(text).attr("data",$(this).attr("value"));
+                $("#GameID").val($(this).attr("value"));
+                $("#sub-sch-menu-game").addClass("hidden");
+            liandong($(this).attr("value"));
+
+            })
+        });
+    }
+
+});
+function txtinput(text) {
+    $("#sch-sort-txt1").text(text).attr("data",text);
+    //$("#GameName").val(text);
+}
+function popups(ename,record) {
+    var lie = 4;
+    var row = 20,page=1;
+    var $that = $('#'+ename);
+    var n = Math.ceil(record/lie)*lie;
+    if(n>record && n > $that.find('.pcotent li').length)
+        for(var i=record;i<n;i++) {
+            $that.find('.pcotent ul').append('<li><div class="pname"><a href="javascript:;" value="" num="'+i+'" data="" >&nbsp;</a></div></li>');
+        }
+    showgamelists(ename,record,row,page);
+    $that.closest('#main-content').before('<div class="popupsbg"></div>');
+    //$that.css({'margin-left':-$(this).width()/4,'margin-top':-$(this).height()/4}).slideDown();
+    $that.css({}).slideDown();
+    
+    $that.find('.butn').on('click',function() {
+        $(this).closest('.popups').removeAttr('style').slideUp().closest('#main-content').siblings('.popupsbg').remove();
+        $that.find('.pbottom').empty();
+    });
+    
+    $that.find('.pcotent li a').on('click',function() {
+        var text = $.trim($(this).attr('value'));
+        if(text == '') return;
+        txtinput(text);
+        $that.find('.butn').click();
+    });
+    
+    $that.find('.pinput').on('keyup',function(){
+        var keyup = $.trim($(this).val());
+        if(keyup == ''){
+            showgamelists(ename,record,row,page);
+            return;
+        }
+        $that.find('.pcotent li a').each(function() {
+            var data = $(this).attr('data');
+            var val = $(this).attr('value');
+            if(val.indexOf(keyup) != -1 || data.indexOf(keyup) != -1) {
+                $(this).closest('li').show();
+            } else {
+                $(this).closest('li').hide();
+            }
+        });
+        
+    });
+}
+function showgamelists(ename,record,row,page) {
+    var $that = $('#'+ename);
+    $that.find('.pbottom').empty();
+    var _s=(page-1)*row,_e=page*row-1;
+    var total=Math.ceil(record/row);
+    $that.find('.pcotent li').each(function() {
+        var an = $(this).find('.pname a').attr('num');
+        if(an<=_e && an>=_s) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
+    var pagelist = '<div>';
+    for(var i=1;i<=total;i++) {
+        if (page == i) {
+            pagelist += '<span class="current">'+i+'</span>';
+        } else {
+            pagelist += '<a href="javascript:;" page="'+i+'">'+i+'</a>';
+        }
+    }
+    pagelist += '<span class="rows">共 '+record+'条记录</span>';
+    pagelist += '</div>';
+    $that.find('.pbottom').append(pagelist).find('a').on('click',function(){
+        page = parseInt($(this).attr('page'));
+        if(isNaN(page)) page = 1;
+        $that.find('.pbottom').empty();
+        showgamelists(ename,record,row,page);
+    });
+}
+highlight_subnav('{:U('Cpa/cpareg')}');
+
+</script>
+</block>

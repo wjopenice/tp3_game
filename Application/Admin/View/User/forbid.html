@@ -1,0 +1,104 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>IP列表</h2>
+	</div>
+	<div class="cf top_nav_list">
+		<div class="fl button_list">
+            <a class="btn blue" href="{:U('forbid_add')}">新 增</a>
+           <!--  <button class="btn ajax-post gre" url="{:U('changeStatus?method=resumeUser')}" target-form="ids">启 用</button>
+           <button class="btn ajax-post red" url="{:U('changeStatus?method=forbidUser')}" target-form="ids">禁 用</button>
+           <button class="btn ajax-post confirm red" url="{:U('changeStatus?method=deleteUser')}" target-form="ids">删 除</button> -->
+        </div>
+
+        <!-- 高级搜索 -->
+		<div class="search-form fr cf">
+			<div class="sleft">
+				<input type="text" name="forbid_ip" class="search-input" value="{:I('forbid_ip')}" placeholder="请输入IP地址">
+				<!-- <a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a> -->
+			</div>
+            <div class="input-list">
+                <a class="sch-btn" href="javascript:;" id="search" url="{:U('User/forbid')}">搜索</a>
+            </div>
+		</div>
+    </div>
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+	<table class="">
+    <thead>
+        <tr>
+		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+		<th class="">IP</th>
+		<th class="">注册数量</th>
+		<th class="">状态</th>
+		<th class="">时间</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<notempty name="_list">
+		<volist name="_list" id="vo">
+		<tr>
+            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}" /></td>
+			<td>{$vo.forbid_ip} </td>
+			<td>{$vo.reg_num}</td>
+			<td>
+			     <if condition="$vo['type'] eq 0">已封
+                        <elseif condition="$vo['type'] eq 1"/>未封
+                        <else />未知
+                 </if>
+
+			</td>
+			<td><span>{$vo.update_time|time_format}</span></td>
+			<td>
+			   <!--   <a  href="{:U('User/edit?id='.$vo['id'])}" class="">编辑</a> -->
+				<eq name="vo.type" value="1">
+				<a href="{:U('User/forbid_edit?type=1&id='.$vo['id'])}" class="ajax-get">拉黑</a>
+				<else/>
+				<a href="{:U('User/forbid_edit?type=0&id='.$vo['id'])}" class="ajax-get">解封</a>
+				</eq>
+              <!--   <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a> -->
+                </td>
+		</tr>
+		</volist>
+		<else/>
+		<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+		</notempty>
+	</tbody>
+    </table>
+	</div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+    //导航高亮
+    highlight_subnav('{:U('User/forbid')}');
+	</script>
+</block>

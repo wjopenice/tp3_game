@@ -1,0 +1,333 @@
+<extend name="Public/base"/>
+<block name="body" >
+<link rel="stylesheet" href="__CSS__/zixun.css">  
+    <style>
+        #pagation{text-align:center;width:1200px;margin: 0 auto ;position:relative;padding-bottom:20px;}         
+
+        #pagation .aBtns{
+            float:left;
+            padding-left:50px;
+        }
+        #pagation .aBtns a{
+            text-decoration: none;
+            font-size:14px;color:#4c4c4c;
+            display: inline-block;padding:5px 10px;
+            background:#fff;margin:0 5px;float:left;
+            cursor: pointer;
+            border: 1px solid #dcdcdc;
+        }
+        #pagation .aBtns a.active{
+            color:#fff;
+            background:#ed6557;
+            border: 1px solid #ed6557;
+        }
+        #pagation .jump{
+            float:right; font-size:14px;color:#4c4c4c;
+            line-height:20px;
+            padding-right:500px;
+        }
+        #pagation .jump input{
+            width:50px;padding: 5px 10px;border:1px solid #999;
+            font-size:14px;margin:3px 3px 0 10px;
+        }
+        #pagation .jump span{
+            display: inline-block;color:#4c4c4c;
+            font-size:14px;padding:5px 10px;cursor: pointer;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var p ="{$Think.get.p}";
+    </script>
+<!--banner-->
+<div class="pic clearfix">
+        <div class="pic1">
+            <a href="javascript:;"  target="{$left_top['0']['target']}"><img src="__ROOT__{$left_top['0']['data']|get_cover='path'}" alt=""></a>
+            <div class="show">
+                <div class="show-content">
+                    <a href="{$left_top['0']['url']}">{$left_top['0']['title']}</a>
+                </div>
+            </div>
+        </div>
+        <div class="pic2">
+            <div class="pic2-t">
+                <a class="one" href="javascript:; "  target="{$mid_top['0']['target']}"><img src="__ROOT__{$mid_top['0']['data']|get_cover='path'}" alt=""></a>
+                <div class="show">
+                    <a href="{$mid_top['0']['url']}">{$mid_top['0']['title']}</a>
+                </div>
+            </div>
+           <div class="pic2-b">
+               <a class="two" href="javascript:;"  target="{$mid_top['1']['target']}"><img src="__ROOT__{$mid_top['1']['data']|get_cover='path'}" alt=""></a>
+               <div class="show">
+                   <a href="{$mid_top['1']['url']}">{$mid_top['1']['title']}</a>
+               </div>
+           </div>
+
+        </div>
+        <div class="pic3">
+            <a href="javascript:;" target="{$left_top['1']['target']}"><img src="__ROOT__{$left_top['1']['data']|get_cover='path'}" alt=""></a>
+            <div class="show">
+                <div class="show-content">
+                    <a href="{$left_top['1']['url']} ">{$left_top['1']['title']}</a>
+                </div>
+            </div>
+        </div>
+       <div class="pic4">
+           <a href="javascript:;" target="{$rig_top['0']['target']}"><img src="__ROOT__{$rig_top['0']['data']|get_cover='path'}" alt=""></a>
+           <div class="show">
+               <div class="show-content">
+                   <a href="{$rig_top['0']['url']}">{$rig_top['0']['title']}</a>
+               </div>
+           </div>
+       </div>
+</div>
+
+<!--中间咨询部分-->
+<div class="zixun  container clearfix">
+    <div class="zixun-l">
+      <!--游戏资讯  -->
+        <div class="cosplay clearfix" >
+            <div class="tab" id="zixunpage">
+		<a href="javascript:;" class="tab3" id="42"><span class="icon-gonggao"></span>游戏公告 &nbsp;</a>
+                <a href="javascript:;" class="tab1 " id="43"> / &nbsp; <span class="icon-cosplay"></span>游戏资讯 &nbsp;</a>
+                <a href="javascript:;" class="tab2" id="44"> / &nbsp; <span class="icon-huodong"></span>游戏活动</a>
+            </div>
+            <div class="content">
+                <ul>
+					<!-- 公告 -->
+                    <li style="display:block">
+                        <div class="content-t">
+                            <volist name="announcement" id="v4" offset="0" length="3">
+                            <div class="content-t-t">
+                                  <img src="__IMG__/zixun/announcement.jpg" >
+                                <div class="content-r">
+                                    <a href="{:U('Category/zxchildren?id='.$v4['id'])}" title="{$v4.title}" target="_blank">{$v4.title}</a>
+                                    <p class="next">
+                                    <!-- {:msubstr($v4['content'],0,9)}...&nbsp;&nbsp;&nbsp; -->
+                                    </p>
+                                    <div class="read clearfix">
+                                        <a class="one" href="{:U('Category/zxchildren?id='.$v4['id'])}">阅读全文>></a>
+                                        <span>{$v4.create_time|date="Y-m-d",###}</span>
+                                    </div>
+                                </div>
+                            </div>
+                                </volist>
+                        </div>
+
+                        <div class="wenzi">
+                            <volist name="announcement" id="v5" offset="3" length="7">
+                                <div class="wenzi-1 clearfix">                                   
+                                    <a href="{:U('Category/zxchildren?id='.$v5['id'])}" title="{$v5.title}" target="_blank">{$v5.title}</a>
+                                    <span>{$v5.create_time|date="Y-m-d",###}</span>
+                                </div>
+                            </volist>
+                        </div>
+                    </li>
+                    <!-- 资讯 -->
+                    <li>
+                        <div class="content-t">
+                            <volist name="notice" id="vo" offset="0" length="3">
+                         <div class="content-t-t">
+                                  <img src="__IMG__/zixun/information.jpg" >
+                                  <!-- <empty name="vo.cover_id">
+                                    <img src="__IMG__/zixun/zixun_300x150.jpg" >
+                                  <else /> 
+                                    <img src="__ROOT__{$vo.cover_id|get_cover='path'}" >
+                                  </empty>  -->
+                                <div class="content-r">
+                                    <a href="{:U('Category/zxchildren?id='.$vo['id'])}" title="{$vo.title}" target="_blank">{$vo.title}</a>
+                                    <p class="next">
+                                   <!--  {:msubstr($vo['content'],0,9)}...&nbsp;&nbsp;&nbsp; -->
+                                    </p>
+                                    <div class="read clearfix">
+                                        <a class="one" href="{:U('Category/zxchildren?id='.$vo['id'])}">阅读全文>></a>
+                                        <span>{$vo.create_time|date="Y-m-d",###}</span>
+                                    </div>
+                                </div>
+                            </div>
+                                </volist>
+                        </div>
+
+                        <div class="wenzi clearfix">
+                            <volist name="notice"  id="v1" offset="3" length="7">
+                            <div class="wenzi-1">                               
+                                <a href="{:U('Category/zxchildren?id='.$v1['id'])}" title="{$v1.title}" target="_blank">{$v1.title}</a>
+                                <span>{$v1.create_time|date="Y-m-d",###}</span>
+                            </div>
+                            </volist>
+                        </div>
+                    </li>
+
+                    <!-- 活动 -->
+                    <li>
+                        <div class="content-t">
+                            <volist name="activity" id="v2" offset="0" length="3">
+                            <div class="content-t-t">
+                                   <img src="__IMG__/zixun/activity.jpg" >
+                                  <!--  <empty name="v2.cover_id">
+                                   <img src="__IMG__/zixun/zixun_300x150.jpg" >
+                                                                    <else /> 
+                                   <img src="__ROOT__{$v2.cover_id|get_cover='path'}" >
+                                                                    </empty>  -->
+
+                                <div class="content-r">
+                                    <a href="{:U('Category/zxchildren?id='.$v2['id'])}" title="{$v2.title}" target="_blank">{$v2.title}</a>
+                                    <p class="next">
+                                    <!-- {:msubstr($v2['content'],0,9)}...&nbsp;&nbsp;&nbsp; -->
+                                    </p>
+                                    <div class="read clearfix">
+                                        <a class="one" href="{:U('Category/zxchildren?id='.$v2['id'])}">阅读全文>></a>
+                                        <span>{$v2.create_time|date="Y-m-d",###}</span>
+                                    </div>
+                                </div>
+                            </div>
+                                </volist>
+                        </div>
+
+                        <div class="wenzi">
+                            <volist name="activity" id="v3" offset="3" length="7">
+                                <div class="wenzi-1">                                    
+                                    <a href="{:U('Category/zxchildren?id='.$v3['id'])}" title="{$v3.title}" target="_blank">{$v3.title}</a>
+                                    <span>{$v3.create_time|date="Y-m-d",###}</span>
+                                </div>
+                            </volist>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="zixun-r ">
+        <!--热门资讯-->
+        <div class="hot">
+            <div class="hot-t">
+                <a href="javascript:;"><span class="icon-zixun"></span>热门资讯</a>
+            </div>
+            <div class="hot-b">
+                <img src="__ROOT__{$adv_zixun['0']['data']|get_cover='path'}" alt="">
+                <ul class="clearfix">                   
+                    <article:limits name="list" category="42" child="true" limit="5">
+                        <li>
+                            <span class="zx"></span><a href="{:U('Category/zxchildren?id='.$list['id'])}">{$list.title}
+                           </a>
+                        </li>
+                    </article:limits>
+                </ul>
+            </div>
+        </div>
+        <!--平台资讯-->
+        <div class="active clearfix">
+            <div class="active-t">
+                <a href="javascript:;"><span class="icon-zixun"></span>平台资讯</a>
+            </div>
+            <div class="active-b">
+                <img src="__ROOT__{$adv_zixun['1']['data']|get_cover='path'}" alt="">
+                <ul>
+                    <article:limits name="list" category="39" child="true" limit="5">
+                        <li>
+                            <span class="zx"></span><a href="{:U('Category/zxchildren?id='.$list['id'])}">{$list.title}</a>
+                        </li>
+                    </article:limits>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--分页器-->
+<div id="pagation" ></div>
+<!--尾巴部分-->
+
+</body>
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/slider.jquery.js"></script>
+<script type="text/javascript" src="__JS__/query.js"></script>
+<script type="text/javascript" src="__JS__/pagation.js"></script>
+<script>
+   var  aId1= $("#zixunpage").find("a").eq(0).attr("id");//42
+   var  aId2= $("#zixunpage").find("a").eq(1).attr("id");//44
+   var  aId3= $("#zixunpage").find("a").eq(2).attr("id");//43
+   
+    var type = {$Think.get.type|default=aId1};
+   
+    // id 的值是 后台分配的  默认42,44,43
+    var aA=document.getElementById("zixunpage").getElementsByTagName('a');
+           // tab 当前的tab高亮
+        for(var i=0;i<aA.length;i++){
+                for(var j=0;j<aA.length;j++){                   
+                   $("#zixunpage").find("a").eq(i).removeClass("on");
+                }        
+        }
+        $('#'+type).addClass('on');    
+// 当前table对应的内容显示
+    if(type==aId1){
+    //type =0 第一个显示 其他隐藏
+       $("#zixunpage").siblings(".content").find("ul").find("li").hide();
+       $("#zixunpage").siblings(".content").find("ul").find("li").eq(0).show();
+      
+    }
+    if(type==aId2){
+    //type =1 第2个显示 其他隐藏
+       $("#zixunpage").siblings(".content").find("ul").find("li").hide();
+       $("#zixunpage").siblings(".content").find("ul").find("li").eq(1).show();
+        
+    }
+    if(type==aId3){
+    //type =2 第3个显示 其他隐藏
+       $("#zixunpage").siblings(".content").find("ul").find("li").hide();
+       $("#zixunpage").siblings(".content").find("ul").find("li").eq(2).show();
+       
+    }
+
+</script>
+
+<script>
+    var aA= document.getElementById("zixunpage").getElementsByTagName('a');  
+    var dataLength = "{$count|default=0}";
+    var p ={$Think.get.p|default=1};   
+    var pageSize=10;
+    var allPageNum=dataLength%pageSize==0 ? parseInt(dataLength/pageSize):(parseInt(dataLength/pageSize)+1);
+    // 总计多少页
+    type= {$Think.get.type|default=aId1};
+    if(dataLength>pageSize){        
+        page({
+            id : 'pagation',
+            nowNum : p,
+            allNum : allPageNum,
+            callBack : function(now,all){
+                 window.location.href="http://{$Think.server.http_host}__CONTROLLER__/zixun/type/"+type+"/p/"+now+"/pagesize/"+pageSize+'.html';
+            }
+        });
+    }else{
+        $("#pagation").css("display","none");
+    }
+// 点击tab 切换页面
+     for(var i=0;i<aA.length;i++){
+        aA[i].index=i;
+        aA[i].onclick=function () {
+            var type2= aA[this.index].getAttribute('id');  
+            if(type != type2){
+                p=1;
+            }
+            window.location.href="http://{$Think.server.http_host}__CONTROLLER__/zixun/type/"+type2+"/p/"+p+"/pagesize/"+pageSize+'.html';        
+        };
+    }
+  
+    if($("#pagation").find(".jump").length>0){
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 50px");
+    }else{
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 230px");
+    }
+</script>
+<script>
+    $( '#slider' ).lateralSlider( {
+        captionPadding: '0',
+        captionHeight: 45
+    } );
+</script>
+
+
+
+</html>
+</block>

@@ -1,0 +1,49 @@
+
+/*#box{*/
+	/*width: 100%;*/
+/*}*/
+#slider {
+	position: relative;
+	width:100%;
+	overflow: hidden;
+	margin: 0 auto 0 auto;
+}
+#slider li {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.prev-link, .next-link {
+	display: block;
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	position: absolute;
+	bottom: 10px;
+
+}
+
+.prev-link {
+	left: 200px;
+	/*background-image: url(prev.png );*/
+}
+
+.next-link {
+	left: 230px;
+	/*background-image: url(next.png );*/
+}
+
+.circle {
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url(circle-empty.png ) no-repeat left top;
+	position: absolute;
+	bottom: 10px;
+	z-index: 300;
+}
+
+.circle-current {
+	background-image: url(circle-full.png );
+}

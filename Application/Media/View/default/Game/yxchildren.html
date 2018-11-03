@@ -1,0 +1,220 @@
+<extend name="Public/base"/>
+<block name="body" >
+ <link rel="stylesheet" href="__CSS__/yxchildren.css">
+<!--游戏详情-->
+<div class="detail container clearfix">
+    <div class="detail-l">
+        <div class="detail-t">
+            <p>当前位置:<a href="{:U('Game/youxi')}"> 游戏中心</a>>{$vo.game_name}</p>
+        </div>
+        <div class="detail-c clearfix">
+            <img src="__ROOT__{$vo.icon|get_cover='path'}" alt="" class="tp">
+            <div class="wenzi">
+                <p class="wenzi-t">{$vo.game_name}</p>
+                <p class="stitle">类型：{$vo.game_type_name}</p>
+                <p class="stitle">大小：{$vo.game_size}</p>
+                <p class="stitle">版本：{$vo.version}</p>
+                <p class="stitle">时间：{$vo.create_time|date="Y-m-d",###}</p>
+                <a href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="load"><img src="__IMG__/youxi/anzhuoxiazai.png" alt="" class="xz"></a>
+             </div>
+             <div class='imgEvm'>
+                <img src="{:U('Game/dow_url_generate?game_id='.$vo['id'])}" alt="">
+                 <p class='txt'>扫码下载</p>
+            </div>
+        </div>
+        <div class="detail-b">
+            <div class="detail-b-t">
+                <p class="one">游戏详情</p>
+                <p class="two">{$vo.introduction}</p>
+            </div>
+            <div class="detail-b-b" id="box1">
+                <div class="hd">
+                    <span class="current">游戏图片</span>
+                    <span>游戏礼包</span>
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li class="show">
+                            <!--游戏部分轮播     -->
+                            <div id="slider">
+                                <volist name=":explode(',',$vo['screenshot'])" id='pid'>
+                                    <if condition='!empty($pid)'>
+                                        <div class="spic" >
+                                            <img src="{$pid|get_cover='path'}" />
+                                        </div>
+                                    </if>
+                                </volist>
+                            </div>
+                        </li>
+                        <li id='gifted'>
+                            <empty name="giftdetail">
+                            <img src="__IMG__/youxi/ku.png" alt="" class="ku">
+                            <else />
+                                <volist name="giftdetail" id="vo" >
+                                    <div class="lb">
+                                        <div class="lb-t">
+                                            <div class="lb-t-t">
+                                                <p class="one" id="{$vo.gift_id}">{$vo.giftbag_name}-{$vo.game_name}</p>
+                                                <p class="two">{$vo.desribe}</p>
+                                            </div>
+                                        </div>
+                                        <div class="lb-b">
+                                            <a href="javascript:;" class="lb-b-l">{$vo.start_time|date="Y-m-d",###}至{$vo.end_time|date="Y-m-d",###}</a>
+                                            <a href="javascript:;" class="lb-b-r">领&nbsp;取</a>
+                                        </div>
+                                    </div>
+                                </volist>
+                            </empty>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="detail-r">
+      <!--游戏排行-->
+      <div class=" paihang clearfix">
+          <div class="paihang-t">
+              <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏排行</a>
+          </div>
+         <div class="paihang-b ">
+                    <ul class="weekly-list">
+                    <volist name="rank" id="vo" >
+                            <li >
+                                <div class="app-show-title clearfix">
+                                    <if condition="$num lt 4"><span class="num s-index-org" style="background-color:#f19ec2;color: #fff;">{$num++}</span>
+                                        <elseif condition="$num lt 7" /><span class="num s-index-org" style="background-color:pink;color: #fff;">{$num++}</span>
+                                        <else /> <span class="num s-index-org" style=";background-color:gray;color: #fff;">{$num++}</span>
+                                    </if>                                    
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}"  class="bl">{$vo.game_name}</a>
+                                    <a href="javascript:;" class="hh">{$vo.game_type_name}</a>
+                                </div>
+
+                                <div class="app-show-block"> 
+                                <if condition="$num lt 5"><span class="num s-index-org" style="background-color:#f19ec2;color: #fff;"></span>
+                                        <elseif condition="$num lt 8" /><span class="num s-index-org" style="background-color:pink;color: #fff;"></span>
+                                        <else /> <span class="num s-index-org" style=";background-color:gray;color: #fff;"></span>
+                                    </if>   
+
+                                <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}" class="pic"><img src="__ROOT__{$vo.icon|get_cover='path'}" alt="{$vo.game_name}"></a>
+                                <div class='xzandli clearfix'>      
+                                    <div class='title clearfix'>
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}"  class="name">{$vo.game_name}</a>
+                                    <a href="javascript:;" class="jiaose">{$vo.game_type_name}</a>
+                                    </div>
+                                    <div class='picandtxt'>   
+                                    <a  class="xz" href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="down">下&nbsp;载</a>                                  
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>2))}" class="lb">礼&nbsp;包</a>
+                                    </div>
+                            </li>
+                        </volist> 
+                        
+                        </ul>
+                </div>
+      </div>
+  </div>
+</div>
+
+</div>
+<script>
+    var box1=document.getElementById('box1');
+    var spans=box1.getElementsByTagName('span');
+    var lis=box1.getElementsByTagName('li');
+    for(var i=0;i<spans.length;i++){
+        spans[i].index=i;
+        spans[i].onmouseover=function(){
+            for(var j=0; j<spans.length;j++){
+                spans[j].className="";
+                lis[j].className="";
+            }
+            this.className="current";
+            lis[this.index].className="show";
+        }
+    }
+
+</script>
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/slider.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var MODULE = "__MODULE__";
+</script>
+<script src="__JS__/pop.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#slider').slider({ speed: 500 });
+    });
+</script>
+<script>
+   // 排行榜
+
+$(function(){
+     var $gameOrder= $(".weekly-list");
+            $gameOrder.find("li").eq(0).addClass('current');
+            $gameOrder.find("li").each(function(){
+                var num=$(this).find('.app-show-title').find('span').html();
+                $(this).find('.app-show-block').find('span').html(num);
+            });
+            $gameOrder.find("li").mouseover(function(){
+                $(this).addClass('current').siblings('li').removeClass('current');
+            })
+})
+</script>
+<script>
+    $('#gifted').find('.lb-b').each(function () {
+        $(this).find('.lb-b-r').click(function () {
+            $.ajax({
+                type:'post',
+                dataType:'json',
+                data:{
+                    gift:$(this).parent(".lb-b").parent(".lb").find('.lb-t-t').find('.one').html(),
+                    giftid:$(this).parent(".lb-b").parent(".lb").find('.lb-t-t').find('.one').attr('id')
+                },
+                url:"{:U('Member/getGameGift')}",
+                success:function(data) {
+                    if (parseInt(data.status) == 1 ) {
+//                    登录成功时候的状态
+                        if(data.msg=='ok'){
+                            login_ok(data);
+                        }
+                        if(data.msg=='no'){
+//                        您已领取过该礼包
+                            login_no(data)
+                        }
+                        if(data.msg=='noc'){
+//                        该礼包已领取完，下次请早
+                            login_noc(data)
+                        }
+                    }
+                    if (parseInt(data.status) == 0 ) {
+                        //登录失败的时候
+                        nologin_box();
+                    }
+                },
+                error:function() {
+                    alert('服务器故障，请稍候再试。。。。');
+                }
+            });
+        })
+    });
+
+    $(function(){
+        var type ='{$Think.get.type|default=1}';       
+        if(type==1){
+            $(".hd").find("span").removeClass("current");
+            $(".hd").find("span").eq(0).addClass("current");
+            $(".bd").find("ul").find("li").removeClass("show");
+            $(".bd").find("ul").find("li").eq(0).addClass("show");
+        }
+        if(type==2){
+            $(".hd").find("span").removeClass("current");
+            $(".hd").find("span").eq(1).addClass("current");
+            $(".bd").find("ul").find("li").removeClass("show");
+            $(".bd").find("ul").find("li").eq(1).addClass("show");
+        }
+    })
+
+
+</script>
+</body>
+</html>
+</block>

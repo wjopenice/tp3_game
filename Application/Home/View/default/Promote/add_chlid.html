@@ -1,0 +1,245 @@
+﻿<extend name="Public/promote_base"/>
+
+<block name="body">
+<style type="text/css">
+  .r span{
+    color: rgb(204,204,204);
+  }
+  .r span.curr{
+    color: green;
+    font-weight: bold;
+  }
+  .r span.special{
+    color: red;
+  }
+  #add_son td .name, #add_son td.r input[type='text']{
+    padding-left: 4px;
+  }
+
+</style>
+<div id="query">
+  <div id="add_son" class="mod">
+    <h2>添加子帐号</h2>
+    <form id="form_reg" action="{:U('Promote/add_chlid')}" method="post" novalidate="novalidate" class="base_info" onsubmit=" return check()">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td class="l">登录帐号：</td>
+            <td class="r">
+              <input type="text" class="name input-txt rinput" name="account" id="account" placeholder="输入登录帐号">
+              <span id="account_tip">支持字母、数字的组合，6-20字符</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="l">登录密码：</td>
+            <td class="r">
+              <input type="password" class="name rinput" name="password" id="password" placeholder="输入登录密码">
+              <span id="password_tip">建议使用字母、数字、下划线任意两种组合，6-16个字符</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="l">确认密码：</td>
+            <td class="r">
+              <input type="password" class="name rinput" name="repassword" id="repassword" placeholder="输入登录密码">
+              <span id="repassword_tip"></span>
+            </td>
+          </tr>
+          <tr>  
+            <td class="l">子帐号昵称：</td>
+            <td class="r">
+              <input type="text" class="name rinput" name="nickname rinput" id="nickname" placeholder="输入子帐号昵称">
+              <span id="nickname_tip">必须和登录账号一致</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="l">真实姓名：</td>
+            <td class="r">
+              <input type="text" class="name rinput" name="real_name" id="real_name" placeholder="输入子帐号姓名">
+              <span id="real_name_tip">请输入中文</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="l">手机号：</td>
+            <td class="r">
+              <input type="text" class="name rinput" name="mobile_phone" id="mobile_phone" placeholder="输入子帐号手机号">
+              <span id="mobile_phone_tip"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="l">电子邮件：</td>
+            <td class="r">
+              <input type="text" class="name rinput" name="email" id="email" placeholder="输入子帐号电子邮件">
+              <span id="email_tip"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="l">银行名称：</td>
+            <td class="r">
+              <input type="text" class="name rinput" name="bank_name" id="bank_name" placeholder="输入子帐号开户银行">
+              <span id="bank_name_tip"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="l">银行卡：</td>
+            <td class="r">
+              <input type="text" class="name rinput" name="bank_card" id="bank_card" placeholder="输入子帐号银行卡号">
+              <span id="bank_card_tip"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="l"></td>
+            <td class="r">
+              <input type="hidden" name="parent_id" value="{:session('promote_auth.pid')}"></input>
+              <input type="button" class="tj btn ajax-post" id="sub_btn" value="确认添加" title="" target-form="base_info">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+          $('#account').blur(function(){
+              //$.trim($(this).val()
+              var account_name =  $.trim($(this).val());
+              if(account_name == ""){
+                $(this).parent().find('span').html('支持字母、数字的组合，6-20字符').addClass('special').removeClass('curr');
+                return false;
+              }
+              var account = /^[0-9a-zA-Z]{6,20}$/;
+              if(account.test($('#account').val()) == false ){
+                  $(this).parent().find('span').html('支持字母、数字的组合，6-20字符').addClass('special').removeClass('curr');
+                  return false;
+              }else{
+                $('#account').parent().find('span').html('√').removeClass('special').addClass('curr');
+              }
+          })
+          $('#password').blur(function(){
+              var psd = /^[a-zA-Z0-9_]{6,16}$/;
+              var psd_con =  $.trim($(this).val());
+              if(psd_con == ""){
+                $(this).parent().find('span').html('建议使用字母、数字、下划线任意两种组合，6-16个字符').addClass('special').removeClass('curr');
+                return false;
+              }
+              if( psd.test($(this).val()) == false){
+                  $(this).parent().find('span').html('建议使用字母、数字、下划线任意两种组合，6-16个字符').addClass('special').removeClass('curr');
+                  return false;
+              }else{
+                $(this).parent().find('span').html('√').removeClass('special').addClass('curr');
+              }    
+          })
+          $('#repassword').blur(function(){
+              if( $('#password').val() == '' && $(this).val() == ''){
+                return false;
+              }
+              if($('#password').val() == $(this).val()){
+                $(this).parent().find('span').html('√').removeClass('special').addClass('curr');
+              }else{
+                $(this).parent().find('span').html('两次密码不一致').addClass('special').removeClass('curr');
+              }
+          })
+          $('#nickname').blur(function(){
+              var nick_con =  $.trim($(this).val());
+              if(  nick_con == ''){
+                $(this).parent().find('span').html('必须和登录账号一致').addClass('special');
+                return false;
+              }
+              if(  $(this).val() == $('#account').val() ){
+                $(this).parent().find('span').html('√').removeClass('special').addClass('curr');
+              }else{
+                $(this).parent().find('span').html('子账号昵称和登录账号不一致').addClass('special').removeClass('curr');
+                return false;
+              }
+          })
+          $('#real_name').blur(function(){
+              var name_game =  $.trim($(this).val());
+              if(  $.trim($(this).val()).length == 0){
+                 $(this).parent().find('span').html('姓名不能为空').addClass('special').removeClass('curr');
+                 return false;
+              }
+              if(!/^[\u4e00-\u9fa5]{1,5}$/.test(name_game)){
+                $(this).parent().find('span').html('请输入中文').addClass('special').removeClass('curr');
+                return false;
+              }else{
+                $(this).parent().find('span').html('√').removeClass('special').addClass('curr');
+              }
+          })
+          $('#mobile_phone').blur(function(){
+              var phone_game =  $.trim($(this).val());
+              if(  $.trim($(this).val()).length == 0){
+                 $(this).parent().find('span').html('手机号不能为空').addClass('special').removeClass('curr');
+                 return false;
+              }
+              if(!/^1[34578]\d{9}$/.test(phone_game)){
+                $(this).parent().find('span').html('').removeClass('curr');
+                if($(this).val().length != 11){
+                  $(this).parent().find('span').html('手机号格式有误').addClass('special').removeClass('curr');
+                }
+                return false;
+              }else{
+                $(this).parent().find('span').html('√').removeClass('special').addClass('curr');
+              }
+          })
+          $('#email').blur(function(){
+              var e_tip = /^(\w-*\.*)+@(\w-?)+(\.\w{2,4})+$/;
+              var e_tip_con =  $.trim($(this).val());
+              if(e_tip_con == ""){
+                  $(this).parent().find('span').html('').removeClass('special').removeClass('curr');
+                  return true;
+              }
+              if( e_tip.test(e_tip_con) == false){
+                  $(this).parent().find('span').html('邮箱格式不正确').addClass('special').removeClass('curr');
+                  return false;
+              }else{
+                $(this).parent().find('span').html('√').removeClass('special').addClass('curr');
+              }    
+          })
+          $('#bank_name').blur(function(){
+              var bank_tip = /^[\u4e00-\u9fa5]{4,}$/;
+              var bank_tip_con =  $.trim($(this).val());
+              if(bank_tip_con == ""){
+                  $(this).parent().find('span').html('').removeClass('special').removeClass('curr');
+                  return true;
+              }
+              if( bank_tip.test(bank_tip_con) == false){
+                  $(this).parent().find('span').html('银行名称输入格式不正确').addClass('special').removeClass('curr');
+                  return false;
+              }else{
+                $(this).parent().find('span').html('√').removeClass('special').addClass('curr');
+              }    
+          })
+
+          $('#bank_card').blur(function(){
+              var bankc_tip = /^[0-9]{19}$/;
+              var bankc_tip_con =  $.trim($(this).val());
+              if(bankc_tip_con == ""){
+                  $(this).parent().find('span').html('').removeClass('special').removeClass('curr');
+                  return true;
+              }
+              if( bankc_tip.test(bankc_tip_con) == false){
+                  $(this).parent().find('span').html('银行卡号输入格式不正确').addClass('special').removeClass('curr');
+                  return false;
+              }else{
+                $(this).parent().find('span').html('√').removeClass('special').addClass('curr');
+              }    
+          })
+          
+           function check(){
+            $('.r span').each(function(e){
+              if($(this).hasClass('special')){
+                e.preventDefault();
+                return false;
+              }
+            })
+          }
+          $('#sub_btn').click(function(){
+            $('.rinput').each(function(i,ele){
+                $(ele).blur();
+            })
+            $('#form_reg').submit();
+          })
+</script>
+
+</block>
+  

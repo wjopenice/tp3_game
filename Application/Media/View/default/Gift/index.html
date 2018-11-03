@@ -1,0 +1,377 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/libao.css">
+    <style>
+        #pagation{text-align:center;padding:40px 30px;width:800px;}
+        #pagation .aBtns{
+            float:left;
+            padding-left:40px;
+        }
+        #pagation .aBtns a{
+            text-decoration: none;
+            font-size:14px;color:#4c4c4c;
+            display: inline-block;padding:5px 10px;
+            background:#fff;margin:0 5px;float:left;
+            cursor: pointer;
+            border: 1px solid #dcdcdc;
+        }
+        #pagation .aBtns a.active{
+            color:#fff;
+            background:#ed6557;
+            border: 1px solid #ed6557;
+        }
+        #pagation .jump{
+            float:right; font-size:14px;color:#4c4c4c;
+            line-height:20px;
+            padding-right:72px;
+        }
+        #pagation .jump input{
+            width:50px;padding: 5px 10px;border:1px solid #dcdcdc;
+            font-size:14px;margin:3px 3px 0 10px;
+        }
+        #pagation .jump span{
+            display: inline-block;cursor: pointer;color:#4c4c4c;
+            font-size:14px;padding:5px 10px;
+        }
+        .youxilb{margin-top: 10px;}
+        .game .game-r{margin-top: 0;}
+        .game .game-r .paihang{margin-top: 0;}
+        /*      公共title_box       */
+        .title_box{height: 54px;line-height: 54px;border-bottom: 2px solid #ccc;}
+        .tit_name{height: 54px;font-size: 20px;font-weight: 600;color: #333;padding: 0 20px;border-bottom: 2px solid #ff6b63;float: left;}
+        .more_link{float: right;}
+        .more_link span{font-size: 14px;color: #999;padding-right: 16px;vertical-align: middle;float: right;}
+    </style>
+    <!--推荐礼包-->
+    <div class="youxilb clearfix">
+        <div class="container">
+            <div class="title_box">
+                <p class="tit_name">推荐礼包</p>
+            </div>
+            <!--<div class="youxi-t">
+                <a href="javascript:;" class="one"><span class="icon-youxi"></span>推荐礼包</a>
+            </div>-->
+            <div class="youxi-b">
+                <ul>
+                    <volist name="recommend_gift" id="vo">
+                        <li>
+                            <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="one">
+                                <img src="__ROOT__{$vo.gift_icon|get_cover='path'}">
+                            </a>
+                            <div class="show">
+                                <p class="first" id="{$vo.gift_id}">{$vo.giftbag_name}</p>
+                                <p >{$vo.game_name}</p>
+                                <p class="two">{$vo.desribe}</p>
+                                <a href="javascript:;" class="goandget">领&nbsp;取</a>
+                            </div>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--最新礼包-->
+    <div class="new container clearfix">
+        <div class="title_box">
+            <p class="tit_name">最新礼包</p>
+        </div>
+        <!--<div class="new-t">
+            <a href="javascript:;" class="one"><span class="icon-libao"></span>最新礼包</a>
+        </div>-->
+        <div class="new-b">
+            <ul>
+                <volist name="gift" id="vo" >
+                    <li>
+                        <a href="{:U('Game/yxchildren?id='.$vo['game_id'].'&type=1')}" class="giftmore">
+                            <img src="__ROOT__{$vo.icon|get_cover='path'}">   </a>
+                        <div class="wenzi">
+                            <a href="{:U('Game/yxchildren?id='.$vo['game_id'].'&type=2')}"><p class="first" id="{$vo.gift_id}">{$vo.giftbag_name}-{$vo.game_name}</p></a><br>
+                            <p class="next">{:msubstr($vo['desribe'],0,20,'UTF-8',false)}</p>
+                        </div>
+                        <div class="load"> 领 &nbsp;取</div>
+
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <!--图片墙-->
+    <div class="pic container" id='allGift'>
+
+        <ul>
+            <volist name="libao_gift" id="gf" >
+                <li><a href="{$gf.url}" target="{$gf.target}"><img src="__ROOT__{$gf.data|get_cover='path'}" alt="{$gf.title}"></a></li>
+            </volist>
+        </ul>
+
+    </div>
+    <!--中间部分-->
+    <div class="game container clearfix">
+        <div class="game-l">
+            <!--全部礼包-->
+            <div class="category">
+                <div class="title_box">
+                    <p class="tit_name">全部礼包</p>
+                </div>
+                <!--<div class="category-t" >
+                    <a href="javascript:;"><span class="icon_fenlei"></span>全部礼包</a>
+                </div>-->
+                <div class="category-b" id="box1">
+                    <div class="category-b-t">
+                        <a href="javascript:;">游戏题材</a>
+                    </div>
+                    <div class="hd">
+                <span class="current" id="0">
+                      不 &nbsp;限
+                </span>
+                        <volist name=':get_game_type_all_show()' id='vo' key='k'>
+                    <span id="{$vo['id']}" >
+                        {$vo.type_name}
+                    </span>
+                        </volist>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            <li class="show">
+                                <volist name='data' id='v'>
+                                    <div class="one_category">
+                                        <a href="{:U('Game/yxchildren?id='.$v['id'].'')}" class="pic">
+                                            <img src="__ROOT__{$v.icon|get_cover='path'}" alt="">
+                                        </a>
+                                        <div class="right">
+                                            <a href="{:U('Game/yxchildren?id='.$v['id'].'&type=2')}" class="title" id="{$v.gift_id}">{:msubstr($v['giftbag_name'],0,4,'UTF-8',false)}</a>
+                                            <p class="next">{$v.game_name}</p>
+                                            <a class="lq" href="javascript:;">领&nbsp;取</a>
+                                        </div>
+                                    </div>
+                                </volist>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--分页器-->
+            <div id="pagation" class="clearfix" >  </div>
+        </div>
+        <div class="game-r">
+            <!--游戏排行-->
+            <div class=" paihang clearfix">
+                <div class="title_box">
+                    <p class="tit_name">游戏排行</p>
+                </div>
+                <!--<div class="paihang-t">
+                    <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏排行</a>
+                </div>-->
+                <div class="paihang-b ">
+                    <ul class="weekly-list">
+                        <volist name="rank" id="vo" >
+                            <li >
+                                <div class="app-show-title clearfix">
+                                    <if condition="$num lt 4"><span class="num s-index-org" style="background-color:#f19ec2;color: #fff;">{$num++}</span>
+                                        <elseif condition="$num lt 7" /><span class="num s-index-org" style="background-color:pink;color: #fff;">{$num++}</span>
+                                        <else /> <span class="num s-index-org" style=";background-color:gray;color: #fff;">{$num++}</span>
+                                    </if>
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}"  class="bl">{$vo.game_name}</a>
+                                    <a href="javascript:;" class="hh">{$vo.game_type_name}</a>
+                                </div>
+
+                                <div class="app-show-block">
+                                    <if condition="$num lt 5"><span class="num s-index-org" style="background-color:#f19ec2;color: #fff;"></span>
+                                        <elseif condition="$num lt 8" /><span class="num s-index-org" style="background-color:pink;color: #fff;"></span>
+                                        <else /> <span class="num s-index-org" style=";background-color:gray;color: #fff;"></span>
+                                    </if>
+
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}" class="pic phPic"><img src="__ROOT__{$vo.icon|get_cover='path'}" alt="{$vo.game_name}"></a>
+                                    <div class='xzandli clearfix'>
+                                        <div class='title clearfix'>
+                                            <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}"  class="name">{$vo.game_name}</a>
+                                            <a href="javascript:;" class="jiaose">{$vo.game_type_name}</a>
+                                        </div>
+                                        <div class='picandtxt'>
+                                            <a  class="xz" href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="down">下&nbsp;载</a>
+                                            <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>2))}" class="lb">礼&nbsp;包</a>
+                                        </div>
+                            </li>
+                        </volist>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--尾巴部分-->
+    </body>
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/js.js"></script>
+    <script src="__JS__/pop.js"></script>
+    <script src="__JS__/pagation.js"></script>
+    <script type="text/javascript" src="__JS__/query.js"></script>
+    <script>
+        var num = {$Think.get.type|default=0};
+        var spans=document.getElementById("box1").getElementsByTagName('span');
+
+        for(var i=0;i<spans.length;i++){
+            for(var j=0;j<spans.length;j++){
+                spans[j].className = "";
+            }
+
+        }
+        $('#'+num).addClass('current');
+
+    </script>
+    <script>
+        var spans=document.querySelector('.hd');
+        var options=spans.getElementsByTagName('span');
+        var dataLength={$count|default=0};
+        //后台的数据总条目条目
+        var pageSize=12;
+        var allPageNum=dataLength%pageSize==0 ? parseInt(dataLength/pageSize):(parseInt(dataLength/pageSize)+1);
+        var p ={$Think.get.p|default=1};
+        type = {$Think.get.type|default=0};
+        if(dataLength>pageSize){
+            page({
+                id : 'pagation',
+                nowNum : p,
+                allNum : allPageNum,
+                callBack : function(now,all){
+                    window.location.href="http://{$Think.server.http_host}__CONTROLLER__/index/type/"+type+"/p/"+now+"/pagesize/"+pageSize+'.html#allGift';
+                }
+            });
+        }else{
+            $("#pagation").css("display","none");
+        }
+        // tab 点击切换页面
+        for(var i=0;i<options.length;i++){
+            options[i].index=i;
+            options[i].onclick=function () {
+                var type2= options[this.index].getAttribute('id');
+                if(type != type2){
+                    p=1;
+                }
+                window.location.href="http://{$Think.server.http_host}__CONTROLLER__/index/type/"+type2+"/p/"+p+"/pagesize/"+pageSize+'.html#allGift';
+            };
+        }
+
+    if($("#pagation").find(".jump").length>0){
+        $("#pagation").find(".aBtns").css('padding-left',"0 0 0 40px");
+    }else{
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 240px");
+    }
+    </script>
+    <script>
+
+        $('.new-b').find('li').each(function () {
+            $(this).find('.load').click(function () {
+                $.ajax({
+                    type:'post',
+                    dataType:'json',
+                    data:{
+                        gift:$(this).parent("li").find('.first').html(),
+                        giftid:$(this).parent("li").find('.first').attr('id')
+                    },
+                    url:"{:U('Member/getGameGift')}",
+                    success:function(data) {
+                        if (parseInt(data.status) == 1 ) {
+//                    登录成功时候的状态
+                            if(data.msg=='ok'){
+                                login_ok(data);
+                            }
+                            if(data.msg=='no'){
+//                        您已领取过该礼包
+                                login_no(data)
+                            }
+                            if(data.msg=='noc'){
+//                        该礼包已领取完，下次请早
+                                login_noc(data)
+                            }
+                        }
+                        if (parseInt(data.status) == 0 ) {
+                            //登录失败的时候
+                            nologin_box();
+                        }
+                    },
+                    error:function() {
+                        alert('服务器故障，请稍候再试。。。。');
+                    }
+                });
+            })
+        })
+
+
+        $('.one_category').find('.right').each(function () {
+            $(this).find('.lq').click(function () {
+                $.ajax({
+                    type:'post',
+                    dataType:'json',
+                    data:{
+                        gift: $(this).parent(".right").find('.title').html(),
+                        giftid:$(this).parent(".right").find('.title').attr('id')
+                    },
+                    url:"{:U('Member/getGameGift')}",
+                    success:function(data) {
+                        if (parseInt(data.status) == 1 ) {
+//                    登录成功时候的状态
+                            if(data.msg=='ok'){
+                                login_ok(data);
+                            }
+                            if(data.msg=='no'){
+//                        您已领取过该礼包
+                                login_no(data)
+                            }
+                            if(data.msg=='noc'){
+//                        该礼包已领取完，下次请早
+                                login_noc(data)
+                            }
+                        }
+                        if (parseInt(data.status) == 0 ) {
+                            //登录失败的时候
+                            nologin_box();
+                        }
+                    },
+                    error:function() {
+                        alert('服务器故障，请稍候再试。。。。');
+                    }
+                });
+            })
+        });
+        $('.youxi-b').find('.show').each(function (){
+            $(this).find('.goandget').click(function (){
+                $.ajax({
+                    type:'post',
+                    dataType:'json',
+                    data:{
+                        gift: $(this).parent(".show").find('.first').html(),
+                        giftid:$(this).parent(".show").find('.first').attr('id')
+                    },
+                    url:"{:U('Member/getGameGift')}",
+                    success:function(data) {
+                        if (parseInt(data.status) == 1 ) {
+//                    登录成功时候的状态
+                            if(data.msg=='ok'){
+                                login_ok(data);
+                            }
+                            if(data.msg=='no'){
+//                        您已领取过该礼包
+                                login_no(data)
+                            }
+                            if(data.msg=='noc'){
+//                        该礼包已领取完，下次请早
+                                login_noc(data)
+                            }
+                        }
+                        if (parseInt(data.status) == 0 ) {
+                            //登录失败的时候
+                            nologin_box();
+                        }
+                    },
+                    error:function() {
+                        alert('服务器故障，请稍候再试。。。。');
+                    }
+                });
+            })
+        });
+
+
+    </script>
+    </html>
+</block>

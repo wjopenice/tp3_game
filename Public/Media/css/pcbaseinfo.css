@@ -1,0 +1,61 @@
+/*个人中心的基本信息*/
+
+#pc_main_con{
+    width:1200px;margin:0 auto;
+}
+#pc_main_con .baseInfo .title{
+    font:16px/50px "Arial"; color:#ed6557;
+    border-bottom: 1px solid #ed6557 ; padding-top:30px;
+}
+#pc_main_con .baseInfo .title img{
+    padding:0 20px ;
+}
+#pc_main_con .baseInfo .content{
+	width:1200px;margin:0 auto;
+}
+#pc_main_con .baseInfo .content .con_l{
+    width:340px;padding-top:56px;float:left;
+}
+#pc_main_con .baseInfo .content .con_l .info_l_top{
+    width:155px;height:154px;margin-left:40px;margin-bottom: 20px;
+}
+#pc_main_con .baseInfo .content .con_l .info_l_bot{
+    width:340px;padding:10px 0 0 30px;
+}
+#pc_main_con .baseInfo .content .con_l .info_l_bot p{
+    margin:0 0 10px 0;line-height:20px;
+}
+#pc_main_con .baseInfo .content .con_l .info_l_bot .safe{
+    padding-left:20px;
+}
+#pc_main_con .baseInfo .content .con_l .info_l_bot .safe .level_di{
+    color:#ed6557;
+}
+#pc_main_con .baseInfo .content .con_l .info_l_bot .safe .level_gao{
+    color:green;
+}
+#baseInfo_r{ width:760px;float:left;margin:43px 0 0 100px;}
+#baseInfo_r .con {height:30px;margin-bottom: 30px;}
+#baseInfo_r .con label{float: left;}
+#baseInfo_r .con label span{display:inline-block;width:100px;text-align:right;font-size:12px;color:#333;}
+#baseInfo_r .con label input{
+    width:268px;height:28px;line-height:28px;text-indent: 2em;   
+    font-size:12px;color:#666;
+    border:1px solid #ccc;
+    margin-left:5px;
+    background: #fff;
+}
+
+#baseInfo_r .star{color:#F19EC2;padding:0 5px 0 30px;}
+#baseInfo_r .ok{color:#afda68;padding:0 5px 0 30px;}
+#baseInfo_r .con p a{
+    display: inline-block;width:92px;height:30px;line-height: 30px;
+    padding:0 5px;font-size:14px;text-align: center;
+    background:#ed6557;color:#fff;margin-left:30px;cursor:pointer;
+    
+}
+#baseInfo_r .con  #xiugia input{
+    width:92px;height:30px;line-height: 30px;
+    padding:0 5px;font-size:14px;text-align: center;
+    background:#ed6557;color:#fff;margin-left:30px;cursor:pointer;
+}

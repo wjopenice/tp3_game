@@ -1,0 +1,156 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <link rel="stylesheet" href="__CSS__/personalcenter.css">
+    <link rel="stylesheet" href="__CSS__/pcaccountyue.css">
+    <style>
+    #pagation{text-align:center;margin:40px 0 0 40px;}      
+    #pagation .aBtns{float:left; padding-left:115px;}
+    #pagation .aBtns a{text-decoration: none;font-size:14px;color:#666;display: inline-block;padding:5px 10px;background:#fff;margin:0 5px;float:left;cursor: pointer;}
+    #pagation .aBtns a.active{color:#fff;background:#f6c15b;}
+    #pagation .jump{float:right; font-size:14px;color:#666;
+        line-height:20px;padding-right:150px;}
+    #pagation .jump input{width:40px;height:20px;border:1px solid #ccc;font-size:14px;margin:3px 3px 0 10px;}
+    #pagation .jump span{display: inline-block;font-size:14px;padding:5px 10px;}
+    
+    </style>
+    <div id="pc_main_con" >
+        <!--个人中心/账户余额-->
+        <div class="account_yue" >
+            <div class="title">
+                 <span style="background: url(__IMG__/personalcenter/pcsprits.png) no-repeat  -166px 0;"></span>账户余额
+            </div>
+            <div class="content clearfix">
+                <div class="con_l" id="account_tab">
+                    <ul>
+                        <li class="current" id="0"><a href="javascript:;"><span style="background: url(__IMG__/personalcenter/pcsprits.png) no-repeat -167px -70px;"></span>平台币余额</a></li>
+                        <li id="1"><a href="javascript:;"><span style="background: url(__IMG__/personalcenter/pcsprits.png) no-repeat -168px -108px;"></span>绑定平台币余额</a></li>
+                    </ul>
+                </div>
+                <div class="con_r" id="account_con">
+                    <!--个人中心/账户余额/平台币余额-->
+                    <div class="con_r_plat  com_r" >
+                        <h2>您的玩转平台平台币余额是&nbsp;:<span id="plat_yue">{$balance}</span></h2>
+                        <p class="msg">使用玩转平台现金账户会让您在玩转平台SDK游戏购买各种虚拟物品平台币余额。</p>
+                        <ul class="clearfix">
+                            <li>
+                                <p><img src="__IMG__/personalcenter/account/anquan.png"></p>
+                                <p class="text">采用顶级数据加密方案，保障新建账户。出入帐记录绝对安全，您可以放心使用。</p>
+                            </li>
+                            <li>
+                                <p><img src="__IMG__/personalcenter/account/xiaofei.png"></p>
+                                <p class="text">补偿等服务可以在通过审核后立即到账您的现金账户，免去等待。</p>
+                            </li>
+                            <li>
+                                <p><img src="__IMG__/personalcenter/account/jilu.png"></p>
+                                <p class="text">账户中记录您的每一笔入账和支出，方便查找和管理日常交易。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--个人中心/账户余额/绑定平台币余额-->
+                    <div class="con_r_bind_yue com_r" style="display: none;">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th  class="fir" style="color:#333;">游戏名称</th>
+                                <th class="sec" style="color:#333;">余额</th></tr>
+                            </thead>
+                            <tbody>
+                               <volist name="list_data" id="vo">
+                                 <tr><td  class="fir">{:msubstr($vo['game_name'],0,7,'UTF-8',false)}</td><td class="sec">{$vo.bind_balance}</td></tr> 
+                               </volist> 
+                            </tbody>
+                        </table>
+                       <div id="pagation"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--小火箭-->
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+
+
+
+</body>
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script src="__JS__/pagation.js"></script> 
+
+<script>
+    $(function(){
+    var l=($(window).width()-$("#pc_main_title").outerWidth())/2;
+    $("#pc_main_title").css("left",l);
+
+    var type = {$Think.get.type|default=0};
+    var p ={$Think.get.p|default=1};
+    var aLi=document.getElementById("account_tab").getElementsByTagName('li');
+        for(var i=0;i<aLi.length;i++){
+                for(var j=0;j<aLi.length;j++){                   
+                    aLi[j].className = "";
+                }        
+        }
+        $("#account_tab").find('#'+type).addClass('current');  
+
+        if($('#account_tab').find('li').eq(0).hasClass('current')){
+            $('#account_tab').find('li').eq(0).find('span').css('background-position','  -167px -70px')
+        }else{
+           $('#account_tab').find('li').eq(0).find('span').css('background-position','  -167px -34px')
+
+        }
+        if($('#account_tab').find('li').eq(1).hasClass('current')){
+            $('#account_tab').find('li').eq(1).find('span').css('background-position','  -168px -144px')
+        }else{
+           $('#account_tab').find('li').eq(1).find('span').css('background-position','  -168px -108px')
+
+        }
+        
+        aLi[0].onclick=function () {
+            var type= aLi[0].getAttribute('id');            
+            window.location.href='http://{$Think.server.http_host}__CONTROLLER__/pcaccountyue/type/'+type+'.html';        
+        };
+        aLi[1].onclick=function () {
+            var type= aLi[1].getAttribute('id');            
+            window.location.href='http://{$Think.server.http_host}__CONTROLLER__/pcaccountyue/type/'+type+'/p/'+p+'/pagesize/10.html';        
+        };
+   
+
+
+    if(type==0){
+        $("#account_con").find(".com_r").hide();
+        $("#account_con").find(".com_r").eq(0).show();
+    } 
+    if(type==1){
+       $("#account_con").find(".com_r").hide();
+       $("#account_con").find(".com_r").eq(1).show();
+
+        var dataLength="{$count|default=0}";
+        var pageSize=10;
+        var allPageNum=dataLength%pageSize==0 ? parseInt(dataLength/pageSize):(parseInt(dataLength/pageSize)+1);       
+        
+        var p ={$Think.get.p|default=0};
+        if(dataLength>pageSize){
+            page({
+                id : 'pagation',
+                nowNum : p,
+                allNum : allPageNum,
+                callBack : function(now,all){
+                     window.location.href='http://{$Think.server.http_host}__CONTROLLER__/pcaccountyue/type/'+type+'/p/'+now+'/pagesize/'+pageSize+'.html';
+                }
+            });
+        }else{
+            $("#pagation").css("display","none");
+        };
+
+    } 
+
+
+    })
+</script>
+
+</html>
+</block>

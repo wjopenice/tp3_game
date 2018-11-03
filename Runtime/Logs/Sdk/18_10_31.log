@@ -1,0 +1,25 @@
+[ 2018-10-31T14:19:39+08:00 ] 127.0.0.1 /sdk/User/user_login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+NOTIC: [8] Memcache::connect(): Server 127.0.0.1 (tcp 11211, udp 0) failed with: ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+NOTIC: [2] Memcache::connect(): Can't connect to 127.0.0.1:11211, ������ӷ���һ��ʱ���û���ȷ�𸴻�ӵ����û�з�Ӧ�����ӳ���ʧ�ܡ�
+ (10060) F:\Visual-NMP-x64\www\zswh\ThinkPHP\Library\Think\Cache\Driver\Memcache.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `sys_hooks` [ RunTime:0.0416s ]
+SQL: SELECT `name`,`addons` FROM `sys_hooks`  [ RunTime:0.0407s ]
+SQL: SHOW COLUMNS FROM `sys_addons` [ RunTime:0.0412s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('ReturnTop')  [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment','SocialComment')  [ RunTime:0.0415s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Attachment')  [ RunTime:0.0407s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('EditorForAdmin')  [ RunTime:0.0411s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('SiteStat','SystemInfo','DevTeam')  [ RunTime:0.0416s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('Editor')  [ RunTime:0.0414s ]
+SQL: SELECT `id`,`name` FROM `sys_addons` WHERE `status` = 1 AND `name` IN ('UploadImages')  [ RunTime:0.0412s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:1.693102s ]
+INFO: [ app_init ] --END-- [ RunTime:1.694300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012244s ]
+

@@ -1,0 +1,91 @@
+<extend name="Public/base" />
+
+<block name="body">
+<link rel="stylesheet" type="text/css" href="__CSS__/admin_table.css" media="all">
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <div class="main-title cf">
+        <h2>编辑[游戏返利]</h2>
+    </div>
+    <!-- 标签页导航 -->
+<div class="tab-wrap">
+    <ul class="tab-nav nav">
+        <li data-tab="tab1" class="current"><a href="javascript:void(0);">基础</a></li>
+    </ul>
+    <div class="tab-content zc_for">
+    <!-- 表单 -->
+    <!-- 表单 -->
+    <form id="form" action="{:U('edit?model='.$model['id'])}" method="post" class="form-horizontal">
+        <!-- 基础 -->
+        <div id="tab1" class="tab-pane in tab1">
+        <table  border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td class="l">游戏名称：</td>
+                    <td class="r" >
+                        <input type="text" class="txt"  name="game_name" disabled="disabled" value="{$data.game_name}" >
+                          <input type="text" class="hidden"  name="game_name"  value="{$data.game_name}">
+                           <input type="text" class="hidden"  name="game_id"  value="{$data.game_id}">
+                    </td>
+                    </tr>
+                  <tr>
+                    <td class="l">推广员：</td>
+                    <td class="r">
+                           <input type="text" class="txt"  name="promote_name" disabled="disabled" value="{$data.promote_name}">
+                            <input type="text" class="hidden"  name="promote_name"  value="{$data.promote_name}">
+                           <input type="text" class="hidden"  name="promote_id"  value="{$data.promote_id}">
+
+                    </td>
+                    <td class="l"></td>
+                    <td class="r">                        
+                    </td>
+                  </tr>
+                    <tr>
+                    <td class="l">代充折扣：</td>
+                    <td class="r" colspan='3'>
+                        <input type="text" class="txt"  name="discount" value="{$data.discount}" placeholder="请输入1-10的数字,如:4.5即为45%">
+                        <span>请输入1-10的数字,如:4.5即为45%</span>
+                    </td>
+                    <input type="hidden" name="id" value="{$data.id}">
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-item cf">
+            <button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <a class="btn btn-return" href="javascript:history.back(-1);">返 回</a>
+        </div>
+    </form>
+    </div>
+</div>
+</block>
+
+<block name="script">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+//导航高亮
+highlight_subnav('{:U('change/lists')}');
+$('#submit').click(function(){
+    $('#form').submit();
+});
+
+$(function(){
+    var inp_radio=$(":radio:checked").val();
+  if(inp_radio==0){
+    $(".money").hide()
+    $("#money").val(0);
+  }else{
+     $(".money").show();     
+  }
+  $(".inp_radio").change(function(){
+    if($(this).val()==1){
+     $(".money").show();     
+    }else{
+    $(".money").hide()
+    $("#money").val(0);   
+    }
+  });
+    showTab();
+
+});
+</script>
+</block>

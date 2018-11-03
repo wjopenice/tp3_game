@@ -1,0 +1,203 @@
+<extend name="Public/base" />
+
+<block name="body">
+<link rel="stylesheet" type="text/css" href="__CSS__/admin_table.css" media="all">
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <div class="main-title cf">
+        <h2>新增 [游戏类型]</h2>
+    </div>
+    <!-- 标签页导航 -->
+<div class="tab-wrap">
+    <div class="tab-content zc_for">
+    <!-- 表单 -->
+    <form id="form" action="{:U('game_type_add')}" method="post" class="form-horizontal" onsubmit="return kong()">
+        <!-- 基础 -->
+        <div id="tab1" class="tab-pane in tab1 tab-look">
+    		<table  border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td class="l">游戏类型：</td>
+                    <td class="r">
+                        <input type="text" class="txt" name="type_name" id="type_name" value="" placeholder="请输入游戏类型">
+                        <span  style="color:red;"></span>
+                    </td>
+                  </tr>
+                  </tr>
+                    <td class="l">显示状态：</td>
+                    <td class="r">
+                        <label class="inp_radio">
+                            <input type="radio" class="inp_radio" value="0" name="status_show">关闭
+                            <input type="radio" class="inp_radio" value="1" name="status_show" checked="checked">开启
+                        </label>
+                    </td>
+                  <tr>
+                  <tr>
+                      <td class="l">图片尺寸：</td>
+                      <td class="r" >
+                         <input type="text" class="txt" name="img_size" id="img_size" value="" placeholder="请输入图片尺寸">
+                        <span  style="color:red;"></span>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td class="l">标识图片：</td>
+                    <td class="r" >                       
+                        <span id="type_img">{:hook('UploadImages', array('name'=>'type_img','value'=>''))}
+                         </span>
+                       <span style="color:red;"></span>
+                    </td>  
+                  </tr>
+                  <tr>
+                    <td class="l">游戏类型排序：</td>
+                    <td class="r">
+                        <input type="text" class="txt" name="sort" id="sort" value="">
+                        <span style="color:red;"></span>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+     
+
+             
+        
+        <!-- <button type="submit">确定</button> -->
+        <!-- <div class="form-item cf">
+            <button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <a class="btn btn-return" href="javascript:history.back(-1);">返 回</a>
+        </div> -->
+        <div class="form-item">
+            <input  type="submit" name="submit" value="确 定" style="border:none;width:70px;height: 40px;color:#fff; background-color: #2062b0;   margin: 30px 10px;padding: 10px;line-height: 20px;">
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+    </div>
+</div>
+</block>
+
+<block name="script">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+//alert($("#cover_id_icon").parent().find('.upload-img-box').html());
+//导航高亮
+highlight_subnav('{:U('APP/game_type_add')}');
+$('#submit').click(function(){
+    $('#form').submit();
+});
+
+$(function(){
+    $("input[name='game_appid']").val("{:generate_game_appid()}");
+    $("#game_type_name").val($("#game_type_id option:selected").text());
+    
+    $('.date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    $('.time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    showTab();
+
+});
+
+
+
+//上传游戏图标
+/* 初始化上传插件 */
+$("#upload_picture_icon").uploadify({
+    "height"          : 30,
+    "swf"             : "__STATIC__/uploadify/uploadify.swf",
+    "fileObjName"     : "download",
+    "buttonText"      : "上传图标",
+    "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+    "width"           : 120,
+    'removeTimeout'   : 1,
+    'fileTypeExts'    : '*.jpg; *.png; *.gif;',
+    "onUploadSuccess" : upload_picture_icon{$field.name},
+    'onFallback' : function() {
+        alert('未检测到兼容版本的Flash.');
+    }
+});
+function upload_picture_icon{$field.name}(file, data){
+    var data = $.parseJSON(data);
+    var src = '';
+    if(data.status){
+        $("#cover_id_icon").val(data.id);
+        src = data.url || '__ROOT__' + data.path;
+        $("#cover_id_icon").parent().find('.upload-img-box').html(
+            '<div class="upload-pre-item"><img src="' + src + '"/></div>'
+        );
+    } else {
+        updateAlert(data.info);
+        setTimeout(function(){
+            $('#top-alert').find('button').click();
+            $(that).removeClass('disabled').prop('disabled',false);
+        },1500);
+    }
+}
+
+
+//上传游戏封面
+/* 初始化上传插件 */
+$("#upload_picture_cover").uploadify({
+    "height"          : 30,
+    "swf"             : "__STATIC__/uploadify/uploadify.swf",
+    "fileObjName"     : "download",
+    "buttonText"      : "上传封面",
+    "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+    "width"           : 120,
+    'removeTimeout'   : 1,
+    'fileTypeExts'    : '*.jpg; *.png; *.gif;',
+    "onUploadSuccess" : upload_picture_cover{$field.name},
+    'onFallback' : function() {
+        alert('未检测到兼容版本的Flash.');
+    }
+});
+function upload_picture_cover{$field.name}(file, data){
+    var data = $.parseJSON(data);
+    var src = '';
+    if(data.status){
+        $("#cover_id_cover").val(data.id);
+        src = data.url || '__ROOT__' + data.path;
+        $("#cover_id_cover").parent().find('.upload-img-box').html(
+            '<div class="upload-pre-item"><img src="' + src + '"/></div>'
+        );
+    } else {
+        updateAlert(data.info);
+        setTimeout(function(){
+            $('#top-alert').find('button').click();
+            $(that).removeClass('disabled').prop('disabled',false);
+        },1500);
+    }
+}
+
+function kong(){
+            if($.trim($("#type_name").val())==''){
+               $('#type_name').next('span').text('游戏类型不能为空！！！');
+               return false;
+            }else if($.trim($("#img_size").val())==''){
+               $('#img_size').next('span').text('图片尺寸大小不能为空！！！');
+               return false;
+           }else if($.trim($("#sort").val())==''){
+               $('#sort').next('span').text('排序不能为空！！！');
+               return false;
+           }
+           
+       };
+
+       $("#type_name").focus(function(){
+         $('#type_name').next('span').text('');
+       });
+        $("#img_size").focus(function(){
+         $('#img_size').next('span').text('');
+       });       
+        $("#sort").focus(function(){
+         $('#sort').next('span').text('');
+       });
+
+</script>
+</block>

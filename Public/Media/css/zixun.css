@@ -1,0 +1,461 @@
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.pic {
+  width: 1200px;
+  height: 400px;
+  margin: 0 auto;
+}
+.pic .pic1 {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+.pic .pic1 a {
+  display: inline-block;
+}
+.pic .pic1 .show {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ background: url("../image/medal.png") left top repeat;
+  display: none;
+}
+.pic .pic1 .show .show-content {
+    width: 300px;
+    height: 400px;
+    line-height: 400px;
+}
+.pic .pic1 .show .show-content   a {
+  font-size: 16px;
+  display: block;
+  color: #fff;
+  text-align: center;
+}
+.pic .pic1:hover .show {
+  display: block;
+}
+.pic .pic2 {
+  width: 400px;
+  height: 400px;
+  float: left;
+}
+.pic .pic2 .pic2-t {
+  position: relative;
+  float: left;
+}
+.pic .pic2 .pic2-t .one {
+  width: 400px;
+  height: 200px;
+  display: block;
+}
+.pic .pic2 .pic2-t .one img {
+  display: inline-block;
+}
+.pic .pic2 .pic2-t .show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 200px;
+  background: url("../image/medal.png") left top repeat;
+  display: none;
+}
+.pic .pic2 .pic2-t .show   a {
+    font-size: 16px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+}
+.pic .pic2 .pic2-t:hover .show {
+  display: block;
+}
+.pic .pic2 .pic2-b {
+  position: relative;
+  float: left;
+}
+.pic .pic2 .pic2-b .two {
+  width: 400px;
+  height: 200px;
+}
+.pic .pic2 .pic2-b .show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 200px;
+  background: url("../image/medal.png") left top repeat;
+  display: none;
+}
+.pic .pic2 .pic2-b .show   a {
+    font-size: 16px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+}
+.pic .pic2 .pic2-b:hover .show {
+  display: block;
+}
+.pic .pic3 {
+  width: 300px;
+  height: 400px;
+  float: left;
+  position: relative;
+}
+.pic .pic3 a {
+  display: inline-block;
+}
+.pic .pic3 .show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  background: url("../image/medal.png") left top repeat;
+  display: none;
+}
+.pic .pic3 .show .show-content {
+    width: 300px;
+    height: 400px;
+    line-height: 400px;
+}
+.pic .pic3 .show .show-content   a {
+  font-size: 16px;
+  display: block;
+  color: #fff;
+  text-align: center;
+}
+.pic .pic3:hover .show {
+  display: block;
+}
+.pic .pic4 {
+  width: 200px;
+  height: 400px;
+  float: left;
+  position: relative;
+}
+.pic .pic4 a {
+  display: inline-block;
+}
+.pic .pic4 .show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 400px;
+  background: url("../image/medal.png") left top repeat;
+  display: none;
+}
+.pic .pic4 .show .show-content {
+  width: 200px;
+  height: 400px;
+  line-height: 400px;
+}
+.pic .pic4 .show .show-content   a {
+     font-size: 16px;
+    display: block;
+    color: #fff;
+    text-align: center;
+}
+.pic .pic4:hover .show {
+  display: block;
+}
+.zixun .zixun-l {
+  width: 800px;
+  float: left;
+}
+.zixun .zixun-l .cosplay {
+  margin-top: 30px;
+  width: 800px;
+}
+.zixun .zixun-l .cosplay .tab {
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  border-bottom: 1px solid #ed6557;
+}
+.zixun .zixun-l .cosplay .tab .tab1 {
+  color: gray;
+  font-size: 20px;
+  float: left;
+  display: block;
+}
+.zixun .zixun-l .cosplay .tab .tab1 .icon-cosplay {
+  width: 14px;
+  height: 13px;
+  display: inline-block;
+  background: url("../image/newsprits.png") no-repeat -77px -243px;
+  margin-right: 10px;
+}
+.zixun .zixun-l .cosplay .tab .tab2 {
+  color: #666;
+  font-size: 20px;
+  float: left;
+  display: block;
+}
+.zixun .zixun-l .cosplay .tab .tab2 .icon-huodong {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background: url("../image/newsprits.png") no-repeat -72px -175px;
+  margin-right: 10px;
+}
+.zixun .zixun-l .cosplay .tab .tab3 {
+  color: #666;
+  font-size: 20px;
+  float: left;
+  display: block;
+}
+.zixun .zixun-l .cosplay .tab .tab3 .icon-gonggao {
+  width: 17px;
+  height: 13px;
+  display: inline-block;
+  background: url("../image/newsprits.png") no-repeat -77px -301px;
+  margin-right: 10px;
+}
+.zixun .zixun-l .cosplay .tab a.on {
+  color: #ed6557;
+}
+.zixun .zixun-l .cosplay .tab a.on .icon-cosplay {
+  background: url("../image/newsprits.png") no-repeat -77px -212px;
+}
+.zixun .zixun-l .cosplay .tab a.on .icon-huodong {
+  background: url("../image/newsprits.png") no-repeat -71px -150px;
+}
+.zixun .zixun-l .cosplay .tab a.on .icon-gonggao {
+  background: url("../image/newsprits.png") no-repeat -74px -274px;
+}
+.zixun .zixun-l .cosplay .content {
+  /*margin-top: 20px;*/
+  overflow: hidden;
+}
+.zixun .zixun-l .cosplay .content ul li {
+  display: none;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t {
+  cursor: pointer;
+  height: 170px;
+  width: 800px;
+  margin-top:20px;
+  border-bottom: 1px solid #F3f3f3;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t > img {
+  float: left;
+  margin-right: 20px;
+  width: 300px;
+  height: 150px;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t .content-r {
+  padding-top: 10px;
+  height:150px;
+  width: 480px;
+  float: right;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t .content-r >a{
+  display: inline-block;
+  width:450px;
+  height:20px;line-height: 20px;overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t .content-r .first {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t .content-r .next {
+  font-size: 12px;  color: #989898; width: 480px;height: 40px;line-height: 20px;overflow: hidden;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t .content-r .read{
+  padding-top:50px;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t .content-r .read .one {
+  display: inline-block;
+  font-size: 14px;
+  color: #989898;
+  float: left;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t .content-r .read span {
+  font-size: 14px;
+  color: #989898;
+  float: right;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t:hover .first {
+  color: #ed6557;
+}
+.zixun .zixun-l .cosplay .content ul li .content-t .content-t-t:hover .read .one {
+  color: #ed6557;
+}
+
+.zixun .zixun-l .cosplay .content ul li .wenzi .wenzi-1 {
+  width: 800px;
+  margin-top: 22px;
+  height: 19px;
+}
+.zixun .zixun-l .cosplay .content ul li .wenzi .wenzi-1 a {
+  display: inline-block;
+  width: 612px;
+  float: left;
+  height: 19px;
+  line-height: 19px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.zixun .zixun-l .cosplay .content ul li .wenzi .wenzi-1 a:hover {
+  color: #ed6557;
+  margin-left: 19px;
+}
+.zixun .zixun-l .cosplay .content ul li .wenzi .wenzi-1 span {
+  float: right;
+  font-size: 14px;
+  color: #989898;
+}
+.zixun .zixun-r {
+  width: 375px;
+  float: right;
+}
+.zixun .zixun-r .hot {
+  margin-top: 30px;
+  width: 375px;
+}
+.zixun .zixun-r .hot .hot-t {
+  height: 40px;
+  font-size: 18px;
+  border-bottom: 1px solid #f19ec2;
+}
+.zixun .zixun-r .hot .hot-t a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #f19ec2;
+  float: left;
+}
+.zixun .zixun-r .hot .hot-t .icon-zixun {
+  margin-right: 10px;
+  display: inline-block;
+  background: url("../image/newsprits.png") no-repeat -72px -328px;
+  width: 16px;
+  height: 17px;
+}
+.zixun .zixun-r .hot .hot-b {
+  margin-top: 20px;
+}
+.zixun .zixun-r .hot .hot-b ul {
+  margin-top: 20px;
+}
+.zixun .zixun-r .hot .hot-b ul li {
+  float: left;
+  margin-bottom: 24px;
+}
+.zixun .zixun-r .hot .hot-b ul li span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  /*解决IE*/
+  behavior: url(ie-css3.htc);
+  background-color: #989898;
+  margin-right: 10px;
+  float: left;
+  margin-top: 5px;
+}
+.zixun .zixun-r .hot .hot-b ul li a {
+  display: inline-block;
+  width: 350px;
+  font-size: 14px;
+  float: left;
+  height: 19px;
+  line-height: 19px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.zixun .zixun-r .hot .hot-b ul li:hover span {
+  background-color: #f19ec2;
+}
+.zixun .zixun-r .hot .hot-b ul li:hover a {
+  color: #f19ec2;
+}
+.zixun .zixun-r .active {
+  width: 375px;
+  margin-top: 30px;
+}
+.zixun .zixun-r .active .active-t {
+  height: 40px;
+  font-size: 18px;
+  border-bottom: 1px solid #f6c15b;
+}
+.zixun .zixun-r .active .active-t a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #f6c15b;
+  float: left;
+}
+.zixun .zixun-r .active .active-t a:last-child {
+  margin-bottom: 0;
+}
+.zixun .zixun-r .active .active-t .icon-zixun {
+  margin-right: 10px;
+  display: inline-block;
+  background: url("../image/newsprits.png") no-repeat -70px -113px;
+  width: 15px;
+  height: 16px;
+}
+.zixun .zixun-r .active .active-b {
+  margin-top: 20px;
+}
+.zixun .zixun-r .active .active-b ul {
+  margin-top: 20px;
+}
+.zixun .zixun-r .active .active-b ul li {
+  float: left;
+  margin-bottom: 24px;
+}
+.zixun .zixun-r .active .active-b ul li span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  /*解决IE*/
+  behavior: url(ie-css3.htc);
+  background-color: #989898;
+  margin-right: 10px;
+  float: left;
+  margin-top: 5px;
+}
+.zixun .zixun-r .active .active-b ul li a {
+  display: inline-block;
+  width: 350px;
+  font-size: 14px;
+  float: left;
+  height: 19px;
+  line-height: 19px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.zixun .zixun-r .active .active-b ul li:hover span {
+  background-color: #f6c15b;
+}
+.zixun .zixun-r .active .active-b ul li:hover a {
+  color: #f6c15b;
+}
+#pagation{padding-top:24px;padding-bottom: 24px;}

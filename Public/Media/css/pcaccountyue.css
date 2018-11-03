@@ -1,0 +1,75 @@
+/*个人中心的内容部分----账户余额部分-----的样式-----------------------*/
+#pc_main_con{
+    width:1200px;margin:0 auto;
+}
+#pc_main_con .account_yue .title{
+    font:16px/50px "Arial"; color:#f6c15b;
+    border-bottom: 1px solid #f6c15b ; padding-top:30px;
+}
+ #pc_main_con .account_yue .title span{float: left;width:21px;height: 21px;margin:15px 20px 0 20px;}
+#pc_main_con .account_yue .content .con_l{
+    width:240px;padding-top:40px;float:left;
+}
+#pc_main_con .account_yue .content .con_l li a{
+    display: block;line-height:60px;
+    font-size:14px;color:#333;
+}
+#pc_main_con .account_yue .content .con_l li a span{
+    float: left;width:21px;height: 21px;margin:20px 12px 0 58px;}
+#pc_main_con .account_yue .content .con_l .current a{
+    color:#fff;background:#f6c15b;
+}
+#pc_main_con .account_yue .content .con_r{
+    float:right;width:960px;min-height: 400px;
+}
+#pc_main_con .account_yue .content .con_r .con_r_plat{
+    padding-top: 40px;
+}
+
+#pc_main_con .account_yue .content .con_r .con_r_plat h2{
+  
+    width:960px;text-align: center;
+    font-size:24px;color:#333;line-height:30px;
+}
+#plat_yue{padding:0 5px;color:#f6c15b;}
+#pc_main_con .account_yue .content .con_r .con_r_plat p.msg{
+   width:960px;text-align: center;
+   margin:22px 0 50px;
+    font-size:12px;color:#666;line-height:30px;height:30px;
+}
+#pc_main_con .account_yue .content .con_r  .con_r_plat ul li{
+    width:190px;margin-left:116px;float:left;
+}
+#pc_main_con .account_yue .content .con_r .con_r_plat ul li p{text-align: center;}
+#pc_main_con .account_yue .content .con_r .con_r_plat ul li p.text{
+    font-size:12px;color:#666;
+    padding-top: 20px;line-height:22px;
+}
+#pc_main_con .account_yue .content .con_r .con_r_bind_yue{
+    padding-top: 40px;
+    margin-left:68px;
+}
+#pc_main_con .account_yue .content .con_r .con_r_bind_yue table{
+    width:892px;
+}
+#pc_main_con .account_yue .content .con_r .con_r_bind_yue table tr{
+    border-bottom:1px solid #E6E6E6;height:46px;color:#666;font-size:14px;
+}
+#pc_main_con .account_yue .content .con_r .con_r_bind_yue table tr td.fir{width:20%; text-align: center}
+#pc_main_con .account_yue .content .con_r .con_r_bind_yue table tr td.sec{text-align: right;padding-right:76px;}
+#pc_main_con .account_yue .content .con_r .con_r_bind_yue table tr th.fir{width:20%; text-align: center}
+#pc_main_con .account_yue .content .con_r .con_r_bind_yue table tr th.sec{text-align: right;padding-right:76px;}
+#chang_page{
+    padding:20px;margin:100px 0 0 100px;font-size:14px;color:#666;
+}
+#chang_page a , #chang_page span{
+    font-size:14px;color:#666;
+    display: inline-block;padding:5px 10px;
+    background:#fff;margin:0 8px;
+}
+#chang_page .current
+{color:#fff;background:#a6937c;}
+#chang_page input{
+    width:50px;padding:5px;
+    border:1px solid #E6E6E6;margin:0 5px;
+}

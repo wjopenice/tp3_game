@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><!--ie专用-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no, address=no">
+<meta name="x5-orientation" content="portrait">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="screen-orientation" content="portrait">
+<style>
+    *{margin:0;padding:0;}
+    a{text-decoration: none;}
+    li{list-style: none;}
+    input,textarea,a{outline: none;}
+    textarea{resize: none;}
+    i,em,s,em{font-style: normal;}
+    img{border: none;vertical-align: top;width:100%;}
+    body{font-family: "微软雅黑";}
+    html{font-size:62.5%;}
+    .zi-xun{width:94%;margin:0 3%;}
+    .zi-xun .title{width:100%; line-height:3rem;color:#343434;text-align: center;font-size:2.6rem;margin-top:2.4rem;}
+    .zi-xun .author{width:100%; line-height:2rem;text-align: center;font-size:1.2rem;margin-top: 1rem ; margin-bottom:1rem; color:#999;}
+    .zi-xun .main{width:100%;line-height:2.8rem;font-size:1.6rem!important;color:#676767;}
+    .zi-xun .main p{text-indent: 2em;}
+    .zi-xun .main img{max-width: 100%!important;}
+
+</style>
+</head>
+<body>
+<div class="zi-xun">
+    <!-- <h1 class="title">玩转平台平台6月9日维护公告</h1> -->
+    <h1 class="title">{$vo.title}</h1>
+    <!-- <div class="author">作者: 陪陪    时间：2017-06-07 14:03:00</div> -->
+    <p class="author">
+        作者: {:get_admin_name($vo['admin'])} &nbsp;  &nbsp;  &nbsp;
+        时间：{$vo.create_time|date="Y-m-d H:i:s",###}
+    </p>
+    <div class="main">
+        {$vo.content} 
+    </div>
+</div>
+</body>
+</html>

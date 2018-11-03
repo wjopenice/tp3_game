@@ -1,0 +1,142 @@
+.dl {
+  height: 658px;
+  width: 100%;
+  min-width: 1200px;
+  background: url(../image/login/beijing.jpg) no-repeat center top;
+  position: relative;
+}
+.dl .login {
+  width: 390px;
+  height: 348px;
+  background: url(../image/login/beijing.png);
+  position: absolute;
+  top: 120px;
+  right: 380px;
+}
+.dl .login .login-t {
+  height: 65px;
+  border-bottom: 1px solid #999;
+  line-height: 65px;
+}
+.dl .login .login-t > p {
+  font-size: 22px;
+  color: #333;
+  margin-left: 42px;
+}
+.dl .login .login-b .login-zh {
+  position: relative;
+}
+.dl .login .login-b .login-zh .zh {
+  width: 288px;
+  height: 46px;
+  background-color: #fff;
+  margin-left: 52px;
+  margin-top: 30px;
+  position: relative;
+  padding-left: 40px;
+  color: #333;
+  line-height: 46px;
+}
+.dl .login .login-b .login-zh .icon-zh {
+  width: 22px;
+  height: 22px;
+  background: url(../image/login/zhanghao.png);
+  position: absolute;
+  top: 42px;
+  left: 58px;
+}
+.dl .login .login-b .login-mima {
+  position: relative;
+}
+.dl .login .login-b .login-mima .mima {
+  width: 288px;
+  height: 46px;
+  background-color: #fff;
+  margin-left: 52px;
+  margin-top: 20px;
+  position: relative;
+  padding-left: 40px;
+  color: #858585;
+  line-height: 46px;
+}
+.dl .login .login-b .login-mima .icon-mima {
+  width: 22px;
+  height: 22px;
+  background: url(../image/login/mima.png);
+  position: absolute;
+  top: 30px;
+  left: 58px;
+}
+.dl .login .login-b .denglu {
+  display: block;
+  margin-top: 20px;
+  width: 288px;
+  height: 46px;
+  font-size: 16px;
+  line-height: 46px;
+  text-align: center;
+  color: #fff;
+  background-color: #f9a12f;
+  margin-left: 52px;
+  cursor:pointer;
+}
+.dl .login .login-b .jzmm {
+  float: left;
+  width: 100px;
+  margin-top: 24px;
+  margin-left: 52px;
+}
+.dl .login .login-b .jzmm a {
+  font-size: 14px;
+  color: #333;
+}
+.dl .login .login-b .jzmm a img {
+  display: inline-block;
+  margin-right: 5px;
+}
+.dl .login .login-b .wjmm {
+  margin-top: 24px;
+  float: right;
+  margin-right: 52px;
+}
+.dl .login .login-b .wjmm a {
+  display: inline-block;
+  font-size: 14px;
+  color: #333;
+}
+.lianjie {
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+.lianjie .lianjie-t {
+  font-size: 18px;
+  border-bottom: 1px solid #F19EC2;
+  height: 40px ;
+  line-height: 40px;
+}
+.lianjie .lianjie-t .one {
+  color: #F19EC2;
+}
+.lianjie .lianjie-t .one > span {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  background: url(../image/newsprits.png) no-repeat -11px -149px;;
+  margin-right: 10px;
+}
+.lianjie .lianjie-b {
+  margin: 20px 0 40px 0;
+}
+.lianjie .lianjie-b li{
+  float:left; width: 150px;
+    height: 24px;
+    line-height: 24px;
+}
+.lianjie .lianjie-b a {
+    font-size: 14px;
+    color: #323232;
+    display: block;
+  }
+.lianjie .lianjie-b a:hover {
+  color: #F19EC2;
+}

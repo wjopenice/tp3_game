@@ -1,0 +1,219 @@
+<extend name="Public/base"/>
+<block name="body" >
+    <title>游戏 </title>
+    <link rel="stylesheet" href="__CSS__/youxi.css">
+ <style>
+        #pagation{text-align:center;margin-top:20px;}
+        #pagation .aBtns{
+            float:left;
+            padding-left:110px;
+        }
+        #pagation .aBtns a{
+            text-decoration: none;
+            font-size:14px;color:#4c4c4c;
+            display: inline-block;padding:5px 10px;
+            background:#fff;margin:0 5px;float:left;
+            cursor: pointer;
+            border: 1px solid #dcdcdc;
+        }
+        #pagation .aBtns a.active{
+            color:#fff;
+            background:#ed6557;
+            border: 1px solid #ed6557;
+        }
+        #pagation .jump{
+            float:right; font-size:14px;color:#4c4c4c;
+            line-height:20px;
+            padding-right:90px;
+        }
+        #pagation .jump input{
+            width:50px;padding: 5px 10px;border:1px solid #999;
+            font-size:14px;margin:3px 3px 0 10px;
+        }
+        #pagation .jump span{
+            display: inline-block;cursor: pointer;color:#4c4c4c;
+            font-size:14px;padding:5px 10px;
+        } 
+        body{
+height:200px;
+background:url(javascript:alert("test!"));
+}
+        /*      公共title_box       */
+        .title_box{height: 54px;line-height: 54px;border-bottom: 2px solid #ccc;}
+        .tit_name{height: 54px;font-size: 20px;font-weight: 600;color: #333;padding: 0 20px;border-bottom: 2px solid #ff6b63;float: left;}
+        .more_link{float: right;}
+        .more_link span{font-size: 14px;color: #999;padding-right: 16px;vertical-align: middle;float: right;}
+
+    </style>
+<!--banner-->
+<div class="accordion">
+    <ul>      
+ 
+        <volist name="sliderbig" id="lun" >
+            <li  style="cursor:pointer;background-image:url(__ROOT__{$lun.data|get_cover='path'})"
+            onclick="window.location.href= '{$lun.url}' ">
+            <a href="javascript:;" style="background-image:url(__ROOT__{$lun.small_data|get_cover='path'})">
+            </a>
+            </li>
+        </volist>
+    </ul>
+</div>
+
+<!--游戏部分-->
+<div class="game clearfix" style="margin-top:0;">
+    <div class="container">
+        <div class="game-l">
+            <!--游戏分类-->
+            <div class="category">
+                <div class="title_box">
+                    <p class="tit_name">游戏分类</p>
+                </div>
+                <!--<div class="category-t">
+                    <a href="javascript:;"><span class="icon-fenlei"></span>游戏分类</a>
+                </div>-->
+                <div class="category-b">
+                    <div class="category-b-t">
+                        <a href="javascript:;">游戏题材</a>
+                    </div>
+                    
+                 <!-- 游戏分类 -->
+                 <div class="category-b-b">
+                      <a class="bx" href="{:U('Game/yx_fenlei?id=0')}">不 &nbsp;限</a><volist name=':get_game_type_all_show()' id='vo' key='k'><a href="{:U('Game/yx_fenlei?type='.$vo['id'].'')}">{$vo.type_name}</a></volist>
+                  </div>
+                  
+
+                </div>
+            </div>
+            <!--游戏排行-->
+            <div class=" paihang clearfix">
+                <div class="title_box">
+                    <p class="tit_name">游戏排行</p>
+                </div>
+                <!--<div class="paihang-t">
+                    <a href="javascript:;"  class="one"><span class="icon-libao"></span>游戏排行</a>
+                </div>-->
+               <div class="paihang-b ">
+                    <ul class="weekly-list">
+                    <volist name="rank" id="vo" >
+                            <li >
+                                <div class="app-show-title clearfix">
+                                    <if condition="$num lt 4"><span class="num s-index-org" style="background-color:#f19ec2;color: #fff;">{$num++}</span>
+                                        <elseif condition="$num lt 7" /><span class="num s-index-org" style="background-color:pink;color: #fff;">{$num++}</span>
+                                        <else /> <span class="num s-index-org" style=";background-color:gray;color: #fff;">{$num++}</span>
+                                    </if>                                    
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}"  class="bl">{$vo.game_name}</a>
+                                    <a href="javascript:;" class="hh">{$vo.game_type_name}</a>
+                                </div>
+
+                                <div class="app-show-block"> 
+                                <if condition="$num lt 5"><span class="num s-index-org" style="background-color:#f19ec2;color: #fff;"></span>
+                                        <elseif condition="$num lt 8" /><span class="num s-index-org" style="background-color:pink;color: #fff;"></span>
+                                        <else /> <span class="num s-index-org" style=";background-color:gray;color: #fff;"></span>
+                                    </if>   
+
+                                <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}" class="pic"><img src="__ROOT__{$vo.icon|get_cover='path'}" alt="{$vo.game_name}"></a>
+                                <div class='xzandli clearfix'>      
+                                    <div class='title clearfix'>
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>1))}"  class="name">{$vo.game_name}</a>
+                                    <a href="javascript:;" class="jiaose">{$vo.game_type_name}</a>
+                                    </div>
+                                    <div class='picandtxt'>   
+                                    <a  class="xz" href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>" class="down">下&nbsp;载</a>                                  
+                                    <a href="{:U('Game/yxchildren',array('id'=>$vo['id'],'type'=>2))}" class="lb">礼&nbsp;包</a>
+                                    </div>
+                            </li>
+                        </volist> 
+                        
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <!--全部游戏-->
+        <div class="game-r">
+            
+            <div class="all clearfix">
+                <div class="title_box">
+                    <p class="tit_name">全部游戏</p>
+                </div>
+                <!--<div class="all-t">
+                    <a href="javascript:;"><span class="icon-fenlei"></span>全部游戏</a>
+                </div>-->
+                <div class="all-b">
+                    <ul>
+                         <volist name="list_data" id="vo">
+                                                 <li>
+                            <div class="one">
+                                <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}"><img src="__ROOT__{$vo.icon|get_cover='path'}" alt=""></a>
+                                <div class="right">
+                                    <a href="{:U('Game/yxchildren?id='.$vo['id'].'')}" class="title">{$vo.game_name}</a>
+                                    <p class="next">{$vo['game_type_name']} | {$vo['game_size']}</p>
+                                    <a class="xz" href="<if condition='$vo.dow_status eq 0'>#<else/>{:U('Down/down_file?game_id='.$vo['id'].'&type=1')}</if>">下&nbsp;载</a>
+                                    <a class="lb" href="__CONTROLLER__/yxchildren/id/{$vo['id']}/type/2">礼&nbsp;包</a>
+                                </div>
+                            </div>
+                                                 </li>
+                                              </volist> 
+                     
+                    </ul>
+                </div>
+            </div>
+           
+            <!--分页器-->
+            <div id="pagation" class="clearfix">
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<!--尾巴部分-->
+</body>
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/youxi.js"></script>
+<script src="__JS__/js.js"></script>
+<script src="__JS__/pagation.js"></script>
+<script type="text/javascript" src="__JS__/query.js"></script>
+
+<script type="text/javascript">
+  
+</script>
+
+<script src="__JS__/jquery-1.11.1.min.js"></script>
+<script src="__JS__/jquery.accordion.js"></script>
+<script type="text/javascript"> 
+    $(".accordion").find('ul').find('li').eq(0).addClass('active'); 
+    $(document).ready(function(){
+        $(".accordion").accordion();
+    });
+</script>
+<script>
+    var dataLength={$count|default=0};//后台的数据总条目条目
+    var pageSize=18;
+    var allPageNum=dataLength%pageSize==0 ? parseInt(dataLength/pageSize):(parseInt(dataLength/pageSize)+1);
+    // 总计多少页
+    
+    var p ={$Think.get.p|default=1};
+    if(dataLength>pageSize){
+        page({
+            id : 'pagation',
+            nowNum : p,
+            allNum : allPageNum,
+            callBack : function(now,all){
+                 window.location.href="http://{$Think.server.http_host}__CONTROLLER__/youxi/p/"+now+"/pagesize/"+pageSize+'.html';
+            }
+        });
+    }else{
+        $("#pagation").css("display","none");
+    }
+
+    if($("#pagation").find(".jump").length>0){
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 110px");
+    }else{
+        $("#pagation").find(".aBtns").css('padding',"0 0 0 270px");
+    }
+</script>
+</html>
+</block>

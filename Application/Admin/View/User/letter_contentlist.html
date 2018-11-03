@@ -1,0 +1,26 @@
+<extend name="Public/base"/>
+<block name="body">
+                 <div id="tab-content">
+                        <div class="tab-title">
+                             <h1 style="font-size: 20px;text-align: center;margin-bottom: 15px;">{$list_data.title}</h1>
+                            <h5 style="text-align: center;font-size: 16px;margin-bottom: 10px;">
+                            {$list_data.create_time|time_format}   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    作者：{$list_data.send_account}
+                            </h5>
+                        </div>    
+                        <hr>
+                       
+                         <div class="tab-bottom " style="margin:0 auto; width: 80%;text-indent: 20px;font-size: 14px;">
+                           {$list_data.send_content}
+                        </div>
+                  </div>     
+  
+</block>
+
+<block name="script">
+
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('User/letter')}');
+    </script>
+</block>
+

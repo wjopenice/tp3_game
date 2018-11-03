@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>玩转平台手游助手_手机游戏第一下载门户_最专业的手游下载平台</title>
+    <meta name="keywords" content="玩转平台手游助手-最专业的手游下载平台。提供当下最全面最热门的安卓手机游戏下载，海量游戏内容，超多游戏礼包，畅爽新体验，全国最专业的手游下载平台，优质用户首选！来这里，轻松发现游戏！更多好玩的手机游戏尽在玩转平台！！" />
+    <meta name="description" content="玩转平台手游助手-最专业的手游下载平台。提供当下最全面最热门的安卓手机游戏下载，海量游戏内容，超多游戏礼包，畅爽新体验，全国最专业的手游下载平台，优质用户首选！来这里，轻松发现游戏！更多好玩的手机游戏尽在玩转平台！" />
+    <link rel="icon" href="__IMG__/s_logo.png"/>
+    <style>
+        /*通用全局设定*/
+        body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,textarea {margin:0;padding:0;}
+        img {border:0;}
+        table{border-collapse:collapse;border-spacing:0;}
+        ol,ul{list-style:none;}
+        input,button,select,textarea{outline:none;}
+        textarea{resize:none;}
+        a{text-decoration: none;}
+        /*公共样式*/
+        .clearfix:after {display: block;content:"";font-size: 0;clear: both;height: 0;}
+        .clearfix { *zoom:1;}
+        .fl{float:left;}
+        .fr{float:right;}
+        .wrap{width:1200px;margin:0 auto;}
+        html{font-family: "微软雅黑"}
+        /*头部*/
+        .header{width: 100%;min-width:1200px;height:80px;background:#fff;}
+        .header .headBar{height:80px;}
+        .header .headBar .logo{width:171px;height:75px;margin-top:2px;}
+        .header .headBar .item {height: 46px;line-height: 46px;margin:20px 10px 0 0;}
+        .header .headBar .item .img{width: 20px;height: 20px;padding: 13px 0;margin-right: 5px;}
+        .header .headBar .item .inner{display: block;font-style: normal;cursor: pointer;color:#333;}
+        /*banner*/
+        .banner{ width:100%;min-width:1200px;height:910px;background:url(__IMG__/app/appdown/banner.png) no-repeat top center;}
+        .banner .banCon{position:relative;height: 910px;}
+        .banner .banCon .appEvm{width:338px;height:154px;position: absolute;right:82px;top:430px;}
+        .banner .banCon .appEvm .pic{width:154px;height:154px;}
+        .banner .banCon .appEvm .pic img{width:154px;height:154px;}
+        .banner .banCon .appEvm .txt{width:184px;height:104px;color:#fff;font-size:20px;text-align: center; padding-top: 50px;}
+        .banner .banCon .superman{width:198px;height:140px;background:url(__IMG__/app/appdown/sprits.png) no-repeat -162px -91px;position: absolute;right:134px;top:74px;z-index:2;}
+
+        .banner .banCon .cloud-1{width:84px;height:54px;background:url(__IMG__/app/appdown/sprits.png) no-repeat -12px -12px;position: absolute;left:-40px;top:11px;}
+
+        .banner .banCon .cloud-2{width:104px;height:66px;background:url(__IMG__/app/appdown/sprits.png) no-repeat -24px -125px;position: absolute;left:-60px;top:136px;}
+
+        .banner .banCon .cloud-3{width:56px;height:32px;background:url(__IMG__/app/appdown/sprits.png) no-repeat -152px -24px;position: absolute;left:390px;top:28px;}
+
+        .banner .banCon .cloud-4{width:56px;height:32px;background:url(__IMG__/app/appdown/sprits.png) no-repeat -152px -24px;position: absolute;right:310px;top:344px;}
+
+        .banner .banCon .cloud-5{width:76px;height:32px;background:url(__IMG__/app/appdown/sprits.png) no-repeat -367px -23px;position: absolute;right:130px;top:77px;z-index:1;}
+        
+        .banner .banCon .qiqiu{width:59px;height:89px;background:url(__IMG__/app/appdown/sprits.png) no-repeat -395px -91px;position: absolute;left:676px;top:274px;}
+
+        .banner .banCon .download{display: block;width:281px;height:109px;background-color:transparent;position: absolute;left: 106px;bottom: 304px;}
+
+        /*内容*/
+        .main{width: 100%;min-width:1200px;margin-top: -200px;}
+        .main .partOne {height:574px}
+        .main .partOne .pic{width: 360px;height:360px;background:url(__IMG__/app/appdown/saferz.png) no-repeat -100px 0px;margin:96px 167px 0 26px;position:relative;}
+        .main .partOne .pic .pic-1{width: 24px;height:24px;background:url(__IMG__/app/appdown/saferz.png) no-repeat -20px -18px;position:absolute;top: 54px; left: 34px;}
+        .main .partOne .pic .pic-2{width: 18px;height:18px;background:url(__IMG__/app/appdown/saferz.png) no-repeat -82px -21px;position:absolute;top: 167px;right: -9px;}
+
+        /*模拟太阳旋转*/
+        .main .partOne .pic .big{width: 360px;height:360px;background-color: transparent;}
+        .main .partOne .pic .big1{width: 326px;height:326px;border-radius:50%;background-color: transparent;position:absolute;top:20px;left:20px;}
+        .main .partOne .pic .big{
+            animation:circle 6s infinite linear;
+            -webkit-animation:circle 6s infinite linear;
+            -moz-animation:circle 6s infinite linear;
+            -ms-animation:circle 6s infinite linear;
+            -o-animation:circle 6s infinite linear;
+        }
+        .main .partOne .pic .big1{
+            animation:circle 3s infinite linear;
+            -webkit-animation:circle 3s infinite linear;
+            -moz-animation:circle 3s infinite linear;
+            -ms-animation:circle 3s infinite linear;
+            -o-animation:circle 3s infinite linear;
+        }
+        .main .partOne .pic .big .pic-1 {width: 24px;height:24px;}
+        .main .partOne .pic .big1 .pic-2 {width: 18px;height:18px;}
+
+        .main .partOne .txt {margin:96px 0 0 0;}
+        .main .partOne .txt h2{font-size:47px;color:#808080;font-weight: normal;margin-top:80px;}
+        .main .partOne .txt h2 span{font-size:47px;color:#db7623;}
+        .main .partOne .txt p{font-size:34px;color:#666;line-height:50px;}
+
+
+        .main .partTwo {width: 100%;min-width:1200px;height:574px;background:#f5f5f5;}
+        .main .partTwo .con .txt{margin:96px 0 0 66px;width:620px;}
+        .main .partTwo .con .txt h2{font-size:47px;color:#808080;font-weight: normal;margin-top:80px;}
+        .main .partTwo .con .txt h2 span{font-size:47px;color:#db7623;}
+        .main .partTwo .con .txt p{font-size:34px;color:#666;line-height:50px;}
+        .main .partTwo .con .pic{width: 514px;height:574px;position:relative;}
+        .main .partTwo .con .gift-1{width: 506px;height:275px;background:url(__IMG__/app/appdown/gift.png) no-repeat 0px 0px;position:absolute;left:0;bottom: 0;}
+        .main .partTwo .con .gift-2{width: 399px;height:203px;background:url(__IMG__/app/appdown/gift.png) no-repeat 0px -338px;position:absolute;left:42px;bottom:211px;}
+        .main .partTwo .con .gift-3{width: 80px;height:80px;background:url(__IMG__/app/appdown/gift.png) no-repeat -598px -102px;position:absolute;top:162px;right:180px;}
+        .main .partTwo .con .gift-4{width: 57px;height:57px;background:url(__IMG__/app/appdown/gift.png) no-repeat -692px -115px;position:absolute;top: 243px;  right: 265px;}
+        .main .partTwo .con .gift-5{width: 41px;height:41px;background:url(__IMG__/app/appdown/gift.png) no-repeat -764px -123px;position:absolute;top: 263px;  right: 175px;}
+        .main .partTwo .con .gift-6{width: 43px;height:43px;background:url(__IMG__/app/appdown/gift.png) no-repeat -820px -122px;position:absolute;top: 316px;  right: 222px;}
+
+
+        .main .partThree {height:574px}
+        .main .partThree .con .pic{width: 400px;height:574px;position:relative;margin:0 114px 0 0}
+        .main .partThree .con .pic .gameCup{width: 333px;margin:0 0 0 66px;height:396px;background:url(__IMG__/app/appdown/gamenew.png) no-repeat -30px -42px;position:absolute;left:0;bottom: 0;}
+        .main .partThree .con .pic .start-1{width: 16px;height:29px;background:url(__IMG__/app/appdown/gamenew.png) no-repeat -398px -19px;position:absolute;top:120px;right:102px;}
+        .main .partThree .con .pic .start-2{width: 17px;height:28px;background:url(__IMG__/app/appdown/gamenew.png) no-repeat -463px -20px;position:absolute;top:120px;right: 60px;}
+        .main .partThree .con .pic .start-3{width: 20px;height:39px;background:url(__IMG__/app/appdown/gamenew.png) no-repeat -396px -77px;position:absolute;top:150px;right: 80px;}
+        .main .partThree .con .txt{margin:96px 0 0 66px;width:620px;}
+        .main .partThree .con .txt h2{font-size:47px;color:#808080;font-weight: normal;margin-top:80px;}
+        .main .partThree .con .txt h2{font-size:47px;color:#808080;font-weight: normal;margin-top:80px;}
+        .main .partThree .con .txt h2 span{font-size:47px;color:#db7623;}
+        .main .partThree .con .txt  p{font-size:34px;color:#666;line-height:50px;}
+
+        /*底部*/
+        .footer {border-top: 1px solid #F2F2F2;background-color: #fbfbfb;padding-bottom: 10px;}
+        .footer .banxin {width: 800px;margin: 0 auto;}
+        .footer .banxin .footer-t {margin-top: 50px;margin-bottom: 30px;padding-bottom: 30px; border-bottom: 1px solid #E6E6E6;}
+        .footer .banxin .footer-t p {font-size: 12px;text-align: center;line-height: 20px;}
+        .footer .banxin .footer-t p a{color: #323232;}
+        .footer .banxin .footer-b {margin: 30px 0 50px 220px; text-align: center;}
+        .footer .banxin .footer-b .one {float: left;display: block;margin-right: 30px;margin-top:15px;width:178px;height:53px;}
+        .footer .banxin .footer-b .two {float: left;display: block;width: 80px;height: 80px; margin-right: 15px;}
+        .footer .banxin .footer-b .wenzi {float: left;display: block;font-size: 14px;color: #323232;margin-top: 25px;}
+        /*超人动画*/
+        .animation .flashman{
+            animation:supman 2.5s .2s ease both alternate;
+            -moz-animation: supman 2.5s .2s ease both alternate;
+            -webkit-animation: supman 2.5s .2s ease both alternate;
+            -ms-animation: supman 2.5s .2s ease both alternate;
+            -o-animation: supman 2.5s .2s ease both alternate;
+        }
+        /*circle动画*/
+        .animation .pic-1{
+            -animation: circle 2.5s .2s ease both infinite;
+            -webkit-animation: circle 2.5s .2s ease both infinite;
+            -moz-animation: circle 2.5s .2s ease both infinite;
+            -ms-animation: circle 2.5s .2s ease both infinite;
+            -o-animation: circle 2.5s .2s ease both infinite;
+        }
+        .animation .pic-2{
+            -animation: circle 2.5s .2s ease both infinite;
+            -webkit-animation: circle 2.5s .2s ease both infinite;
+            -moz-animation: circle 2.5s .2s ease both infinite;
+            -ms-animation: circle 2.5s .2s ease both infinite;
+            -o-animation: circle 2.5s .2s ease both infinite;
+        }
+
+        /*星星动画*/
+        .animation .start-1{
+            animation: flashStar 2.5s .2s ease both infinite;
+            -webkit-animation: flashStar 2.5s .2s ease both infinite;
+            -moz-animation:flashStar 2.5s .2s ease both infinite;
+            -ms-animation:flashStar 2.5s .2s ease both infinite;
+            -o-animation:flashStar 2.5s .2s ease both infinite;
+        }
+        .animation .start-2{
+            animation: flashStar 2.5s .2s ease both infinite;
+            -webkit-animation: flashStar 2.5s .2s ease both infinite;
+            -moz-animation:flashStar 2.5s .2s ease both infinite;
+            -ms-animation:flashStar 2.5s .2s ease both infinite;
+            -o-animation:flashStar 2.5s .2s ease both infinite;
+        }
+        .animation .start-3{
+            animation: flashStar 2.5s .2s ease both infinite;
+            -webkit-animation: flashStar 2.5s .2s ease both infinite;
+            -moz-animation:flashStar 2.5s .2s ease both infinite;
+            -ms-animation:flashStar 2.5s .2s ease both infinite;
+            -o-animation:flashStar 2.5s .2s ease both infinite;
+        }
+
+        /*礼包动画*/
+        .animation .gift-3 {
+            animation: toshow3 2s .2s ease both infinite;
+            -webkit-animation: toshow3 2s .2s ease both infinite;
+            -moz-animation: toshow3 2s .2s ease both infinite;
+            -ms-animation: toshow3 2s .2s ease both infinite;
+            -o-animation: toshow3 2s .2s ease both infinite;
+        }
+        .animation .gift-4 {
+            animation: toshow3 2s .2s ease both infinite;
+            -webkit-animation: toshow3 2s .2s ease both infinite;
+            -moz-animation: toshow3 2s .2s ease both infinite;
+            -ms-animation: toshow3 2s .2s ease both infinite;
+            -o-animation: toshow3 2s .2s ease both infinite;
+        }
+        .animation .gift-5 {
+            animation: toshow3 2s .2s ease both infinite;
+            -webkit-animation: toshow3 2s .2s ease both infinite;
+            -moz-animation: toshow3 2s .2s ease both infinite;
+            -ms-animation: toshow3 2s .2s ease both infinite;
+            -o-animation: toshow3 2s .2s ease both infinite;
+        }
+        .animation .gift-6 {
+            animation: toshow3 2s 0.2s ease both infinite;
+            -webkit-animation: toshow3 2s 0.2s ease both infinite;
+            -moz-animation: toshow3 2s 0.2s ease both infinite;
+            -ms-animation: toshow3 2s 0.2s ease both infinite;
+            -o-animation: toshow3 2s 0.2s ease both infinite;
+        }
+        
+        /*气球动画*/
+        .qiqiu{
+            -webkit-animation:updown 10s linear infinite alternate;
+            -moz-animation:updown 10s linear infinite alternate;
+            -ms-animation:updown 10s linear infinite alternate;
+            -o-animation:updown 10s linear infinite alternate;
+            animation:updown 10s linear infinite alternate;
+        }
+        .cloud-1,.cloud-2,.cloud-4{
+             -webkit-animation:moveRight 10s linear infinite alternate;
+             -moz-animation:moveRight 10s linear infinite alternate;
+             -ms-animation:moveRight 10s linear infinite alternate;
+             -o-animation:moveRight 10s linear infinite alternate;
+            animation:moveRight 10s linear infinite alternate;
+
+        }
+        .cloud-3{
+              -webkit-animation:moveLeft 10s linear infinite alternate;
+              -moz-animation:moveLeft 10s linear infinite alternate;
+              -ms-animation:moveLeft 10s linear infinite alternate;
+              -o-animation:moveLeft 10s linear infinite alternate;
+            animation:moveLeft 10s linear infinite alternate;
+        }
+
+        /*toshow3*/
+        @keyframes toshow3 {
+            0% {
+                transform: translate(0, 190px);
+                opacity: 0
+            }
+
+            50% {
+                transform: translate(0, 0)
+            }
+
+            99% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+        @-webkit-keyframes toshow3 {
+            0% {
+                -webkit-transform: translate(0, 190px);
+                opacity: 0
+            }
+
+            50% {
+                -webkit-transform: translate(0, 0)
+            }
+
+            99% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+        @-moz-keyframes toshow3 {
+            0% {
+                -moz-transform: translate(0, 190px);
+                opacity: 0
+            }
+
+            50% {
+                -moz-transform: translate(0, 0);
+                opacity: 1
+            }
+
+            99% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+        @-ms-keyframes toshow3 {
+            0% {
+                -ms-transform: translate(0, 190px);
+                opacity: 0
+            }
+
+            50% {
+                -ms-transform: translate(0, 0);
+                opacity: 1
+            }
+
+            99% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        /*supman*/
+        @keyframes supman {
+            0% {
+               transform: translate(-1000px, 9px);
+                opacity: 0
+            }
+
+            10% {
+                opacity: 1
+            }
+
+            90% {
+                opacity: 1
+            }
+
+            100% {
+               transform:  translate(0, 0);
+                opacity: 1
+            }
+
+        }
+        @-webkit-keyframes supman {
+
+            0% {
+                -webkit-transform: translate(-1000px, 9px);
+                opacity: 0
+            }
+
+            10% {
+                opacity: 1
+            }
+
+            90% {
+                opacity: 1
+            }
+
+            100% {
+                -webkit-transform:  translate(0, 0);
+                opacity: 1
+            }
+
+        }
+        @-moz-keyframes supman{
+            0% {
+                -moz-transform: translate(-500px, 9px);
+                opacity: 0
+            }
+
+            10% {
+                opacity: 1
+            }
+
+            90% {
+                opacity: 1
+            }
+
+            100% {
+                -moz-transform: translate(0, 0);
+                opacity: 1
+            }
+        }
+        @-ms-keyframes supman{
+            0% {
+                -ms-transform: translate(-500px, 9px);
+                opacity: 0
+            }
+
+            10% {
+                opacity: 1
+            }
+
+            90% {
+                opacity: 1
+            }
+
+            100% {
+                -ms-transform: translate(0, 0);
+                opacity: 1
+            }
+        }
+
+        /*giftStar*/
+        @keyframes giftStar {
+            0%,50%,100%{
+                opacity: 1;
+                transform: scale(1.6);
+            }
+            25%,75%{
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+        }
+        @-webkit-keyframes giftStar {
+            0%,50%,100%{
+                opacity: 1;
+                -webkit-transform: scale(1.6);
+            }
+            25%,75%{
+                opacity: 0.3;
+                -webkit-transform: scale(0.8);
+            }
+        }
+        @-moz-keyframes giftStar {
+            0%,50%,100%{
+                opacity: 1;
+                -moz-transform: scale(1.6);
+            }
+            25%,75%{
+                opacity: 0.3;
+                -moz-transform: scale(0.8);
+            }
+        }
+        @-ms-keyframes giftStar {
+            0%,50%,100%{
+                opacity: 1;
+                -ms-transform: scale(1.6);
+            }
+            25%,75%{
+                opacity: 0.3;
+                -ms-transform: scale(0.8);
+            }
+        }
+
+        /*flashStar*/
+        @keyframes flashStar {
+            0%,50%,100%{
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            25%,75%{
+                opacity: 0.3;
+                transform: scale(0.6);
+            }
+        }
+        @-webkit-keyframes flashStar {
+            0%,50%,100%{
+                opacity: 1;
+                -webkit-transform: scale(1.2);
+            }
+            25%,75%{
+                opacity: 0.3;
+                -webkit-transform: scale(0.6);
+            }
+        }
+        @-moz-keyframes flashStar {
+            0%,50%,100%{
+                opacity: 1;
+                -moz-transform: scale(1.2);
+            }
+            25%,75%{
+                opacity: 0.3;
+                -moz-transform: scale(0.6);
+            }
+        }
+        @-ms-keyframes flashStar {
+            0%,50%,100%{
+                opacity: 1;
+                -ms-transform: scale(1.2);
+            }
+            25%,75%{
+                opacity: 0.3;
+                -ms-transform: scale(0.6);
+            }
+        }
+
+        /*circle*/
+        @keyframes circle{
+            0%{ transform:rotate(0deg); }
+            100%{ transform:rotate(360deg); }
+        }
+        @-webkit-keyframes circle{
+            0%{ -webkit-transform:rotate(0deg); }
+            100%{ -webkit-transform:rotate(360deg); }
+        }
+        @-moz-keyframes circle{
+            0%{ -moz-transform:rotate(0deg); }
+            100%{ -moz-transform:rotate(360deg); }
+        }
+        @-ms-keyframes circle{
+            0%{ -ms-transform:rotate(0deg); }
+            100%{ -ms-transform:rotate(360deg); }
+        }
+
+/**/
+        @keyframes updown {
+            0%,100%{
+                transform: translate(0,0);
+            }
+            50%{
+                transform: translate(0,94px);
+            }
+        }
+        @-webkit-keyframes updown {
+            0%,100%{
+                -webkit-transform: translate(0,0);
+            }
+            50%{
+                -webkit-transform: translate(0,94px);
+            }
+        }
+        @-moz-keyframes updown {
+             0%,100%{
+                 -moz-transform: translate(0,0);
+             }
+             50%{
+                 -moz-transform: translate(0,94px);
+             }
+         }
+        @-ms-keyframes updown {
+              0%,100%{
+                  -ms-transform: translate(0,0);
+              }
+              50%{
+                  -ms-transform: translate(0,94px);
+              }
+          }
+
+
+        @-webkit-keyframes moveLeft {
+            0%,100%{
+                -webkit-transform: translate(0,0);
+            }
+            50%{
+                -webkit-transform: translate( -520px,0);
+            }
+        }
+        @-moz-keyframes moveLeft {
+            0%,100%{
+                -moz-stransform: translate(0,0);
+            }
+            50%{
+                -moz-stransform: translate( -520px,0);
+            }
+        }
+        @-ms-keyframes moveLeft {
+             0%,100%{
+                 -ms-stransform: translate(0,0);
+             }
+             50%{
+                 -ms-stransform: translate( -520px,0);
+             }
+         }
+        @keyframes moveLeft {
+            0%,100%{
+                transform: translate(0,0);
+            }
+            50%{
+                transform: translate( -520px,0);
+            }
+        }
+
+
+        @-webkit-keyframes moveRight {
+             0%,100%{
+                 -webkit-transform: translate(0,0);
+             }
+             50%{
+                 -webkit-transform: translate( 340px,0);
+             }
+         }
+        @-moz-keyframes moveRight {
+            0%,100%{
+                -moz-transform: translate(0,0);
+            }
+            50%{
+                -moz-transform: translate(340px,0);
+            }
+        }
+        @-ms-keyframes moveRight {
+              0%,100%{
+                  -ms-transform: translate(0,0);
+              }
+              50%{
+                  -ms-transform: translate( 340px,0);
+              }
+          }
+
+        @keyframes moveRight {
+            0%,100%{
+                transform: translate(0,0);
+            }
+            50%{
+                transform: translate( 340px,0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="wrap headBar">
+        <a href="http://www.moguplay.com" class="logo fl"><img src="__IMG__/app/appdown/logo.png" ></a>
+        <a href="javascript:;" class="item fr"><img src="__IMG__/app/appdown/andriod.png"  class="img fl"><i class="inner fr">Android</i></a>
+    </div>
+</div>
+<div class="banner">
+    <div class="wrap banCon animation">
+        <div class="appEvm">
+            <div class="pic fl"><img src="__IMG__/app/appdown/erweima180.gif"></div>
+            <div class="txt fr">下载APP<br/>更多豪礼等你拿</div>
+        </div>
+        <div class="superman flashman"></div>
+        <!-- <div class="cloud-1"></div> -->
+        <div class="cloud-2"></div>
+        <div class="cloud-3"></div>
+        <div class="cloud-4"></div>
+        <div class="cloud-5"></div>
+        <div class="qiqiu"></div>
+        <a href="{:U('Down/down_file?game_id=68&type=1')}" class="download"></a>
+    </div>
+</div>
+<div class="main">
+    <div class="partOne">
+        <div class="wrap con">
+            <div class="pic fl animation">
+                <div class="big">
+                    <div class="pic-1"></div>
+                </div>
+                <div class="big1">
+                    <div class="pic-2"></div>
+                </div>
+            </div>
+            <div class="txt fr">
+                <h2><span>安全</span>认证，放心体验</h2>
+                <p>应用商店自律组成员单位，<br/>权威安全认证，放心无忧下载</p>
+            </div>
+        </div>
+    </div>
+    <div class="partTwo">
+        <div class="wrap con">
+
+            <div class="txt fl">
+                <h2>特权<span>礼包</span>，免费畅领</h2>
+                <p>量身定制的游戏特权，<br/>热门游戏礼包，助您升级提速</p>
+            </div>
+
+            <div class="pic fr animation">
+                <div class="gift-1"></div>
+                <div class="gift-2"></div>
+                <div class="gift-3"></div>
+                <div class="gift-4"></div>
+                <div class="gift-5"></div>
+                <div class="gift-6"></div>
+            </div>
+        </div>
+    </div>
+    <div class="partThree">
+        <div class="wrap con">
+            <div class="pic fl animation">
+                <div class="gameCup"></div>
+                <div class="start-1"></div>
+                <div class="start-2"></div>
+                <div class="start-3"></div>
+            </div>
+            <div class="txt fr">
+                <h2><span>精品</span>游戏，尽收囊底</h2>
+                <p>囊括全平台最热门，<br/>最精品的手机游戏，<br/>让您随时随地尽享游戏试玩乐趣</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--尾巴部分-->
+<div class="footer clearfix">
+    <div class="banxin">
+        <div class="footer-t">
+            <p>
+                <a href="{:U('Category/zxchildren/id/35')}" target="_blank">关于我们 ｜  </a>
+                <a href="{:U('Category/zxchildren/id/36')}" target="_blank">商务合作 ｜  </a>
+                <a href="{:U('Category/zxchildren/id/37')}" target="_blank">合作伙伴 ｜  </a>
+                <a href="{:U('Service/kefu')}" target="_blank">客服帮助</a>
+            </p>
+            <p>
+                <a href="{:U('Index/regareement')}" target="_blank">注册协议｜ </a>
+                <a href="{:U('Public/register')}" target="_blank">防沉迷系统 ｜ </a>
+                <a href="{:U('Category/zxchildren/id/38')}" target="_blank">适龄提示：18+ 家中监护系统 ｜ </a>
+                <a href="{:U('Index/interareement')}" target="_blank">《网络游戏服务格式化协议必备条款》 </a>
+            </p>
+            <p>
+                <a href="javascript:;">
+                    北京玩转平台科技有限公司 版权所有2016 moguplay.com
+                </a>
+            </p>
+            <p><a href="javascript:;">网站备案：京ICP备17006373号</a></p>
+        </div>
+
+        <div class="footer-b clearfix">
+            <a class="one" href="javascript:;"><img src="__IMG__/footer/logo_178x53.png" alt=""></a>
+            <a class="two" href="javascript:;"><img src="__IMG__/footer/erweima.png" alt=""></a>
+            <a class="wenzi" href="javascript:; ">玩转平台 <br>手机助手APP</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

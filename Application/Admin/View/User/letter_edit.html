@@ -1,0 +1,65 @@
+<extend name="Public/base"/>
+
+	     
+
+<block name="body">
+    <div class="main-title">
+        <h2>新增用户</h2>
+    </div>
+    <form action="{:U('User/letter_edit?id='.$list_data['id'])}" method="post" class="form-horizontal tab-list">
+        <div class="form-item">
+            <label class="item-label">标题</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="title" value="{$list_data.title}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">类型</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="type" value="{$list_data.type}">
+            </div>
+        </div>
+
+        <div class="form-item" >
+            <label class="item-label">发布内容</label>
+        
+        <!-- <script id="container" name="send_content" type="text/plain" value={$list_data.send_content} >
+          
+        </script>
+            -->
+        <textarea id="container" name="send_content" type="text/plain" >
+          {$list_data.send_content} 
+        </textarea>
+
+        <script type="text/javascript" src="__JS__/ueditor/ueditor.config.js"></script>
+        
+        <script type="text/javascript" src="__JS__/ueditor/ueditor.all.js"></script>
+        <script type="text/javascript" charset="utf-8" src="__JS__/ueditor/lang/zh-cn/zh-cn.js"></script>
+       
+        <script type="text/javascript">
+            var ue = UE.getEditor('container');
+        </script>
+
+
+        </div>
+       
+       <div class="form-item">
+            <input  type="submit" name="submit" value="确 定" style="border:none;width:70px;height: 40px;color:#fff; background-color: #2062b0;   margin: 30px 10px;padding: 10px;line-height: 20px;">
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+
+
+
+    </form>
+</block>
+
+<block name="script">
+
+
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('User/letter')}');
+    </script>
+</block>
+
